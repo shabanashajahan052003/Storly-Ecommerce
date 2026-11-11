@@ -8,6 +8,104 @@
     <title>Storly - Home</title>
 
     <link href="./assets/css/output.css" rel="stylesheet">
+    <style>
+        @keyframes letterRevealUp {
+            0% {
+                opacity: 0;
+                transform: translateY(115%) rotate(4deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        @keyframes heroFadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-letter {
+            display: inline-block;
+            transform: translateY(115%);
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        .hero-anim-active .hero-letter {
+            animation: letterRevealUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .hero-fade-item {
+            opacity: 0;
+            transform: translateY(24px);
+            will-change: transform, opacity;
+        }
+        .hero-anim-active .hero-fade-item {
+            animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Shop By Category Envelope Reveal Animations */
+        @keyframes envelopeRise {
+            0% {
+                opacity: 0;
+                transform: translateY(105%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes categoryCardEmerge {
+            0% {
+                opacity: 0;
+                transform: translateY(80px) scale(0.92);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .cat-envelope-slot {
+            display: block;
+            overflow: hidden;
+            line-height: 1.25;
+        }
+        .cat-envelope-text {
+            display: inline-block;
+            transform: translateY(105%);
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        .cat-anim-active .cat-heading-text {
+            animation: envelopeRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+        }
+        .cat-anim-active .cat-subtitle-text {
+            animation: envelopeRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+        }
+        .cat-card-slot {
+            opacity: 0;
+            transform: translateY(80px) scale(0.92);
+            will-change: transform, opacity;
+        }
+        .cat-anim-active .cat-card-slot:nth-child(1) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+        }
+        .cat-anim-active .cat-card-slot:nth-child(2) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.70s forwards;
+        }
+        .cat-anim-active .cat-card-slot:nth-child(3) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+        }
+        .cat-anim-active .cat-card-slot:nth-child(4) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.00s forwards;
+        }
+        .cat-anim-active .cat-card-slot:nth-child(5) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
+        }
+    </style>
 </head>
 
 <body class="bg-white">
@@ -133,10 +231,10 @@
 
                         <!-- Slide 1 Content -->
                         <div
-                            class="absolute left-4 top-1/2 z-10 max-w-[90%] -translate-y-1/2 sm:left-8 sm:max-w-[75%] md:left-12 lg:left-16">
+                            class="hero-slide-content absolute left-4 top-1/2 z-10 max-w-[90%] -translate-y-1/2 sm:left-8 sm:max-w-[75%] md:left-12 lg:left-16">
 
                             <!-- Offer Tag -->
-                            <div class="mb-3 inline-flex items-center gap-2">
+                            <div class="hero-fade-item mb-3 inline-flex items-center gap-2" style="animation-delay: 0.1s;">
                                 <span
                                     class="inline-flex h-5 items-center justify-center rounded-full bg-[#AAF27F] px-2 py-1 text-xs font-normal uppercase text-gray-800">
                                     25% OFF
@@ -148,31 +246,34 @@
 
                             <!-- Heading -->
                             <h1
-                                class="mb-2 max-w-2xl text-2xl font-bold leading-tight text-white sm:mb-3 sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.15]">
+                                class="hero-letter-heading overflow-hidden mb-2 max-w-2xl text-2xl font-bold leading-tight text-white sm:mb-3 sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.15]">
                                 Your Everyday <br>
                                 Shopping, Simplified
                             </h1>
 
                             <!-- Description -->
                             <p
-                                class="mb-4 max-w-sm text-xs leading-relaxed text-white line-clamp-2 sm:mb-6 sm:text-sm sm:line-clamp-none md:text-base">
+                                class="hero-fade-item mb-4 max-w-sm text-xs leading-relaxed text-white line-clamp-2 sm:mb-6 sm:text-sm sm:line-clamp-none md:text-base"
+                                style="animation-delay: 0.7s;">
                                 Enjoy a seamless shopping experience with fast delivery and unbeatable prices.
                             </p>
 
                             <!-- CTA Button -->
-                            <a href="banner-with-left-sidebar-3-column.html"
-                                class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#AAF27F] px-4 py-2.5 text-sm sm:px-5 sm:py-3 sm:text-base font-medium text-[#04535C] transition-all hover:bg-white">
-                                Shop Now
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                                    fill="none" class="transition-transform duration-500 group-hover:rotate-45">
-                                    <path d="M15.5833 6.41406L5.5 16.4974" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                    <path
-                                        d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </a>
+                            <div class="hero-fade-item" style="animation-delay: 0.85s;">
+                                <a href="banner-with-left-sidebar-3-column.html"
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#AAF27F] px-4 py-2.5 text-sm sm:px-5 sm:py-3 sm:text-base font-medium text-[#04535C] transition-all hover:bg-white">
+                                    Shop Now
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                        fill="none" class="transition-transform duration-500 group-hover:rotate-45">
+                                        <path d="M15.5833 6.41406L5.5 16.4974" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                        <path
+                                            d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
 
                         </div>
 
@@ -185,10 +286,10 @@
 
                         <!-- Slide 2 Content -->
                         <div
-                            class="absolute left-4 top-1/2 z-10 max-w-[90%] -translate-y-1/2 sm:left-8 sm:max-w-[75%] md:left-12 lg:left-16">
+                            class="hero-slide-content absolute left-4 top-1/2 z-10 max-w-[90%] -translate-y-1/2 sm:left-8 sm:max-w-[75%] md:left-12 lg:left-16">
 
                             <!-- Offer Tag -->
-                            <div class="mb-3 inline-flex items-center gap-2">
+                            <div class="hero-fade-item mb-3 inline-flex items-center gap-2" style="animation-delay: 0.1s;">
                                 <span
                                     class="inline-flex h-5 items-center justify-center rounded-full bg-[#AAF27F] px-2 py-1 text-xs font-normal uppercase text-gray-800">
                                     25% OFF
@@ -200,31 +301,34 @@
 
                             <!-- Heading -->
                             <h2
-                                class="mb-2 max-w-2xl text-2xl font-bold leading-tight text-white sm:mb-3 sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.15]">
+                                class="hero-letter-heading overflow-hidden mb-2 max-w-2xl text-2xl font-bold leading-tight text-white sm:mb-3 sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.15]">
                                 Skip the Aisle. Keep <br>
                                 the Change
                             </h2>
 
                             <!-- Description -->
                             <p
-                                class="mb-4 max-w-sm text-xs leading-relaxed text-white line-clamp-2 sm:mb-6 sm:text-sm sm:line-clamp-none md:text-base">
+                                class="hero-fade-item mb-4 max-w-sm text-xs leading-relaxed text-white line-clamp-2 sm:mb-6 sm:text-sm sm:line-clamp-none md:text-base"
+                                style="animation-delay: 0.7s;">
                                 our weekly shop just got easier—and 25% cheaper
                             </p>
 
                             <!-- CTA Button -->
-                            <a href="banner-with-left-sidebar-3-column.html"
-                                class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#AAF27F] px-4 py-2.5 text-sm sm:px-5 sm:py-3 sm:text-base font-medium text-[#04535C] transition-all hover:bg-white">
-                                Shop Now
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                                    fill="none" class="transition-transform duration-500 group-hover:rotate-45">
-                                    <path d="M15.5833 6.41406L5.5 16.4974" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                    <path
-                                        d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </a>
+                            <div class="hero-fade-item" style="animation-delay: 0.85s;">
+                                <a href="banner-with-left-sidebar-3-column.html"
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#AAF27F] px-4 py-2.5 text-sm sm:px-5 sm:py-3 sm:text-base font-medium text-[#04535C] transition-all hover:bg-white">
+                                    Shop Now
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                        fill="none" class="transition-transform duration-500 group-hover:rotate-45">
+                                        <path d="M15.5833 6.41406L5.5 16.4974" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                        <path
+                                            d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
 
                         </div>
 
@@ -237,10 +341,10 @@
 
                         <!-- Slide 3 Content -->
                         <div
-                            class="absolute left-4 top-1/2 z-10 max-w-[90%] -translate-y-1/2 sm:left-8 sm:max-w-[75%] md:left-12 lg:left-16">
+                            class="hero-slide-content absolute left-4 top-1/2 z-10 max-w-[90%] -translate-y-1/2 sm:left-8 sm:max-w-[75%] md:left-12 lg:left-16">
 
                             <!-- Offer Tag -->
-                            <div class="mb-3 inline-flex items-center gap-2">
+                            <div class="hero-fade-item mb-3 inline-flex items-center gap-2" style="animation-delay: 0.1s;">
                                 <span
                                     class="inline-flex h-5 items-center justify-center rounded-full bg-[#AAF27F] px-2 py-1 text-xs font-normal uppercase text-gray-800">
                                     25% OFF
@@ -252,31 +356,34 @@
 
                             <!-- Heading -->
                             <h2
-                                class="mb-2 max-w-2xl text-2xl font-bold leading-tight text-white sm:mb-3 sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.15]">
+                                class="hero-letter-heading overflow-hidden mb-2 max-w-2xl text-2xl font-bold leading-tight text-white sm:mb-3 sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.15]">
                                 Eat Better. Spend <br>
                                 Less.
                             </h2>
 
                             <!-- Description -->
                             <p
-                                class="mb-4 max-w-sm text-xs leading-relaxed text-white line-clamp-2 sm:mb-6 sm:text-sm sm:line-clamp-none md:text-base">
+                                class="hero-fade-item mb-4 max-w-sm text-xs leading-relaxed text-white line-clamp-2 sm:mb-6 sm:text-sm sm:line-clamp-none md:text-base"
+                                style="animation-delay: 0.7s;">
                                 Discover the best of the market with an exclusive 25% discount
                             </p>
 
                             <!-- CTA Button -->
-                            <a href="banner-with-left-sidebar-3-column.html"
-                                class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#AAF27F] px-4 py-2.5 text-sm sm:px-5 sm:py-3 sm:text-base font-medium text-[#04535C] transition-all hover:bg-white">
-                                Shop Now
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                                    fill="none" class="transition-transform duration-500 group-hover:rotate-45">
-                                    <path d="M15.5833 6.41406L5.5 16.4974" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                    <path
-                                        d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </a>
+                            <div class="hero-fade-item" style="animation-delay: 0.85s;">
+                                <a href="banner-with-left-sidebar-3-column.html"
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#AAF27F] px-4 py-2.5 text-sm sm:px-5 sm:py-3 sm:text-base font-medium text-[#04535C] transition-all hover:bg-white">
+                                    Shop Now
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                        fill="none" class="transition-transform duration-500 group-hover:rotate-45">
+                                        <path d="M15.5833 6.41406L5.5 16.4974" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                        <path
+                                            d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
 
                         </div>
 
@@ -409,16 +516,20 @@
 
         <!-- ================= SHOP BY CATEGORY SECTION ================= -->
 
-        <section class="w-full px-4 pb-12 sm:px-6 sm:pb-16">
+        <section id="shop-by-category-section" class="w-full px-4 pb-12 sm:px-6 sm:pb-16">
 
             <!-- Section Header -->
             <div class="mb-8 flex items-end justify-between">
                 <div class="flex flex-col">
                     <h2 class="text-2xl font-bold leading-tight text-gray-900 md:text-3xl">
-                        Shop By Category
+                        <span class="cat-envelope-slot">
+                            <span class="cat-envelope-text cat-heading-text">Shop By Category</span>
+                        </span>
                     </h2>
                     <p class="mt-2 text-sm text-gray-500 md:text-base">
-                        Secure a rare 50% valuation on our most-celebrated goods 🔥
+                        <span class="cat-envelope-slot">
+                            <span class="cat-envelope-text cat-subtitle-text">Secure a rare 50% valuation on our most-celebrated goods 🔥</span>
+                        </span>
                     </p>
                 </div>
                 <a href="top-banner-with-3-col.html"
@@ -454,7 +565,7 @@
 
                     <!-- Category 1: Frozen Foods -->
                     <div
-                        class="category-item w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
+                        class="category-item cat-card-slot w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
                         <a href="product-details-6.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
@@ -472,7 +583,7 @@
 
                     <!-- Category 2: Snacks & Beverages -->
                     <div
-                        class="category-item w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
+                        class="category-item cat-card-slot w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
                         <a href="product-details-6.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
@@ -490,7 +601,7 @@
 
                     <!-- Category 3: Fresh Produce -->
                     <div
-                        class="category-item w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
+                        class="category-item cat-card-slot w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
                         <a href="product-details-6.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
@@ -508,7 +619,7 @@
 
                     <!-- Category 4: Dairy & Eggs -->
                     <div
-                        class="category-item w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
+                        class="category-item cat-card-slot w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
                         <a href="product-details-6.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
@@ -526,7 +637,7 @@
 
                     <!-- Category 5: Meat & Fish -->
                     <div
-                        class="category-item w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
+                        class="category-item cat-card-slot w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
                         <a href="product-details-6.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
@@ -585,6 +696,69 @@
         </section>
 
         <!-- ================= END SHOP BY CATEGORY SECTION ================= -->
+
+
+        <!-- ================= WINTER SALE BANNER SECTION ================= -->
+
+        <section class="w-full px-4 pb-12 sm:px-6 sm:pb-16">
+
+            <div class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 md:p-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+
+                <div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
+
+                    <!-- -50% Large Offer Text -->
+                    <div class="shrink-0 select-none">
+                        <span class="text-[72px] font-extrabold leading-none text-[#04535C]/15 sm:text-[96px] md:text-[110px] xl:text-[128px]">
+                            -50%
+                        </span>
+                    </div>
+
+                    <!-- Center Details: WINTER SALE, Code, Description -->
+                    <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-left">
+
+                        <!-- Main Heading -->
+                        <h2 class="text-3xl font-extrabold tracking-tight text-[#04535C] sm:text-4xl md:text-5xl lg:leading-tight">
+                            WINTER SALE
+                        </h2>
+
+                        <!-- Sale Code With Copy Icon -->
+                        <p class="mt-2 flex items-center justify-center gap-2 text-base font-semibold text-gray-800 lg:justify-start">
+                            <span>Sale Code: WINSALE2026</span>
+                            <button type="button" aria-label="Copy sale code"
+                                class="inline-flex cursor-pointer items-center justify-center text-gray-500 transition-colors hover:text-[#04535C]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path
+                                        d="M6.75 11.25C6.75 9.12868 6.75 8.06802 7.40901 7.40901C8.06802 6.75 9.12868 6.75 11.25 6.75L12 6.75C14.1213 6.75 15.182 6.75 15.841 7.40901C16.5 8.06802 16.5 9.12868 16.5 11.25V12C16.5 14.1213 16.5 15.182 15.841 15.841C15.182 16.5 14.1213 16.5 12 16.5H11.25C9.12868 16.5 8.06802 16.5 7.40901 15.841C6.75 15.182 6.75 14.1213 6.75 12L6.75 11.25Z"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M12.7499 6.75C12.7482 4.53218 12.7146 3.38341 12.069 2.59682C11.9444 2.44492 11.8051 2.30563 11.6532 2.18097C10.8234 1.5 9.59061 1.5 7.125 1.5C4.65939 1.5 3.42658 1.5 2.59682 2.18097C2.44492 2.30563 2.30563 2.44492 2.18097 2.59682C1.5 3.42658 1.5 4.65939 1.5 7.125C1.5 9.59061 1.5 10.8234 2.18097 11.6532C2.30563 11.8051 2.44492 11.9444 2.59682 12.069C3.38341 12.7146 4.53218 12.7482 6.75 12.7499"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </p>
+
+                        <!-- Description -->
+                        <p class="mt-1 text-sm text-gray-500 sm:text-base">
+                            Join our mailing list for exclusive deals and updates
+                        </p>
+
+                    </div>
+
+                    <!-- Right Side: Shop Now Button -->
+                    <div class="shrink-0">
+                        <a href="banner-with-left-sidebar-3-column.html"
+                            class="inline-flex items-center justify-center rounded-lg bg-[#04535C] px-8 py-3.5 text-base font-semibold text-[#AAF27F] transition-colors duration-300 hover:bg-[#02414F] hover:text-white sm:px-10">
+                            Shop Now
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= END WINTER SALE BANNER SECTION ================= -->
     </main>
 
 
@@ -671,6 +845,88 @@
                     }
                 });
             });
+        })();
+
+        // Hero Envelope-Style Letter Reveal Animation
+        (function () {
+            const headings = document.querySelectorAll('.hero-letter-heading');
+
+            // Wrap each character in an overflow-hidden clip container with an upward moving span
+            headings.forEach(heading => {
+                const nodes = Array.from(heading.childNodes);
+                heading.innerHTML = '';
+                let letterIndex = 0;
+
+                nodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        const chars = node.textContent.split('');
+                        chars.forEach(ch => {
+                            if (ch === ' ') {
+                                heading.appendChild(document.createTextNode(' '));
+                            } else {
+                                const wrap = document.createElement('span');
+                                wrap.className = 'inline-block overflow-hidden align-top';
+                                const span = document.createElement('span');
+                                span.className = 'hero-letter';
+                                span.textContent = ch;
+                                span.style.animationDelay = (0.2 + letterIndex * 0.025) + 's';
+                                wrap.appendChild(span);
+                                heading.appendChild(wrap);
+                                letterIndex++;
+                            }
+                        });
+                    } else if (node.nodeName === 'BR') {
+                        heading.appendChild(document.createElement('br'));
+                    } else {
+                        heading.appendChild(node.cloneNode(true));
+                    }
+                });
+            });
+
+            const slideContents = document.querySelectorAll('.hero-slide-content');
+            const radios = document.querySelectorAll('input[name="hero-slide-toggle"]');
+
+            function triggerSlideAnimation(slideIndex) {
+                slideContents.forEach((content, idx) => {
+                    content.classList.remove('hero-anim-active');
+                    if (idx === slideIndex) {
+                        // Force layout reflow to restart keyframe animation cleanly
+                        void content.offsetWidth;
+                        content.classList.add('hero-anim-active');
+                    }
+                });
+            }
+
+            radios.forEach((radio, idx) => {
+                radio.addEventListener('change', () => {
+                    if (radio.checked) {
+                        triggerSlideAnimation(idx);
+                    }
+                });
+            });
+
+            // Initial animation on page load
+            triggerSlideAnimation(0);
+        })();
+
+        // Shop By Category Viewport Intersection Observer & Sequence Trigger
+        (function () {
+            const catSection = document.getElementById('shop-by-category-section');
+            if (!catSection) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        catSection.classList.add('cat-anim-active');
+                        observer.unobserve(catSection); // Animate once on entrance
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            observer.observe(catSection);
         })();
     </script>
 
