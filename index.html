@@ -105,6 +105,186 @@
         .cat-anim-active .cat-card-slot:nth-child(5) {
             animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
         }
+
+        /* Winter Sale Envelope-Style Emerge Animation */
+        @keyframes winterEnvelopeRise {
+            0% {
+                opacity: 0;
+                transform: translateY(110%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .winter-envelope-card {
+            overflow: hidden;
+        }
+        .winter-envelope-letter {
+            opacity: 0;
+            transform: translateY(110%);
+            will-change: transform, opacity;
+        }
+        .winter-anim-active .winter-envelope-letter {
+            animation: winterEnvelopeRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+        }
+
+        /* Best Selling Products Envelope-Style Emerge Animation */
+        .best-envelope-slot {
+            display: block;
+            overflow: hidden;
+        }
+        .best-envelope-text {
+            display: inline-block;
+            transform: translateY(105%);
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        .best-arrows-envelope-slot {
+            display: flex;
+            overflow: hidden;
+            padding: 4px;
+        }
+        .best-arrows-envelope-slot > .best-envelope-text {
+            display: flex;
+        }
+        .best-anim-active .best-heading-text {
+            animation: envelopeRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+        }
+        .best-anim-active .best-subtitle-text {
+            animation: envelopeRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+        }
+        .best-anim-active .best-arrows-slot {
+            animation: envelopeRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+        }
+        .best-card-slot {
+            opacity: 0;
+            transform: translateY(80px) scale(0.92);
+            will-change: transform, opacity;
+        }
+        .best-anim-active .best-card-slot:nth-child(1) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+        }
+        .best-anim-active .best-card-slot:nth-child(2) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.70s forwards;
+        }
+        .best-anim-active .best-card-slot:nth-child(3) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+        }
+        .best-anim-active .best-card-slot:nth-child(4) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.00s forwards;
+        }
+        .best-anim-active .best-card-slot:nth-child(5) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
+        }
+
+        /* Promo Banners Envelope Reveal Animation */
+        .promo-envelope-card {
+            opacity: 0;
+            transform: translateY(70px) scale(0.95);
+            will-change: transform, opacity;
+        }
+        .promo-anim-active .promo-envelope-card:nth-child(1) {
+            animation: categoryCardEmerge 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+        }
+        .promo-anim-active .promo-envelope-card:nth-child(2) {
+            animation: categoryCardEmerge 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+        }
+
+        /* Feature Promo Banners Envelope Reveal Animation */
+        .feature-envelope-left {
+            opacity: 0;
+            transform: translateY(70px) scale(0.96);
+            will-change: transform, opacity;
+        }
+        .feature-envelope-item {
+            opacity: 0;
+            transform: translateY(70px) scale(0.96);
+            will-change: transform, opacity;
+        }
+        .feature-anim-active .feature-envelope-left {
+            animation: categoryCardEmerge 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+        }
+        .feature-anim-active .feature-envelope-item:nth-child(1) {
+            animation: categoryCardEmerge 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+        }
+        .feature-anim-active .feature-envelope-item:nth-child(2) {
+            animation: categoryCardEmerge 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+        }
+
+        /* New Arrivals Envelope Reveal Animation */
+        .arrivals-envelope-slot {
+            display: block;
+            overflow: hidden;
+        }
+        .arrivals-envelope-text {
+            display: inline-block;
+            transform: translateY(105%);
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        .arrivals-arrows-envelope-slot {
+            display: flex;
+            overflow: hidden;
+            padding: 4px;
+        }
+        .arrivals-arrows-envelope-slot > .arrivals-envelope-text {
+            display: flex;
+        }
+        .arrivals-anim-active .arrivals-heading-text {
+            animation: envelopeRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+        }
+        .arrivals-anim-active .arrivals-subtitle-text {
+            animation: envelopeRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+        }
+        .arrivals-anim-active .arrivals-arrows-slot {
+            animation: envelopeRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+        }
+        .arrivals-card-slot {
+            opacity: 0;
+            transform: translateY(80px) scale(0.92);
+            will-change: transform, opacity;
+        }
+        .arrivals-anim-active .arrivals-card-slot:nth-child(1) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+        }
+        .arrivals-anim-active .arrivals-card-slot:nth-child(2) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.70s forwards;
+        }
+        .arrivals-anim-active .arrivals-card-slot:nth-child(3) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+        }
+        .arrivals-anim-active .arrivals-card-slot:nth-child(4) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.00s forwards;
+        }
+        .arrivals-anim-active .arrivals-card-slot:nth-child(5) {
+            animation: categoryCardEmerge 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
+        }
+
+        /* Product Image Click Zoom-Out Effect */
+        .product-img-click-zoom {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+        .product-img-click-zoom.is-zoomed-out {
+            transform: scale(0.85) !important;
+        }
+
+        /* Secondary Promo Banners Envelope Reveal Animation */
+        .promo2-envelope-card {
+            opacity: 0;
+            transform: translateY(70px) scale(0.96);
+            will-change: transform, opacity;
+        }
+        .promo2-anim-active .promo2-card-1 {
+            animation: categoryCardEmerge 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+        }
+        .promo2-anim-active .promo2-card-2 {
+            animation: categoryCardEmerge 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.30s forwards;
+        }
+        .promo2-anim-active .promo2-card-3 {
+            animation: categoryCardEmerge 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+        }
     </style>
 </head>
 
@@ -435,15 +615,15 @@
 
         <!-- ================= PROMO BANNERS ================= -->
 
-        <section class="w-full px-4 pb-8 sm:px-6 sm:pb-12">
+        <section id="promo-banners-section" class="w-full px-4 pb-8 sm:px-6 sm:pb-12">
 
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
 
                 <!-- Promo Banner 1 -->
-                <div class="group/card relative h-[260px] sm:h-[300px] md:h-[348px] w-full overflow-hidden rounded-2xl">
+                <div class="promo-envelope-card group/card relative h-[260px] sm:h-[300px] md:h-[348px] w-full overflow-hidden rounded-2xl">
 
                     <img src="./assets/images/promo-banner-1.webp" alt="Your Daily Store"
-                        class="h-full w-full rounded-2xl object-cover transition-transform duration-500 ease-out group-hover/card:scale-105">
+                        class="h-full w-full rounded-2xl object-cover transition-transform duration-500 ease-out group-hover/card:scale-105 group-active/card:scale-105">
 
                     <div class="absolute left-5 top-1/2 z-10 max-w-[85%] -translate-y-1/2 sm:left-8">
 
@@ -474,10 +654,10 @@
                 </div>
 
                 <!-- Promo Banner 2 -->
-                <div class="group/card relative h-[260px] sm:h-[300px] md:h-[348px] w-full overflow-hidden rounded-2xl">
+                <div class="promo-envelope-card group/card relative h-[260px] sm:h-[300px] md:h-[348px] w-full overflow-hidden rounded-2xl">
 
                     <img src="./assets/images/promo-banner-2.webp" alt="Click. Shop. Smile."
-                        class="h-full w-full rounded-2xl object-cover transition-transform duration-500 ease-out group-hover/card:scale-105">
+                        class="h-full w-full rounded-2xl object-cover transition-transform duration-500 ease-out group-hover/card:scale-105 group-active/card:scale-105">
 
                     <div class="absolute left-5 bottom-6 z-10 max-w-[85%] sm:left-8 sm:bottom-8">
 
@@ -700,11 +880,11 @@
 
         <!-- ================= WINTER SALE BANNER SECTION ================= -->
 
-        <section class="w-full px-4 pb-12 sm:px-6 sm:pb-16">
+        <section id="winter-sale-section" class="w-full px-4 pb-12 sm:px-6 sm:pb-16">
 
-            <div class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 md:p-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+            <div class="winter-envelope-card rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 md:p-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
 
-                <div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
+                <div class="winter-envelope-letter flex flex-col items-center justify-between gap-6 lg:flex-row">
 
                     <!-- -50% Large Offer Text -->
                     <div class="shrink-0 select-none">
@@ -759,6 +939,921 @@
         </section>
 
         <!-- ================= END WINTER SALE BANNER SECTION ================= -->
+
+
+        <!-- ================= BEST SELLING PRODUCTS SECTION ================= -->
+        <section id="best-selling-products-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14">
+            <div class="mx-auto max-w-[1440px]">
+
+                <!-- Section Header with Arrows -->
+                <div class="mb-6 flex flex-row items-center justify-between gap-4 sm:mb-8">
+                    <div class="text-left">
+                        <div class="best-envelope-slot">
+                            <h2 class="best-envelope-text best-heading-text text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl md:text-[32px]">
+                                Best Selling Products
+                            </h2>
+                        </div>
+                        <div class="best-envelope-slot mt-1">
+                            <p class="best-envelope-text best-subtitle-text text-sm font-normal text-gray-500 sm:text-base">
+                                Our top-tier selections, now available with exclusive seasonal pricing
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Left & Right Arrow Buttons (Horizontal Row at Right) -->
+                    <div class="best-arrows-envelope-slot shrink-0">
+                        <div class="best-envelope-text best-arrows-slot flex flex-row items-center gap-3 sm:gap-4">
+                            <button type="button" id="best-selling-prev-btn" aria-label="Previous products"
+                                class="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-gray-100/80 text-gray-700 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <button type="button" id="best-selling-next-btn" aria-label="Next products"
+                                class="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-gray-100/80 text-gray-700 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Carousel Track -->
+                <div id="best-selling-track"
+                    class="flex gap-5 overflow-x-auto pb-4 pt-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden scroll-smooth">
+
+                    <!-- Product Card 1 -->
+                    <article class="best-selling-card best-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
+                        <div class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
+                            <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg bg-gray-50">
+                                <img src="./assets/images/best-selling/product-1.webp" alt="Premium Basmati Rice"
+                                    class="h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
+                            </a>
+                            <a href="top-banner-with-1-col.html" class="text-xs font-normal text-gray-400 hover:text-gray-600">
+                                Store Name/Category
+                            </a>
+                            <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
+                                <a href="product-details-6.html">Premium Basmati Rice</a>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <span class="text-base font-semibold text-gray-900">$21.99</span>
+                                <span class="text-sm text-gray-400 line-through">$25.99</span>
+                                <span class="text-sm font-semibold text-red-500">10% OFF</span>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-1 text-sm text-gray-500">
+                                <div class="flex text-[#FFC107]">
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <span class="ml-1 text-xs text-gray-500">(118)</span>
+                            </div>
+                            <!-- Stock Progress Bar -->
+                            <div>
+                                <div class="mb-1.5 h-2 w-full rounded-full bg-amber-100">
+                                    <div class="h-2 rounded-full bg-amber-500" style="width: 58%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Sold: <strong class="text-gray-800">4</strong></span>
+                                    <span>Available: <strong class="text-gray-800">200</strong></span>
+                                </div>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="mt-1 flex items-center gap-3">
+                                <button type="button" aria-label="Add to wishlist"
+                                    class="group/wish flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <svg class="h-5 w-5 transition-transform duration-200 group-hover/wish:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M16.2191 3.32846C13.9844 1.95769 12.034 2.51009 10.8623 3.39001C10.3819 3.7508 10.1417 3.93119 10.0003 3.93119C9.859 3.93119 9.61879 3.7508 9.13837 3.39002L9.13837 3.39001C7.96667 2.51009 6.01623 1.95769 3.78152 3.32846C0.848716 5.12745 0.185093 11.0624 6.94993 16.0695C8.23842 17.0232 8.88267 17.5 10.0003 17.5C11.118 17.5 11.7622 17.0232 13.0507 16.0695C19.8156 11.0624 19.1519 5.12745 16.2191 3.32846Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="group/cart flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#04535C] px-3 py-2.5 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover/cart:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M5 5L18.3333 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <circle cx="4.99967" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="14.1667" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.66667 16.6667L12.5 16.6667" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 2 -->
+                    <article class="best-selling-card best-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
+                        <div class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
+                            <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg bg-gray-50">
+                                <img src="./assets/images/best-selling/product-2.webp" alt="Fresh Organic Vegetables"
+                                    class="h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
+                            </a>
+                            <a href="top-banner-with-1-col.html" class="text-xs font-normal text-gray-400 hover:text-gray-600">
+                                Fresh Produce
+                            </a>
+                            <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
+                                <a href="product-details-6.html">Fresh Organic Vegetables Pack</a>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <span class="text-base font-semibold text-gray-900">$18.50</span>
+                                <span class="text-sm text-gray-400 line-through">$22.00</span>
+                                <span class="text-sm font-semibold text-red-500">15% OFF</span>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-1 text-sm text-gray-500">
+                                <div class="flex text-[#FFC107]">
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <span class="ml-1 text-xs text-gray-500">(94)</span>
+                            </div>
+                            <!-- Stock Progress Bar -->
+                            <div>
+                                <div class="mb-1.5 h-2 w-full rounded-full bg-amber-100">
+                                    <div class="h-2 rounded-full bg-amber-500" style="width: 72%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Sold: <strong class="text-gray-800">12</strong></span>
+                                    <span>Available: <strong class="text-gray-800">150</strong></span>
+                                </div>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="mt-1 flex items-center gap-3">
+                                <button type="button" aria-label="Add to wishlist"
+                                    class="group/wish flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <svg class="h-5 w-5 transition-transform duration-200 group-hover/wish:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M16.2191 3.32846C13.9844 1.95769 12.034 2.51009 10.8623 3.39001C10.3819 3.7508 10.1417 3.93119 10.0003 3.93119C9.859 3.93119 9.61879 3.7508 9.13837 3.39002L9.13837 3.39001C7.96667 2.51009 6.01623 1.95769 3.78152 3.32846C0.848716 5.12745 0.185093 11.0624 6.94993 16.0695C8.23842 17.0232 8.88267 17.5 10.0003 17.5C11.118 17.5 11.7622 17.0232 13.0507 16.0695C19.8156 11.0624 19.1519 5.12745 16.2191 3.32846Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="group/cart flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#04535C] px-3 py-2.5 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover/cart:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M5 5L18.3333 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <circle cx="4.99967" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="14.1667" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.66667 16.6667L12.5 16.6667" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 3 -->
+                    <article class="best-selling-card best-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
+                        <div class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
+                            <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg bg-gray-50">
+                                <img src="./assets/images/best-selling/product-3.webp" alt="Organic Whole Wheat Bread"
+                                    class="h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
+                            </a>
+                            <a href="top-banner-with-1-col.html" class="text-xs font-normal text-gray-400 hover:text-gray-600">
+                                Bakery & Breakfast
+                            </a>
+                            <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
+                                <a href="product-details-6.html">Organic Whole Wheat Bread</a>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <span class="text-base font-semibold text-gray-900">$4.99</span>
+                                <span class="text-sm text-gray-400 line-through">$6.99</span>
+                                <span class="text-sm font-semibold text-red-500">10% OFF</span>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-1 text-sm text-gray-500">
+                                <div class="flex text-[#FFC107]">
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <span class="ml-1 text-xs text-gray-500">(162)</span>
+                            </div>
+                            <!-- Stock Progress Bar -->
+                            <div>
+                                <div class="mb-1.5 h-2 w-full rounded-full bg-amber-100">
+                                    <div class="h-2 rounded-full bg-amber-500" style="width: 45%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Sold: <strong class="text-gray-800">8</strong></span>
+                                    <span>Available: <strong class="text-gray-800">120</strong></span>
+                                </div>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="mt-1 flex items-center gap-3">
+                                <button type="button" aria-label="Add to wishlist"
+                                    class="group/wish flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <svg class="h-5 w-5 transition-transform duration-200 group-hover/wish:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M16.2191 3.32846C13.9844 1.95769 12.034 2.51009 10.8623 3.39001C10.3819 3.7508 10.1417 3.93119 10.0003 3.93119C9.859 3.93119 9.61879 3.7508 9.13837 3.39002L9.13837 3.39001C7.96667 2.51009 6.01623 1.95769 3.78152 3.32846C0.848716 5.12745 0.185093 11.0624 6.94993 16.0695C8.23842 17.0232 8.88267 17.5 10.0003 17.5C11.118 17.5 11.7622 17.0232 13.0507 16.0695C19.8156 11.0624 19.1519 5.12745 16.2191 3.32846Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="group/cart flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#04535C] px-3 py-2.5 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover/cart:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M5 5L18.3333 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <circle cx="4.99967" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="14.1667" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.66667 16.6667L12.5 16.6667" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 4 -->
+                    <article class="best-selling-card best-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
+                        <div class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
+                            <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg bg-gray-50">
+                                <img src="./assets/images/best-selling/product-4.webp" alt="Fresh Farm Whole Milk"
+                                    class="h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
+                            </a>
+                            <a href="top-banner-with-1-col.html" class="text-xs font-normal text-gray-400 hover:text-gray-600">
+                                Dairy & Eggs
+                            </a>
+                            <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
+                                <a href="product-details-6.html">Fresh Farm Whole Milk</a>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <span class="text-base font-semibold text-gray-900">$3.49</span>
+                                <span class="text-sm text-gray-400 line-through">$4.29</span>
+                                <span class="text-sm font-semibold text-red-500">18% OFF</span>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-1 text-sm text-gray-500">
+                                <div class="flex text-[#FFC107]">
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <span class="ml-1 text-xs text-gray-500">(140)</span>
+                            </div>
+                            <!-- Stock Progress Bar -->
+                            <div>
+                                <div class="mb-1.5 h-2 w-full rounded-full bg-amber-100">
+                                    <div class="h-2 rounded-full bg-amber-500" style="width: 80%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Sold: <strong class="text-gray-800">20</strong></span>
+                                    <span>Available: <strong class="text-gray-800">80</strong></span>
+                                </div>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="mt-1 flex items-center gap-3">
+                                <button type="button" aria-label="Add to wishlist"
+                                    class="group/wish flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <svg class="h-5 w-5 transition-transform duration-200 group-hover/wish:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M16.2191 3.32846C13.9844 1.95769 12.034 2.51009 10.8623 3.39001C10.3819 3.7508 10.1417 3.93119 10.0003 3.93119C9.859 3.93119 9.61879 3.7508 9.13837 3.39002L9.13837 3.39001C7.96667 2.51009 6.01623 1.95769 3.78152 3.32846C0.848716 5.12745 0.185093 11.0624 6.94993 16.0695C8.23842 17.0232 8.88267 17.5 10.0003 17.5C11.118 17.5 11.7622 17.0232 13.0507 16.0695C19.8156 11.0624 19.1519 5.12745 16.2191 3.32846Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="group/cart flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#04535C] px-3 py-2.5 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover/cart:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M5 5L18.3333 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <circle cx="4.99967" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="14.1667" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.66667 16.6667L12.5 16.6667" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 5 -->
+                    <article class="best-selling-card best-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
+                        <div class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
+                            <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg bg-gray-50">
+                                <img src="./assets/images/best-selling/product-5.webp" alt="Cold Pressed Pure Sunflower Oil"
+                                    class="h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
+                            </a>
+                            <a href="top-banner-with-1-col.html" class="text-xs font-normal text-gray-400 hover:text-gray-600">
+                                Rice, Atta & Grains
+                            </a>
+                            <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
+                                <a href="product-details-6.html">Cold Pressed Pure Sunflower Oil</a>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <span class="text-base font-semibold text-gray-900">$14.99</span>
+                                <span class="text-sm text-gray-400 line-through">$17.99</span>
+                                <span class="text-sm font-semibold text-red-500">16% OFF</span>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-1 text-sm text-gray-500">
+                                <div class="flex text-[#FFC107]">
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <span class="ml-1 text-xs text-gray-500">(88)</span>
+                            </div>
+                            <!-- Stock Progress Bar -->
+                            <div>
+                                <div class="mb-1.5 h-2 w-full rounded-full bg-amber-100">
+                                    <div class="h-2 rounded-full bg-amber-500" style="width: 60%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Sold: <strong class="text-gray-800">6</strong></span>
+                                    <span>Available: <strong class="text-gray-800">94</strong></span>
+                                </div>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="mt-1 flex items-center gap-3">
+                                <button type="button" aria-label="Add to wishlist"
+                                    class="group/wish flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <svg class="h-5 w-5 transition-transform duration-200 group-hover/wish:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M16.2191 3.32846C13.9844 1.95769 12.034 2.51009 10.8623 3.39001C10.3819 3.7508 10.1417 3.93119 10.0003 3.93119C9.859 3.93119 9.61879 3.7508 9.13837 3.39002L9.13837 3.39001C7.96667 2.51009 6.01623 1.95769 3.78152 3.32846C0.848716 5.12745 0.185093 11.0624 6.94993 16.0695C8.23842 17.0232 8.88267 17.5 10.0003 17.5C11.118 17.5 11.7622 17.0232 13.0507 16.0695C19.8156 11.0624 19.1519 5.12745 16.2191 3.32846Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="group/cart flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#04535C] px-3 py-2.5 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover/cart:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M5 5L18.3333 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <circle cx="4.99967" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="14.1667" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.66667 16.6667L12.5 16.6667" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- ================= END BEST SELLING PRODUCTS SECTION ================= -->
+
+
+        <!-- ================= PROMOTIONAL FEATURE BANNERS SECTION ================= -->
+        <section id="promo-feature-banners-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14">
+            <div class="mx-auto max-w-[1400px]">
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+
+                    <!-- Left Column: Large Farmer Banner -->
+                    <div class="feature-envelope-left lg:col-span-5">
+                        <div class="group relative h-full min-h-[380px] sm:min-h-[460px] lg:min-h-[500px] overflow-hidden rounded-2xl cursor-pointer active:scale-[0.99] transition-transform duration-300">
+                            <!-- Background Image with smooth zoom on hover and touch -->
+                            <img src="./assets/images/promo-banners/banner-farmer.webp" alt="Elegant Living Room"
+                                class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 group-active:scale-105" />
+
+                            <!-- Bottom Gradient Overlay & Content -->
+                            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/85 via-black/35 to-transparent p-6 sm:p-8 text-left">
+                                <h3 class="mb-1.5 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-[32px]">
+                                    Elegant Living Room
+                                </h3>
+                                <p class="mb-6 text-sm text-gray-200 sm:text-base">
+                                    Discover stylish furniture and decor pieces
+                                </p>
+                                <div>
+                                    <a href="banner-with-left-sidebar-3-column.html"
+                                        class="group/btn inline-flex items-center justify-center gap-2 rounded-lg bg-[#AAF27F] px-5 py-3 text-sm font-semibold text-[#04535C] transition-all duration-300 hover:bg-white hover:text-[#04535C] sm:text-base">
+                                        <span>Shop Now</span>
+                                        <svg class="h-5 w-5 transition-transform duration-300 group-hover/btn:rotate-45"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none">
+                                            <path d="M15.5833 6.41699L5.5 16.5003" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                            <path d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Two Alternating Promo Banners -->
+                    <div class="flex flex-col gap-6 lg:col-span-7">
+
+                        <!-- Top Banner: Text on Left, Fresh Produce Image on Right -->
+                        <div class="feature-envelope-item group flex flex-col overflow-hidden rounded-2xl bg-[#F8F9FA] sm:flex-row cursor-pointer active:scale-[0.99] transition-transform duration-300">
+                            <!-- Text Side -->
+                            <div class="flex flex-col items-start justify-center p-6 sm:w-[58%] sm:p-7 md:p-8 lg:p-7 xl:p-9 text-left">
+                                <h3 class="mb-2 whitespace-normal sm:whitespace-nowrap text-2xl font-bold tracking-tight text-[#04535C] sm:text-[26px] md:text-[28px] xl:text-[30px] lg:leading-tight">
+                                    Cozy Home Essentials
+                                </h3>
+                                <p class="mb-6 text-sm text-gray-600 sm:text-base">
+                                    Soft cushions, elegant lighting, and timeless
+                                </p>
+                                <a href="blog-details.html"
+                                    class="group/btn inline-flex items-center justify-center gap-2 rounded-lg bg-[#04535C] px-5 py-3 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white sm:text-base">
+                                    <span>Explore Now</span>
+                                    <svg class="h-5 w-5 transition-transform duration-300 group-hover/btn:rotate-45"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none">
+                                        <path d="M15.5833 6.41699L5.5 16.5003" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                        <path d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <!-- Image Side with subtle hover & touch zoom -->
+                            <div class="relative overflow-hidden sm:w-[42%]">
+                                <img src="./assets/images/promo-banners/banner-fresh-produce.webp" alt="Cozy Home Essentials"
+                                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 group-active:scale-105" />
+                            </div>
+                        </div>
+
+                        <!-- Bottom Banner: Vegetables Image on Left, Text on Right (Alternating) -->
+                        <div class="feature-envelope-item group flex flex-col overflow-hidden rounded-2xl bg-[#F8F9FA] sm:flex-row cursor-pointer active:scale-[0.99] transition-transform duration-300">
+                            <!-- Image Side on Left -->
+                            <div class="relative overflow-hidden sm:w-[42%]">
+                                <img src="./assets/images/promo-banners/banner-vegetables.webp" alt="Wall & Accent Decor"
+                                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 group-active:scale-105" />
+                            </div>
+
+                            <!-- Text Side on Right -->
+                            <div class="flex flex-col items-start justify-center p-6 sm:w-[58%] sm:p-7 md:p-8 lg:p-7 xl:p-9 text-left">
+                                <h3 class="mb-2 whitespace-normal sm:whitespace-nowrap text-2xl font-bold tracking-tight text-[#04535C] sm:text-[26px] md:text-[28px] xl:text-[30px] lg:leading-tight">
+                                    Wall & Accent Decor
+                                </h3>
+                                <p class="mb-6 text-sm text-gray-600 sm:text-base">
+                                    Handpicked Favorites for You
+                                </p>
+                                <a href="blog-details.html"
+                                    class="group/btn inline-flex items-center justify-center gap-2 rounded-lg bg-[#04535C] px-5 py-3 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white sm:text-base">
+                                    <span>Explore Now</span>
+                                    <svg class="h-5 w-5 transition-transform duration-300 group-hover/btn:rotate-45"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none">
+                                        <path d="M15.5833 6.41699L5.5 16.5003" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                        <path d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- ================= END PROMOTIONAL FEATURE BANNERS SECTION ================= -->
+
+        <!-- ================= NEW ARRIVALS SECTION ================= -->
+        <section id="new-arrivals-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14">
+            <div class="mx-auto max-w-[1440px]">
+
+                <!-- Section Header (Title, Subtitle & Arrows) -->
+                <div class="mb-6 flex flex-row items-end justify-between gap-4 sm:mb-8">
+                    <div>
+                        <div class="arrivals-envelope-slot">
+                            <h2 class="arrivals-envelope-text arrivals-heading-text text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl md:text-4xl">
+                                New Arrivals
+                            </h2>
+                        </div>
+                        <div class="arrivals-envelope-slot mt-1">
+                            <p class="arrivals-envelope-text arrivals-subtitle-text text-sm font-normal text-gray-500 sm:text-base">
+                                Heritage quality meeting an unprecedented limited-time offer
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Left & Right Arrow Buttons (Horizontal Row at Right) -->
+                    <div class="arrivals-arrows-envelope-slot shrink-0">
+                        <div class="arrivals-envelope-text arrivals-arrows-slot flex flex-row items-center gap-3 sm:gap-4">
+                            <button type="button" id="new-arrivals-prev-btn" aria-label="Previous products"
+                                class="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-gray-100/80 text-gray-700 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <button type="button" id="new-arrivals-next-btn" aria-label="Next products"
+                                class="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-gray-100/80 text-gray-700 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Carousel Track -->
+                <div id="new-arrivals-track"
+                    class="flex gap-5 overflow-x-auto pb-4 pt-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden scroll-smooth">
+
+                    <!-- Product Card 1 -->
+                    <article class="new-arrivals-card arrivals-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
+                        <div class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
+                            <a href="product-details-6.html" class="product-img-wrap relative block overflow-hidden rounded-lg bg-gray-50">
+                                <img src="./assets/images/best-selling/product-1.webp" alt="Premium Basmati Rice"
+                                    class="product-img-click-zoom h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
+                            </a>
+                            <a href="top-banner-with-1-col.html" class="text-xs font-normal text-gray-400 hover:text-gray-600">
+                                Store Name/Category
+                            </a>
+                            <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
+                                <a href="product-details-6.html">Premium Basmati Rice</a>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <span class="text-base font-semibold text-gray-900">$21.99</span>
+                                <span class="text-sm text-gray-400 line-through">$25.99</span>
+                                <span class="text-sm font-semibold text-red-500">10% OFF</span>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-1 text-sm text-gray-500">
+                                <div class="flex text-[#FFC107]">
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <span class="ml-1 text-xs text-gray-500">(128)</span>
+                            </div>
+                            <!-- Stock Progress Bar -->
+                            <div>
+                                <div class="mb-1.5 h-2 w-full rounded-full bg-amber-100">
+                                    <div class="h-2 rounded-full bg-amber-500" style="width: 65%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Sold: <strong class="text-gray-800">14</strong></span>
+                                    <span>Available: <strong class="text-gray-800">120</strong></span>
+                                </div>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="mt-1 flex items-center gap-3">
+                                <button type="button" aria-label="Add to wishlist"
+                                    class="group/wish flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <svg class="h-5 w-5 transition-transform duration-200 group-hover/wish:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M16.2191 3.32846C13.9844 1.95769 12.034 2.51009 10.8623 3.39001C10.3819 3.7508 10.1417 3.93119 10.0003 3.93119C9.859 3.93119 9.61879 3.7508 9.13837 3.39002L9.13837 3.39001C7.96667 2.51009 6.01623 1.95769 3.78152 3.32846C0.848716 5.12745 0.185093 11.0624 6.94993 16.0695C8.23842 17.0232 8.88267 17.5 10.0003 17.5C11.118 17.5 11.7622 17.0232 13.0507 16.0695C19.8156 11.0624 19.1519 5.12745 16.2191 3.32846Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="group/cart flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#04535C] px-3 py-2.5 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover/cart:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M5 5L18.3333 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <circle cx="4.99967" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="14.1667" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.66667 16.6667L12.5 16.6667" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 2 -->
+                    <article class="new-arrivals-card arrivals-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
+                        <div class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
+                            <a href="product-details-6.html" class="product-img-wrap relative block overflow-hidden rounded-lg bg-gray-50">
+                                <img src="./assets/images/best-selling/product-2.webp" alt="Fresh Organic Vegetables Pack"
+                                    class="product-img-click-zoom h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
+                            </a>
+                            <a href="top-banner-with-1-col.html" class="text-xs font-normal text-gray-400 hover:text-gray-600">
+                                Fresh Produce
+                            </a>
+                            <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
+                                <a href="product-details-6.html">Fresh Organic Vegetables Pack</a>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <span class="text-base font-semibold text-gray-900">$18.50</span>
+                                <span class="text-sm text-gray-400 line-through">$22.00</span>
+                                <span class="text-sm font-semibold text-red-500">15% OFF</span>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-1 text-sm text-gray-500">
+                                <div class="flex text-[#FFC107]">
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <span class="ml-1 text-xs text-gray-500">(94)</span>
+                            </div>
+                            <!-- Stock Progress Bar -->
+                            <div>
+                                <div class="mb-1.5 h-2 w-full rounded-full bg-amber-100">
+                                    <div class="h-2 rounded-full bg-amber-500" style="width: 72%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Sold: <strong class="text-gray-800">12</strong></span>
+                                    <span>Available: <strong class="text-gray-800">150</strong></span>
+                                </div>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="mt-1 flex items-center gap-3">
+                                <button type="button" aria-label="Add to wishlist"
+                                    class="group/wish flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <svg class="h-5 w-5 transition-transform duration-200 group-hover/wish:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M16.2191 3.32846C13.9844 1.95769 12.034 2.51009 10.8623 3.39001C10.3819 3.7508 10.1417 3.93119 10.0003 3.93119C9.859 3.93119 9.61879 3.7508 9.13837 3.39002L9.13837 3.39001C7.96667 2.51009 6.01623 1.95769 3.78152 3.32846C0.848716 5.12745 0.185093 11.0624 6.94993 16.0695C8.23842 17.0232 8.88267 17.5 10.0003 17.5C11.118 17.5 11.7622 17.0232 13.0507 16.0695C19.8156 11.0624 19.1519 5.12745 16.2191 3.32846Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="group/cart flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#04535C] px-3 py-2.5 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover/cart:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M5 5L18.3333 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <circle cx="4.99967" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="14.1667" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.66667 16.6667L12.5 16.6667" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 3 -->
+                    <article class="new-arrivals-card arrivals-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
+                        <div class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
+                            <a href="product-details-6.html" class="product-img-wrap relative block overflow-hidden rounded-lg bg-gray-50">
+                                <img src="./assets/images/best-selling/product-3.webp" alt="Organic Whole Wheat Bread"
+                                    class="product-img-click-zoom h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
+                            </a>
+                            <a href="top-banner-with-1-col.html" class="text-xs font-normal text-gray-400 hover:text-gray-600">
+                                Bakery & Breakfast
+                            </a>
+                            <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
+                                <a href="product-details-6.html">Organic Whole Wheat Bread</a>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <span class="text-base font-semibold text-gray-900">$4.99</span>
+                                <span class="text-sm text-gray-400 line-through">$6.99</span>
+                                <span class="text-sm font-semibold text-red-500">10% OFF</span>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-1 text-sm text-gray-500">
+                                <div class="flex text-[#FFC107]">
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <span class="ml-1 text-xs text-gray-500">(162)</span>
+                            </div>
+                            <!-- Stock Progress Bar -->
+                            <div>
+                                <div class="mb-1.5 h-2 w-full rounded-full bg-amber-100">
+                                    <div class="h-2 rounded-full bg-amber-500" style="width: 45%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Sold: <strong class="text-gray-800">8</strong></span>
+                                    <span>Available: <strong class="text-gray-800">120</strong></span>
+                                </div>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="mt-1 flex items-center gap-3">
+                                <button type="button" aria-label="Add to wishlist"
+                                    class="group/wish flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <svg class="h-5 w-5 transition-transform duration-200 group-hover/wish:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M16.2191 3.32846C13.9844 1.95769 12.034 2.51009 10.8623 3.39001C10.3819 3.7508 10.1417 3.93119 10.0003 3.93119C9.859 3.93119 9.61879 3.7508 9.13837 3.39002L9.13837 3.39001C7.96667 2.51009 6.01623 1.95769 3.78152 3.32846C0.848716 5.12745 0.185093 11.0624 6.94993 16.0695C8.23842 17.0232 8.88267 17.5 10.0003 17.5C11.118 17.5 11.7622 17.0232 13.0507 16.0695C19.8156 11.0624 19.1519 5.12745 16.2191 3.32846Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="group/cart flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#04535C] px-3 py-2.5 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover/cart:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M5 5L18.3333 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <circle cx="4.99967" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="14.1667" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.66667 16.6667L12.5 16.6667" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 4 -->
+                    <article class="new-arrivals-card arrivals-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
+                        <div class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
+                            <a href="product-details-6.html" class="product-img-wrap relative block overflow-hidden rounded-lg bg-gray-50">
+                                <img src="./assets/images/best-selling/product-4.webp" alt="Fresh Farm Whole Milk"
+                                    class="product-img-click-zoom h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
+                            </a>
+                            <a href="top-banner-with-1-col.html" class="text-xs font-normal text-gray-400 hover:text-gray-600">
+                                Dairy & Eggs
+                            </a>
+                            <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
+                                <a href="product-details-6.html">Fresh Farm Whole Milk</a>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <span class="text-base font-semibold text-gray-900">$3.49</span>
+                                <span class="text-sm text-gray-400 line-through">$4.29</span>
+                                <span class="text-sm font-semibold text-red-500">18% OFF</span>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-1 text-sm text-gray-500">
+                                <div class="flex text-[#FFC107]">
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <span class="ml-1 text-xs text-gray-500">(140)</span>
+                            </div>
+                            <!-- Stock Progress Bar -->
+                            <div>
+                                <div class="mb-1.5 h-2 w-full rounded-full bg-amber-100">
+                                    <div class="h-2 rounded-full bg-amber-500" style="width: 80%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Sold: <strong class="text-gray-800">20</strong></span>
+                                    <span>Available: <strong class="text-gray-800">80</strong></span>
+                                </div>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="mt-1 flex items-center gap-3">
+                                <button type="button" aria-label="Add to wishlist"
+                                    class="group/wish flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <svg class="h-5 w-5 transition-transform duration-200 group-hover/wish:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M16.2191 3.32846C13.9844 1.95769 12.034 2.51009 10.8623 3.39001C10.3819 3.7508 10.1417 3.93119 10.0003 3.93119C9.859 3.93119 9.61879 3.7508 9.13837 3.39002L9.13837 3.39001C7.96667 2.51009 6.01623 1.95769 3.78152 3.32846C0.848716 5.12745 0.185093 11.0624 6.94993 16.0695C8.23842 17.0232 8.88267 17.5 10.0003 17.5C11.118 17.5 11.7622 17.0232 13.0507 16.0695C19.8156 11.0624 19.1519 5.12745 16.2191 3.32846Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="group/cart flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#04535C] px-3 py-2.5 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover/cart:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M5 5L18.3333 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <circle cx="4.99967" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="14.1667" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.66667 16.6667L12.5 16.6667" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 5 -->
+                    <article class="new-arrivals-card arrivals-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
+                        <div class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
+                            <a href="product-details-6.html" class="product-img-wrap relative block overflow-hidden rounded-lg bg-gray-50">
+                                <img src="./assets/images/best-selling/product-5.webp" alt="Cold Pressed Pure Sunflower Oil"
+                                    class="product-img-click-zoom h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
+                            </a>
+                            <a href="top-banner-with-1-col.html" class="text-xs font-normal text-gray-400 hover:text-gray-600">
+                                Cooking & Oils
+                            </a>
+                            <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
+                                <a href="product-details-6.html">Cold Pressed Pure Sunflower Oil</a>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <span class="text-base font-semibold text-gray-900">$12.99</span>
+                                <span class="text-sm text-gray-400 line-through">$15.99</span>
+                                <span class="text-sm font-semibold text-red-500">19% OFF</span>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex items-center gap-1 text-sm text-gray-500">
+                                <div class="flex text-[#FFC107]">
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="h-4 w-4 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <span class="ml-1 text-xs text-gray-500">(88)</span>
+                            </div>
+                            <!-- Stock Progress Bar -->
+                            <div>
+                                <div class="mb-1.5 h-2 w-full rounded-full bg-amber-100">
+                                    <div class="h-2 rounded-full bg-amber-500" style="width: 55%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Sold: <strong class="text-gray-800">11</strong></span>
+                                    <span>Available: <strong class="text-gray-800">90</strong></span>
+                                </div>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="mt-1 flex items-center gap-3">
+                                <button type="button" aria-label="Add to wishlist"
+                                    class="group/wish flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-[#04535C] hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <svg class="h-5 w-5 transition-transform duration-200 group-hover/wish:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M16.2191 3.32846C13.9844 1.95769 12.034 2.51009 10.8623 3.39001C10.3819 3.7508 10.1417 3.93119 10.0003 3.93119C9.859 3.93119 9.61879 3.7508 9.13837 3.39002L9.13837 3.39001C7.96667 2.51009 6.01623 1.95769 3.78152 3.32846C0.848716 5.12745 0.185093 11.0624 6.94993 16.0695C8.23842 17.0232 8.88267 17.5 10.0003 17.5C11.118 17.5 11.7622 17.0232 13.0507 16.0695C19.8156 11.0624 19.1519 5.12745 16.2191 3.32846Z" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="group/cart flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#04535C] px-3 py-2.5 text-sm font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover/cart:scale-110" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                        <path d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M5 5L18.3333 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <circle cx="4.99967" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="14.1667" cy="16.6667" r="1.66667" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.66667 16.6667L12.5 16.6667" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                        <path d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+        <!-- ================= END NEW ARRIVALS SECTION ================= -->
+
+        <!-- ================= SECONDARY PROMOTIONAL BANNERS SECTION ================= -->
+        <section id="promo-banners-2-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14">
+            <div class="mx-auto max-w-[1440px]">
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+
+                    <!-- Left Column: 2 Stacked Promotional Banners -->
+                    <div class="flex flex-col gap-6 lg:col-span-7">
+
+                        <!-- Banner 1: Daily Essentials, Delivered Fresh -->
+                        <div class="promo2-envelope-card promo2-card-1 group relative flex min-h-[300px] sm:min-h-[340px] md:min-h-[360px] items-center overflow-hidden rounded-2xl bg-[#700915] sm:rounded-3xl">
+                            <img src="./assets/images/promo-banners-2/promo-1.webp" alt="Daily Essentials, Delivered Fresh"
+                                class="absolute inset-0 h-full w-full object-cover object-right transition-transform duration-700 ease-out group-hover:scale-105" />
+                            <div class="relative z-10 flex max-w-[340px] sm:max-w-md flex-col items-start p-6 sm:p-10 md:p-12 text-left">
+                                <h3 class="mb-2 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-white">
+                                    Daily Essentials,<br>Delivered Fresh
+                                </h3>
+                                <p class="mb-5 sm:mb-6 text-sm sm:text-base text-white/90">
+                                    From fresh produce to pantry staples, delivered fast
+                                </p>
+                                <a href="banner-with-left-sidebar-3-column.html"
+                                    class="group/btn inline-flex items-center justify-center gap-2 rounded-lg bg-[#AAF27F] px-6 py-3 text-sm sm:text-base font-semibold text-[#04535C] transition-all duration-300 hover:bg-white">
+                                    <span>Shop Now</span>
+                                    <svg class="h-5 w-5 transition-transform duration-300 group-hover/btn:rotate-45"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none">
+                                        <path d="M15.5833 6.41699L5.5 16.5003" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                        <path d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Banner 3: Farm Fresh Goodness, Delivered Home -->
+                        <div class="promo2-envelope-card promo2-card-3 group relative flex min-h-[300px] sm:min-h-[340px] md:min-h-[360px] items-center overflow-hidden rounded-2xl bg-[#FAB900] sm:rounded-3xl">
+                            <img src="./assets/images/promo-banners-2/promo-3.webp" alt="Farm Fresh Goodness, Delivered Home"
+                                class="absolute inset-0 h-full w-full object-cover object-right transition-transform duration-700 ease-out group-hover:scale-105" />
+                            <div class="relative z-10 flex max-w-[340px] sm:max-w-md flex-col items-start p-6 sm:p-10 md:p-12 text-left">
+                                <h3 class="mb-2 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-[#04535C]">
+                                    Farm Fresh Goodness,<br>Delivered Home
+                                </h3>
+                                <p class="mb-5 sm:mb-6 text-sm sm:text-base text-[#04535C]/80">
+                                    From fresh produce to pantry staples, delivered fast
+                                </p>
+                                <a href="banner-with-left-sidebar-3-column.html"
+                                    class="group/btn inline-flex items-center justify-center gap-2 rounded-lg bg-[#AAF27F] px-6 py-3 text-sm sm:text-base font-semibold text-[#04535C] transition-all duration-300 hover:bg-[#04535C] hover:text-[#AAF27F]">
+                                    <span>Shop Now</span>
+                                    <svg class="h-5 w-5 transition-transform duration-300 group-hover/btn:rotate-45"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none">
+                                        <path d="M15.5833 6.41699L5.5 16.5003" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                        <path d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Banner 2 - Save More on Every Basket -->
+                    <div class="flex lg:col-span-5">
+                        <div class="promo2-envelope-card promo2-card-2 group relative flex h-full min-h-[500px] sm:min-h-[560px] lg:min-h-[744px] w-full flex-col justify-end overflow-hidden rounded-2xl sm:rounded-3xl">
+                            <img src="./assets/images/promo-banners-2/promo-2.webp" alt="Save More on Every Basket"
+                                class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" />
+                            <!-- White Floating Card at Bottom -->
+                            <div class="relative z-10 m-4 sm:m-6 rounded-2xl bg-white p-6 sm:p-8 shadow-md sm:rounded-3xl text-left">
+                                <h3 class="mb-2 text-2xl sm:text-[26px] md:text-[28px] font-bold leading-tight text-[#04535C]">
+                                    Save More on Every<br>Basket
+                                </h3>
+                                <p class="mb-5 sm:mb-6 text-sm sm:text-base text-gray-500">
+                                    Fast delivery in your area
+                                </p>
+                                <a href="banner-with-left-sidebar-3-column.html"
+                                    class="group/btn inline-flex items-center justify-center gap-2 rounded-lg bg-[#04535C] px-6 py-3 text-sm sm:text-base font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                    <span>Shop Now</span>
+                                    <svg class="h-5 w-5 transition-transform duration-300 group-hover/btn:rotate-45"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none">
+                                        <path d="M15.5833 6.41699L5.5 16.5003" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                        <path d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- ================= END SECONDARY PROMOTIONAL BANNERS SECTION ================= -->
     </main>
 
 
@@ -927,6 +2022,204 @@
             });
 
             observer.observe(catSection);
+        })();
+
+        // Winter Sale Viewport Intersection Observer & Sequence Trigger
+        (function () {
+            const winterSection = document.getElementById('winter-sale-section');
+            if (!winterSection) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        winterSection.classList.add('winter-anim-active');
+                        observer.unobserve(winterSection); // Animate once on entrance
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            observer.observe(winterSection);
+        })();
+
+        // Best Selling Products Slider Navigation (Arrows + Drag)
+        (function () {
+            const track = document.getElementById('best-selling-track');
+            const prevBtn = document.getElementById('best-selling-prev-btn');
+            const nextBtn = document.getElementById('best-selling-next-btn');
+
+            if (!track) return;
+
+            function getStepWidth() {
+                const card = track.querySelector('.best-selling-card');
+                if (!card) return 300;
+                const style = window.getComputedStyle(track);
+                const gap = parseFloat(style.gap) || 20;
+                return card.getBoundingClientRect().width + gap;
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    track.scrollBy({ left: -getStepWidth(), behavior: 'smooth' });
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    track.scrollBy({ left: getStepWidth(), behavior: 'smooth' });
+                });
+            }
+        })();
+
+        // Best Selling Products Viewport Intersection Observer & Envelope Animation Trigger
+        (function () {
+            const bestSection = document.getElementById('best-selling-products-section');
+            if (!bestSection) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        bestSection.classList.add('best-anim-active');
+                        observer.unobserve(bestSection); // Trigger animation once on entrance
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            observer.observe(bestSection);
+        })();
+
+        // Promo Banners (1 & 2) Viewport Intersection Observer & Reveal Trigger
+        (function () {
+            const promoSection = document.getElementById('promo-banners-section');
+            if (!promoSection) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        promoSection.classList.add('promo-anim-active');
+                        observer.unobserve(promoSection); // Trigger animation once on entrance
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            observer.observe(promoSection);
+        })();
+
+        // Feature Promo Banners Viewport Intersection Observer & Reveal Trigger
+        (function () {
+            const featureSection = document.getElementById('promo-feature-banners-section');
+            if (!featureSection) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        featureSection.classList.add('feature-anim-active');
+                        observer.unobserve(featureSection); // Trigger animation once on entrance
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            observer.observe(featureSection);
+        })();
+
+        // New Arrivals Slider Navigation (Left/Right Arrows)
+        (function () {
+            const track = document.getElementById('new-arrivals-track');
+            const prevBtn = document.getElementById('new-arrivals-prev-btn');
+            const nextBtn = document.getElementById('new-arrivals-next-btn');
+
+            if (!track) return;
+
+            function getStepWidth() {
+                const card = track.querySelector('.new-arrivals-card');
+                if (!card) return 300;
+                const style = window.getComputedStyle(track);
+                const gap = parseFloat(style.gap) || 20;
+                return card.getBoundingClientRect().width + gap;
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    track.scrollBy({ left: -getStepWidth(), behavior: 'smooth' });
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    track.scrollBy({ left: getStepWidth(), behavior: 'smooth' });
+                });
+            }
+        })();
+
+        // New Arrivals Product Image Smooth Click Zoom-Out Effect
+        (function () {
+            const track = document.getElementById('new-arrivals-track');
+            if (!track) return;
+
+            const imgWrappers = track.querySelectorAll('.product-img-wrap');
+            imgWrappers.forEach(wrap => {
+                wrap.addEventListener('click', (e) => {
+                    const img = wrap.querySelector('.product-img-click-zoom');
+                    if (!img) return;
+
+                    // Trigger smooth zoom out
+                    img.classList.add('is-zoomed-out');
+                    setTimeout(() => {
+                        img.classList.remove('is-zoomed-out');
+                    }, 400);
+                });
+            });
+        })();
+
+        // New Arrivals Viewport Intersection Observer & Envelope Animation Trigger
+        (function () {
+            const arrivalsSection = document.getElementById('new-arrivals-section');
+            if (!arrivalsSection) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        arrivalsSection.classList.add('arrivals-anim-active');
+                        observer.unobserve(arrivalsSection); // Trigger animation once on entrance
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            observer.observe(arrivalsSection);
+        })();
+
+        // Secondary Promo Banners Viewport Intersection Observer & Reveal Trigger
+        (function () {
+            const promo2Section = document.getElementById('promo-banners-2-section');
+            if (!promo2Section) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        promo2Section.classList.add('promo2-anim-active');
+                        observer.unobserve(promo2Section); // Trigger animation once on entrance
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            observer.observe(promo2Section);
         })();
     </script>
 
