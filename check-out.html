@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storly - Checkout 1</title>
+    <link href="./assets/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/logo.svg">
+    <style>
+        .fade-up-init {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .fade-up-init.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+        /* ================= ANIMATION & SMOOTH TRANSITIONS ================= */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 30px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .animate__fadeInUp {
+            animation-name: fadeInUp;
+            animation-duration: 1.2s;
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .wow {
+            opacity: 0;
+            will-change: opacity, transform;
+        }
+
+        .wow.animated {
+            opacity: 1;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto !important;
+            }
+            .wow, .animate__fadeInUp {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body class="bg-white font-sans text-[#212529] antialiased">
+
+    <!-- Top Announcement Bar -->
+    <div class="flex h-[42px] w-full items-center justify-center bg-[#AAF27F] px-4">
+        <p class="text-center text-sm font-medium text-[#04535C]">
+            Free shipping on orders over 129 $
+        </p>
+    </div>
+
+    <!-- ================= MAIN HEADER ================= -->
+    <header class="sticky top-0 z-50 bg-white px-4 py-3 sm:px-6 sm:py-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)]">
+        <div class="mx-auto flex max-w-[1440px] items-center justify-between">
+
+            <!-- Hamburger Menu -->
+            <button type="button" id="menu-open-btn" aria-label="Open navigation menu"
+                class="group flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-white transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    class="text-[#04535C] transition-colors duration-300 group-hover:text-[#6CB33F]">
+                    <path d="M4 6h16" />
+                    <path d="M4 12h16" />
+                    <path d="M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Storly Logo -->
+            <a href="index.html" aria-label="Storly Home" class="shrink-0">
+                <img src="./assets/icons/logo.svg" alt="Storly Logo"
+                    class="block w-[135px] sm:w-[150px] h-auto object-contain">
+            </a>
+
+            <!-- Shopping Cart -->
+            <a href="cart.html" aria-label="Shopping Cart"
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#04535C] transition-colors duration-300 hover:bg-[#03434A]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="#AAF27F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="mx-auto max-w-[1440px]">
+            <form role="search" class="relative mt-4 w-full">
+                <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" viewBox="0 0 24 24" fill="none"
+                        stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                </span>
+                <input type="search" name="search" placeholder="Search for the items" aria-label="Search for items"
+                    class="h-12 w-full rounded-full border border-gray-200 bg-white py-3 pl-12 pr-4 text-sm text-[#04535C] outline-none placeholder:text-gray-400 focus:border-[#04535C]">
+            </form>
+        </div>
+    </header>
+
+    <!-- ================= BREADCRUMB ================= -->
+    <nav aria-label="Breadcrumb" class="py-5 bg-white">
+        <div class="mx-auto max-w-[1440px] px-4 sm:px-6">
+            <ul class="flex items-center gap-2 text-sm">
+                <li>
+                    <a href="index.html" class="flex items-center gap-1.5 text-[#212529] hover:text-[#04535C] font-medium transition-colors">
+                        <svg class="h-4 w-4" fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" fill="currentColor"/>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li class="flex items-center justify-center text-[#919EAB]">
+                    <span class="inline-block size-1 rounded-full bg-[#919EAB]"></span>
+                </li>
+                <li class="text-[#919EAB] font-normal">Checkout 1</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ================= MAIN CHECKOUT CONTENT ================= -->
+    <main class="py-8 bg-white min-h-[60vh]">
+        <div class="mx-auto max-w-[1440px] px-4 sm:px-6">
+
+            <div class="grid grid-cols-1 gap-8 xl:grid-cols-12">
+
+                <!-- LEFT COLUMN (8 cols): Checkout Forms -->
+                <div class="xl:col-span-8 space-y-6">
+
+                    <!-- CARD 1: Login Card -->
+                    <div class="wow animate__fadeInUp rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden" data-wow-duration="1.2s">
+                        <div class="border-b border-gray-200 px-6 py-4">
+                            <h3 class="text-lg font-bold text-[#212529]">
+                                Already have an account ?
+                            </h3>
+                        </div>
+                        <div class="p-6">
+                            <form id="checkout-login-form" class="space-y-6">
+                                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                    <!-- User Name -->
+                                    <div class="relative w-full">
+                                        <input type="text" id="login-username" placeholder=" "
+                                            class="peer h-12 w-full rounded-lg border border-gray-300 px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                        <label for="login-username"
+                                            class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                            User Name
+                                        </label>
+                                    </div>
+                                    <!-- Password -->
+                                    <div class="relative w-full">
+                                        <input type="password" id="login-password" placeholder=" "
+                                            class="peer h-12 w-full rounded-lg border border-gray-300 px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                        <label for="login-password"
+                                            class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                            Password
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col items-center justify-between gap-4 pt-1 sm:flex-row">
+                                    <div class="flex items-center gap-2">
+                                        <label class="flex cursor-pointer items-center gap-2">
+                                            <input type="checkbox" class="peer sr-only">
+                                            <div class="flex size-4.5 shrink-0 items-center justify-center rounded border border-gray-300 bg-white text-transparent transition-all peer-checked:border-[#04535C] peer-checked:bg-[#04535C] peer-checked:text-[#AAF27F]">
+                                                <svg class="size-3 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                                            </div>
+                                            <span class="text-sm text-gray-600">Remember me</span>
+                                        </label>
+                                        <span class="text-gray-400">|</span>
+                                        <a href="#" class="text-sm text-gray-600 hover:text-[#04535C] hover:underline">Lost your password?</a>
+                                    </div>
+                                    <button type="button"
+                                        class="w-full sm:w-auto rounded-lg bg-[#04535C] px-7 py-3 text-base font-medium text-[#AAF27F] transition-all hover:bg-[#02414F] hover:text-white">
+                                        Sign In
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: Address Information -->
+                    <div class="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+                        <div class="border-b border-gray-200 px-6 py-4">
+                            <h3 class="text-lg font-bold text-[#212529]">
+                                Address Information
+                            </h3>
+                        </div>
+                        <div class="p-6">
+                            <form id="checkout-address-form" class="space-y-6">
+
+                                <!-- Row 1: First Name & Last Name -->
+                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                    <div class="relative w-full">
+                                        <input type="text" id="billing-first-name" placeholder=" " required
+                                            class="peer h-12 w-full rounded-lg border border-gray-300 px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                        <label for="billing-first-name"
+                                            class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                            First Name
+                                        </label>
+                                    </div>
+                                    <div class="relative w-full">
+                                        <input type="text" id="billing-last-name" placeholder=" " required
+                                            class="peer h-12 w-full rounded-lg border border-gray-300 px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                        <label for="billing-last-name"
+                                            class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                            Last Name
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Row 2: Phone Number & Email Address -->
+                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                    <div class="relative w-full">
+                                        <input type="tel" id="billing-phone" placeholder=" " required
+                                            class="peer h-12 w-full rounded-lg border border-gray-300 px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                        <label for="billing-phone"
+                                            class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                            Phone Number
+                                        </label>
+                                    </div>
+                                    <div class="relative w-full">
+                                        <input type="email" id="billing-email" placeholder=" " required
+                                            class="peer h-12 w-full rounded-lg border border-gray-300 px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                        <label for="billing-email"
+                                            class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                            Email Address
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Row 3: Country, City, State, ZIP Code -->
+                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                                    <!-- Country Select -->
+                                    <div class="relative w-full">
+                                        <select id="billing-country"
+                                            class="h-12 w-full rounded-lg border border-gray-300 bg-white px-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                            <option value="US">United States</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="UK">United Kingdom</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="IN">India</option>
+                                        </select>
+                                    </div>
+                                    <!-- City Input -->
+                                    <div class="relative w-full">
+                                        <input type="text" id="billing-city" placeholder=" " required
+                                            class="peer h-12 w-full rounded-lg border border-gray-300 px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                        <label for="billing-city"
+                                            class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                            City
+                                        </label>
+                                    </div>
+                                    <!-- State Select -->
+                                    <div class="relative w-full">
+                                        <select id="billing-state"
+                                            class="h-12 w-full rounded-lg border border-gray-300 bg-white px-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                            <option value="CA">California</option>
+                                            <option value="NY">New York</option>
+                                            <option value="TX">Texas</option>
+                                            <option value="FL">Florida</option>
+                                            <option value="IL">Illinois</option>
+                                        </select>
+                                    </div>
+                                    <!-- ZIP Code -->
+                                    <div class="relative w-full">
+                                        <input type="text" id="billing-zip" placeholder=" " required
+                                            class="peer h-12 w-full rounded-lg border border-gray-300 px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                        <label for="billing-zip"
+                                            class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                            ZIP Code
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Row 4: Apartments, suite, unit etc -->
+                                <div class="relative w-full">
+                                    <input type="text" id="billing-address-line" placeholder=" "
+                                        class="peer h-12 w-full rounded-lg border border-gray-300 px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                    <label for="billing-address-line"
+                                        class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                        Apartments, suite, unit, etc ( Optional)
+                                    </label>
+                                </div>
+
+                                <!-- Delivery Time -->
+                                <div class="space-y-3 py-2 border-t border-gray-100">
+                                    <h4 class="text-base font-bold text-[#212529]">Delivery Time</h4>
+                                    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                                        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-gray-300 p-3 hover:bg-gray-50 transition-colors">
+                                            <input type="radio" name="delivery-time" value="morning" checked class="accent-[#04535C]">
+                                            <span class="text-sm font-medium text-gray-700">Morning (8:00 AM - 11:00 AM)</span>
+                                        </label>
+                                        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-gray-300 p-3 hover:bg-gray-50 transition-colors">
+                                            <input type="radio" name="delivery-time" value="noon" class="accent-[#04535C]">
+                                            <span class="text-sm font-medium text-gray-700">Noon (11:00 AM - 2:00 PM)</span>
+                                        </label>
+                                        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-gray-300 p-3 hover:bg-gray-50 transition-colors">
+                                            <input type="radio" name="delivery-time" value="afternoon" class="accent-[#04535C]">
+                                            <span class="text-sm font-medium text-gray-700">Afternoon (2:00 PM - 5:00 PM)</span>
+                                        </label>
+                                        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-gray-300 p-3 hover:bg-gray-50 transition-colors">
+                                            <input type="radio" name="delivery-time" value="evening" class="accent-[#04535C]">
+                                            <span class="text-sm font-medium text-gray-700">Evening (5:00 PM - 8:00 PM)</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Shipment Type -->
+                                <div class="space-y-3 py-2 border-t border-gray-100">
+                                    <h4 class="text-base font-bold text-[#212529]">Shipment Type</h4>
+                                    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                                        <label class="flex cursor-pointer items-center justify-between rounded-lg border border-gray-300 p-3 hover:bg-gray-50 transition-colors">
+                                            <div class="flex items-center gap-3">
+                                                <input type="radio" name="shipment-type" value="free" checked class="shipment-radio accent-[#04535C]">
+                                                <span class="text-sm font-medium text-gray-700">Free Shipment</span>
+                                            </div>
+                                            <span class="text-sm font-bold text-[#04535C]">$0.00</span>
+                                        </label>
+                                        <label class="flex cursor-pointer items-center justify-between rounded-lg border border-gray-300 p-3 hover:bg-gray-50 transition-colors">
+                                            <div class="flex items-center gap-3">
+                                                <input type="radio" name="shipment-type" value="fast" class="shipment-radio accent-[#04535C]">
+                                                <span class="text-sm font-medium text-gray-700">Fast Shipment</span>
+                                            </div>
+                                            <span class="text-sm font-bold text-[#04535C]">$10.00</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Address Type -->
+                                <div class="space-y-3 py-2 border-t border-gray-100">
+                                    <h4 class="text-base font-bold text-[#212529]">Address Type</h4>
+                                    <div class="flex flex-wrap gap-4">
+                                        <label class="flex cursor-pointer items-center gap-2">
+                                            <input type="radio" name="address-type" value="home" checked class="accent-[#04535C]">
+                                            <span class="text-sm text-gray-700 font-medium">Home</span>
+                                        </label>
+                                        <label class="flex cursor-pointer items-center gap-2">
+                                            <input type="radio" name="address-type" value="office" class="accent-[#04535C]">
+                                            <span class="text-sm text-gray-700 font-medium">Office</span>
+                                        </label>
+                                        <label class="flex cursor-pointer items-center gap-2">
+                                            <input type="radio" name="address-type" value="other" class="accent-[#04535C]">
+                                            <span class="text-sm text-gray-700 font-medium">Other</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+                                    <button type="button" id="save-address-btn"
+                                        class="w-full sm:w-auto text-center rounded-lg bg-[#04535C] px-7 py-3 text-base font-medium text-[#AAF27F] transition-all hover:bg-[#02414F] hover:text-white">
+                                        Save Address
+                                    </button>
+                                    <button type="button"
+                                        class="w-full sm:w-auto text-center rounded-lg border border-gray-300 bg-white px-7 py-3 text-base font-medium text-gray-700 transition-all hover:bg-gray-50">
+                                        Cancel
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: Payment Options -->
+                    <div class="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+                        <div class="border-b border-gray-200 px-6 py-4">
+                            <h3 class="text-lg font-bold text-[#212529]">Payment</h3>
+                        </div>
+                        <div class="p-6 space-y-4">
+
+                            <!-- Option 1: Direct Bank Transfer -->
+                            <div class="payment-method-item rounded-xl border border-gray-200 overflow-hidden transition-colors">
+                                <label class="flex cursor-pointer items-center justify-between p-4 hover:bg-gray-50">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="payment-method" value="bank" class="payment-radio accent-[#04535C]">
+                                        <span class="text-base font-medium text-[#212529]">Direct Bank Transfer</span>
+                                    </div>
+                                </label>
+                                <div class="payment-body hidden border-t border-gray-100 bg-gray-50 p-4 text-sm text-gray-600">
+                                    Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                                </div>
+                            </div>
+
+                            <!-- Option 2: Cash On Delivery -->
+                            <div class="payment-method-item rounded-xl border border-gray-200 overflow-hidden transition-colors">
+                                <label class="flex cursor-pointer items-center justify-between p-4 hover:bg-gray-50">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="payment-method" value="cod" class="payment-radio accent-[#04535C]">
+                                        <span class="text-base font-medium text-[#212529]">Cash On Delivery</span>
+                                    </div>
+                                </label>
+                                <div class="payment-body hidden border-t border-gray-100 bg-gray-50 p-4 text-sm text-gray-600">
+                                    Pay with cash upon delivery. Ensure you have the exact amount ready for the delivery person.
+                                </div>
+                            </div>
+
+                            <!-- Option 3: Credit Card (Default Open) -->
+                            <div class="payment-method-item rounded-xl border border-gray-200 overflow-hidden transition-colors border-[#04535C]">
+                                <label class="flex cursor-pointer items-center justify-between p-4 hover:bg-gray-50">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="payment-method" value="card" checked class="payment-radio accent-[#04535C]">
+                                        <span class="text-base font-medium text-[#212529]">Credit Card</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <img alt="Visa" class="h-5 w-auto" src="assets/images/checkout/visa.svg">
+                                    </div>
+                                </label>
+                                <div class="payment-body border-t border-gray-100 bg-gray-50 p-6 space-y-4">
+                                    <div class="relative w-full">
+                                        <input type="text" id="card-number" placeholder=" " maxlength="19"
+                                            class="peer h-12 w-full rounded-lg border border-gray-300 bg-white px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                        <label for="card-number"
+                                            class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                            Card Number
+                                        </label>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                        <div class="relative w-full">
+                                            <input type="text" id="card-expiry" placeholder=" " maxlength="5"
+                                                class="peer h-12 w-full rounded-lg border border-gray-300 bg-white px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                            <label for="card-expiry"
+                                                class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                                Expiration Date (MM/YY)
+                                            </label>
+                                        </div>
+                                        <div class="relative w-full">
+                                            <input type="text" id="card-cvv" placeholder=" " maxlength="4"
+                                                class="peer h-12 w-full rounded-lg border border-gray-300 bg-white px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                            <label for="card-cvv"
+                                                class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                                CVV
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative w-full">
+                                        <input type="text" id="card-holder" placeholder=" "
+                                            class="peer h-12 w-full rounded-lg border border-gray-300 bg-white px-4 pt-3 text-base text-[#212529] outline-none transition-colors focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                        <label for="card-holder"
+                                            class="pointer-events-none absolute left-3 top-3 -translate-y-6 bg-white px-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:top-3 peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-[#04535C]">
+                                            Card Holder Name
+                                        </label>
+                                    </div>
+
+                                    <div class="pt-1">
+                                        <label class="flex cursor-pointer items-center gap-2">
+                                            <input type="checkbox" class="peer sr-only" checked>
+                                            <div class="flex size-4.5 shrink-0 items-center justify-center rounded border border-gray-300 bg-white text-transparent transition-all peer-checked:border-[#04535C] peer-checked:bg-[#04535C] peer-checked:text-[#AAF27F]">
+                                                <svg class="size-3 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                                            </div>
+                                            <span class="text-sm text-gray-600 select-none">Save Card for Future Use</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Option 4: PayPal -->
+                            <div class="payment-method-item rounded-xl border border-gray-200 overflow-hidden transition-colors">
+                                <label class="flex cursor-pointer items-center justify-between p-4 hover:bg-gray-50">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="payment-method" value="paypal" class="payment-radio accent-[#04535C]">
+                                        <span class="text-base font-medium text-[#212529]">PayPal</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <img alt="PayPal" class="h-5 w-auto" src="assets/images/checkout/paypal.svg">
+                                    </div>
+                                </label>
+                                <div class="payment-body hidden border-t border-gray-100 bg-gray-50 p-4 text-sm text-gray-600">
+                                    You will be redirected to PayPal website to complete your payment securely.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN (4 cols): Order Summary -->
+                <div class="xl:col-span-4">
+                    <div class="space-y-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+
+                        <!-- Ordered Products List -->
+                        <div>
+                            <h2 class="mb-5 text-xl font-bold text-[#212529]">
+                                Order Summary
+                            </h2>
+                            <ul class="space-y-4">
+
+                                <!-- Product 1 -->
+                                <li class="flex items-center gap-3 rounded-xl border border-gray-200 p-3">
+                                    <div class="size-15 shrink-0 overflow-hidden rounded-lg bg-gray-50">
+                                        <img alt="Product" class="h-full w-full object-cover" src="assets/images/checkout/product-1.webp">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="mb-1 text-sm font-semibold text-[#212529] truncate">Fresh Basket Fruits</h3>
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-xs text-[#637381]">1 x 120 mg Pack</p>
+                                            <div class="flex items-center gap-1.5">
+                                                <span class="text-xs text-[#919EAB] line-through">$29.99</span>
+                                                <span class="text-sm font-bold text-[#04535C]">$27.49</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Product 2 -->
+                                <li class="flex items-center gap-3 rounded-xl border border-gray-200 p-3">
+                                    <div class="size-15 shrink-0 overflow-hidden rounded-lg bg-gray-50">
+                                        <img alt="Product" class="h-full w-full object-cover" src="assets/images/checkout/product-2.webp">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="mb-1 text-sm font-semibold text-[#212529] truncate">Fresh Basket Fruits</h3>
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-xs text-[#637381]">1 x 120 mg Pack</p>
+                                            <div class="flex items-center gap-1.5">
+                                                <span class="text-xs text-[#919EAB] line-through">$29.99</span>
+                                                <span class="text-sm font-bold text-[#04535C]">$27.49</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Product 3 -->
+                                <li class="flex items-center gap-3 rounded-xl border border-gray-200 p-3">
+                                    <div class="size-15 shrink-0 overflow-hidden rounded-lg bg-gray-50">
+                                        <img alt="Product" class="h-full w-full object-cover" src="assets/images/checkout/product-3.webp">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="mb-1 text-sm font-semibold text-[#212529] truncate">Fresh Basket Fruits</h3>
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-xs text-[#637381]">1 x 120 mg Pack</p>
+                                            <div class="flex items-center gap-1.5">
+                                                <span class="text-xs text-[#919EAB] line-through">$29.99</span>
+                                                <span class="text-sm font-bold text-[#04535C]">$27.49</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Product 4 -->
+                                <li class="flex items-center gap-3 rounded-xl border border-gray-200 p-3">
+                                    <div class="size-15 shrink-0 overflow-hidden rounded-lg bg-gray-50">
+                                        <img alt="Product" class="h-full w-full object-cover" src="assets/images/checkout/product-4.webp">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="mb-1 text-sm font-semibold text-[#212529] truncate">Fresh Basket Fruits</h3>
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-xs text-[#637381]">1 x 120 mg Pack</p>
+                                            <div class="flex items-center gap-1.5">
+                                                <span class="text-xs text-[#919EAB] line-through">$29.99</span>
+                                                <span class="text-sm font-bold text-[#04535C]">$27.49</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Product 5 -->
+                                <li class="flex items-center gap-3 rounded-xl border border-gray-200 p-3">
+                                    <div class="size-15 shrink-0 overflow-hidden rounded-lg bg-gray-50">
+                                        <img alt="Product" class="h-full w-full object-cover" src="assets/images/checkout/product-5.webp">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="mb-1 text-sm font-semibold text-[#212529] truncate">Fresh Basket Fruits</h3>
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-xs text-[#637381]">1 x 120 mg Pack</p>
+                                            <div class="flex items-center gap-1.5">
+                                                <span class="text-xs text-[#919EAB] line-through">$29.99</span>
+                                                <span class="text-sm font-bold text-[#04535C]">$27.49</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <!-- Price Breakdown Box -->
+                        <div class="rounded-2xl bg-gray-100 p-6">
+                            <h3 class="mb-5 text-xl font-bold text-[#212529]">
+                                Order Summary
+                            </h3>
+                            <ul class="space-y-4 pb-4">
+                                <li class="flex items-center justify-between text-base">
+                                    <span class="text-[#637381]">Sub-Total</span>
+                                    <span class="text-[#212529] font-medium">$20.00</span>
+                                </li>
+                                <li class="flex items-center justify-between text-base">
+                                    <span class="text-[#637381]">Vat (40%)</span>
+                                    <span class="text-[#212529] font-medium">$4.00</span>
+                                </li>
+                                <li class="flex items-center justify-between text-base text-[#04535C]">
+                                    <span>Discount</span>
+                                    <span class="font-medium">-$4.00</span>
+                                </li>
+                                <li class="flex items-center justify-between text-base">
+                                    <span class="text-[#637381]">Shipment</span>
+                                    <span id="checkout-shipment-cost" class="text-[#212529] font-medium">$0.00</span>
+                                </li>
+                                <li class="flex items-center justify-between text-base">
+                                    <span class="text-[#637381]">Tax</span>
+                                    <span class="text-[#212529] font-medium">$0.00</span>
+                                </li>
+                            </ul>
+                            <div class="flex items-center justify-between border-t border-gray-300 pt-4">
+                                <span class="text-lg font-bold text-[#212529]">Total</span>
+                                <span id="checkout-final-total" class="text-lg font-bold text-[#212529]">$20.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Place Order Button -->
+                        <div>
+                            <button type="button" id="place-order-btn"
+                                class="flex h-12 w-full items-center justify-center rounded-lg bg-[#04535C] text-base font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                                Proceed to checkout
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    
+    <!-- ================= BENEFIT CARDS (4-GRID) ================= -->
+    <section class="py-12 bg-white">
+        <div class="mx-auto max-w-[1440px] px-4 sm:px-6">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+
+                <!-- Item 1: Free Shipping -->
+                <div class="wow animate__fadeInUp rounded-2xl border border-gray-200 p-6 text-center transition-all hover:shadow-sm" data-wow-duration="1.2s">
+                    <div class="mx-auto mb-3 flex size-14 items-center justify-center rounded-full bg-[#04535C]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="22.6667" cy="23.9987" r="2.66667" stroke="#AAF27F" stroke-width="1.5" />
+                            <circle cx="9.33366" cy="23.9987" r="2.66667" stroke="#AAF27F" stroke-width="1.5" />
+                            <path d="M14.667 22.6654H20.0003M18.0003 9.33203H19.2575C21.0048 9.33203 21.8784 9.33203 22.6191 9.75139C23.3598 10.1707 23.8536 10.945 24.8414 12.4935C25.534 13.5793 26.2609 14.3674 27.2832 15.0685C28.3125 15.7745 28.8019 16.1195 29.0735 16.6734C29.3337 17.2038 29.3337 17.832 29.3337 19.0885C29.3337 20.7449 29.3337 21.5731 28.8683 22.0994C28.8484 22.122 28.8279 22.144 28.8069 22.1654C28.317 22.6654 27.5461 22.6654 26.0044 22.6654H25.3337" stroke="#AAF27F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M17.333 9.33203L18.6586 12.6461C19.3081 14.2699 19.6329 15.0817 20.3101 15.5402C20.9873 15.9987 21.8617 15.9987 23.6105 15.9987H27.9997" stroke="#AAF27F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M6.49308 22.6654C4.68944 22.6654 3.78763 22.6654 3.22731 22.0796C2.66699 21.4938 2.66699 20.551 2.66699 18.6654V9.33203C2.66699 7.44641 2.66699 6.5036 3.22731 5.91782C3.78763 5.33203 4.68944 5.33203 6.49308 5.33203H13.5076C15.3112 5.33203 16.213 5.33203 16.7733 5.91782C17.3337 6.5036 17.3337 7.44641 17.3337 9.33203V22.6654H11.5945" stroke="#AAF27F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h4 class="text-base font-bold text-[#212529]">Free Shipping</h4>
+                    <p class="mt-1 text-sm text-gray-500 leading-relaxed">
+                        Enjoy the Convenience of Free Shipping on Every Order
+                    </p>
+                </div>
+
+                <!-- Item 2: 24/7 Support -->
+                <div class="wow animate__fadeInUp rounded-2xl border border-gray-200 p-6 text-center transition-all hover:shadow-sm" data-wow-duration="1.2s" data-wow-delay="0.1s">
+                    <div class="mx-auto mb-3 flex size-14 items-center justify-center rounded-full bg-[#04535C]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M22.666 14.4059C22.666 13.9451 22.666 13.7147 22.7354 13.5093C22.937 12.9126 23.4684 12.681 24.0008 12.4385C24.5993 12.1659 24.8986 12.0296 25.1951 12.0056C25.5317 11.9784 25.869 12.0509 26.1567 12.2124C26.5381 12.4265 26.8042 12.8332 27.0765 13.164C28.3343 14.6918 28.9633 15.4557 29.1934 16.2981C29.3791 16.9779 29.3791 17.6888 29.1934 18.3686C28.8577 19.5972 27.7973 20.6271 27.0124 21.5805C26.6109 22.0682 26.4101 22.312 26.1567 22.4543C25.869 22.6158 25.5317 22.6883 25.1951 22.6611C24.8986 22.6371 24.5993 22.5008 24.0008 22.2282C23.4684 21.9857 22.937 21.7541 22.7354 21.1574C22.666 20.952 22.666 20.7216 22.666 20.2607V14.4059Z" stroke="#AAF27F" stroke-width="1.5" />
+                            <path d="M9.33301 14.4062C9.33301 13.8258 9.31671 13.3043 8.84756 12.8963C8.67691 12.7479 8.45068 12.6448 7.99822 12.4387C7.39968 12.1661 7.10042 12.0298 6.80389 12.0058C5.91423 11.9339 5.43557 12.5411 4.92251 13.1642C3.66467 14.692 3.03576 15.4559 2.80563 16.2983C2.61991 16.9781 2.61991 17.689 2.80563 18.3688C3.14128 19.5975 4.2017 20.6274 4.98662 21.5807C5.48139 22.1817 5.95403 22.73 6.80389 22.6613C7.10042 22.6373 7.39968 22.501 7.99822 22.2284C8.45068 22.0223 8.67691 21.9192 8.84756 21.7708C9.31671 21.3628 9.33301 20.8413 9.33301 20.261V14.4062Z" stroke="#AAF27F" stroke-width="1.5" />
+                            <path d="M6.66602 12C6.66602 7.58172 10.8447 4 15.9993 4C21.154 4 25.3327 7.58172 25.3327 12" stroke="#AAF27F" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h4 class="text-base font-bold text-[#212529]">24/7 Support</h4>
+                    <p class="mt-1 text-sm text-gray-500 leading-relaxed">
+                        Round-the-Clock Assistance for a Smooth Shopping Experience
+                    </p>
+                </div>
+
+                <!-- Item 3: 30 Days Return -->
+                <div class="wow animate__fadeInUp rounded-2xl border border-gray-200 p-6 text-center transition-all hover:shadow-sm" data-wow-duration="1.2s" data-wow-delay="0.2s">
+                    <div class="mx-auto mb-3 flex size-14 items-center justify-center rounded-full bg-[#04535C]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M26.667 15.9987C26.667 21.8901 21.8917 26.6654 16.0003 26.6654C10.1089 26.6654 5.33366 21.8901 5.33366 15.9987C5.33366 10.1073 10.1089 5.33203 16.0003 5.33203C20.1657 5.33203 23.757 7.72536 25.5003 11.1987" stroke="#AAF27F" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M25.333 6.66536V11.332H20.6663" stroke="#AAF27F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M13.333 14.668H18.6663" stroke="#AAF27F" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h4 class="text-base font-bold text-[#212529]">30 Days Return</h4>
+                    <p class="mt-1 text-sm text-gray-500 leading-relaxed">
+                        Your Satisfaction is Our Priority: Return Any Product Within 30 Days
+                    </p>
+                </div>
+
+                <!-- Item 4: Secure Payment -->
+                <div class="wow animate__fadeInUp rounded-2xl border border-gray-200 p-6 text-center transition-all hover:shadow-sm" data-wow-duration="1.2s" data-wow-delay="0.3s">
+                    <div class="mx-auto mb-3 flex size-14 items-center justify-center rounded-full bg-[#04535C]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M18.667 24.6654C18.667 24.6654 20.0003 24.6654 21.3337 27.332C21.3337 27.332 25.569 20.6654 29.3337 19.332" stroke="#AAF27F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7.33301 15.332H7.32103" stroke="#AAF27F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14.667 26.0013H14.0003C8.98889 26.0013 6.48317 26.0013 4.81027 24.6801C4.5427 24.4688 4.29524 24.2359 4.07073 23.9841C2.66699 22.4096 2.66699 20.0513 2.66699 15.3346C2.66699 10.618 2.66699 8.25967 4.07073 6.68517C4.29524 6.43334 4.5427 6.20044 4.81027 5.98913C6.48317 4.66797 8.98889 4.66797 14.0003 4.66797H18.0003C23.0118 4.66797 25.5175 4.66797 27.1904 5.98913C27.458 6.20044 27.7054 6.43334 27.9299 6.68517C29.1947 8.10375 29.3199 10.1586 29.3323 14.0013V14.668" stroke="#AAF27F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M19.3337 15.3333C19.3337 17.1743 17.8413 18.6667 16.0003 18.6667C14.1594 18.6667 12.667 17.1743 12.667 15.3333C12.667 13.4924 14.1594 12 16.0003 12C17.8413 12 19.3337 13.4924 19.3337 15.3333Z" stroke="#AAF27F" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <h4 class="text-base font-bold text-[#212529]">Secure Payment</h4>
+                    <p class="mt-1 text-sm text-gray-500 leading-relaxed">
+                        Seamless Shopping Backed by Safe and Secure Payment Options
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-gray-200 bg-white">
+
+        <!-- 1. Footer Nav -->
+        <div class="pt-12 pb-8">
+            <div class="mx-auto max-w-[1440px] px-4 sm:px-6">
+                <div class="flex flex-col justify-between gap-8 xl:flex-row">
+
+                    <!-- Col 1: Brand & Bio -->
+                    <div class="xl:w-3/12">
+                        <a class="mb-5 block" href="index.html">
+                            <img alt="Storly Logo" src="./assets/icons/logo.svg" class="h-10 w-auto" />
+                        </a>
+                        <p class="mb-5 text-sm text-gray-600 leading-relaxed md:pr-10">
+                            From Our Trusted Store to Your Doorstep, Delivering Quality with Convenience
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <!-- Facebook -->
+                            <a href="#" aria-label="Facebook" class="text-gray-700 hover:text-[#04535C] transition-colors">
+                                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M17 8V7.25C15.0784 7.25 14.3117 7.24841 13.7055 7.32991C13.0777 7.41432 12.5109 7.59999 12.0555 8.05546L12.5858 8.58579L13.1161 9.11612C13.2464 8.9858 13.4439 8.87858 13.9054 8.81654C14.3884 8.75159 15.036 8.75 16 8.75V8ZM12 12H11.25V21.5H12H12.75V12H12ZM10 14V14.75H15V14V13.25H10V14Z" fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <!-- X / Twitter -->
+                            <a href="#" aria-label="Twitter" class="text-gray-700 hover:text-[#04535C] transition-colors">
+                                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 21L10.5484 13.4516M10.5484 13.4516L3 3H8L13.4516 10.5484M10.5484 13.4516L16 21H21L13.4516 10.5484M21 3L13.4516 10.5484" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="#" aria-label="Instagram" class="text-gray-700 hover:text-[#04535C] transition-colors">
+                                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.51472 16.5 7.5 14.4853 7.5 12C7.5 9.51472 9.51472 7.5 12 7.5C14.4853 7.5 16.5 9.51472 16.5 12Z" stroke="currentColor" stroke-width="1.5"></path>
+                                    <path d="M17.5078 6.5L17.4988 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="#" aria-label="LinkedIn" class="text-gray-700 hover:text-[#04535C] transition-colors">
+                                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 10V17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M11 13V17M11 13C11 11.3431 12.3431 10 14 10C15.6569 10 17 11.3431 17 13V17M11 13V10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M7 7.00513L7.00898 6.99402" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                    <path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Navigation Links -->
+                    <div class="grid grid-cols-2 gap-8 md:grid-cols-12 xl:w-8/12 xl:gap-6">
+                        <div class="md:col-span-3">
+                            <h4 class="mb-5 text-base font-semibold text-[#212529]">Menu</h4>
+                            <ul class="space-y-3 text-sm text-gray-500">
+                                <li><a class="hover:text-[#04535C] transition-colors" href="about.html">About</a></li>
+                                <li><a class="hover:text-[#04535C] transition-colors" href="index.html">Delivery</a></li>
+                                <li><a class="hover:text-[#04535C] transition-colors" href="contact.html">FAQ</a></li>
+                                <li><a class="hover:text-[#04535C] transition-colors" href="blog.html">Blog</a></li>
+                                <li><a class="hover:text-[#04535C] transition-colors" href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="md:col-span-3">
+                            <h4 class="mb-5 text-base font-semibold text-[#212529]">Category</h4>
+                            <ul class="space-y-3 text-sm text-gray-500">
+                                <li><a class="hover:text-[#04535C] transition-colors" href="index.html">Grocery</a></li>
+                                <li><a class="hover:text-[#04535C] transition-colors" href="index.html">Bakery</a></li>
+                                <li><a class="hover:text-[#04535C] transition-colors" href="index.html">Ice-cream</a></li>
+                                <li><a class="hover:text-[#04535C] transition-colors" href="index.html">Energy Drinks</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-span-full md:col-span-6">
+                            <h4 class="mb-5 text-base font-semibold text-[#212529]">Customer Services</h4>
+                            <ul class="space-y-4 text-sm text-gray-500">
+                                <li class="flex items-center gap-3">
+                                    <svg class="size-5 shrink-0 text-[#04535C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.77762 11.9424C2.8296 10.2893 2.37185 8.93948 2.09584 7.57121C1.68762 5.54758 2.62181 3.57081 4.16938 2.30947C4.82345 1.77638 5.57323 1.95852 5.96 2.6524L6.83318 4.21891C7.52529 5.46057 7.87134 6.08139 7.8027 6.73959C7.73407 7.39779 7.26737 7.93386 6.33397 9.00601L3.77762 11.9424ZM3.77762 11.9424C5.69651 15.2883 8.70784 18.3013 12.0576 20.2224M12.0576 20.2224C13.7107 21.1704 15.0605 21.6282 16.4288 21.9042C18.4524 22.3124 20.4292 21.3782 21.6905 19.8306C22.2236 19.1766 22.0415 18.4268 21.3476 18.04L19.7811 17.1668C18.5394 16.4747 17.9186 16.1287 17.2604 16.1973C16.6022 16.2659 16.0661 16.7326 14.994 17.666L12.0576 20.2224Z" />
+                                    </svg>
+                                    <span>+1 (555) 666-77-88</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="size-5 shrink-0 text-[#04535C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.6177 21.367C13.1841 21.773 12.6044 22 12.0011 22C11.3978 22 10.8182 21.773 10.3845 21.367C6.41302 17.626 1.09076 13.4469 3.68627 7.37966C5.08963 4.09916 8.45834 2 12.0011 2C15.5439 2 18.9126 4.09916 20.316 7.37966C22.9082 13.4393 17.599 17.6389 13.6177 21.367Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z" />
+                                    </svg>
+                                    <span>help@company.com</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="size-5 shrink-0 text-[#04535C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 8.5L9.94202 10.2394C11.6572 11.2535 12.3428 11.2535 14.058 10.2394L17 8.5" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.01577 13.4756C2.08114 16.5412 2.11383 18.0739 3.24496 19.2094C4.37608 20.3448 5.95033 20.3843 9.09883 20.4634C11.0393 20.5122 12.9607 20.5122 14.9012 20.4634C18.0497 20.3843 19.6239 20.3448 20.7551 19.2094C21.8862 18.0739 21.9189 16.5412 21.9842 13.4756C22.0053 12.4899 22.0053 11.5101 21.9842 10.5244C21.9189 7.45886 21.8862 5.92609 20.7551 4.79066C19.6239 3.65523 18.0497 3.61568 14.9012 3.53657C12.9607 3.48781 11.0393 3.48781 9.09882 3.53656C5.95033 3.61566 4.37608 3.65521 3.24495 4.79065C2.11382 5.92608 2.08114 7.45885 2.01576 10.5244C1.99474 11.5101 1.99475 12.4899 2.01577 13.4756Z" />
+                                    </svg>
+                                    <span>2972 Westheimer Rd. Santa Ana, Illinois 85486</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Footer Nav End -->
+
+        <!-- 2. Footer Center: Winter Sale Banner -->
+        <div class="border-t border-gray-200 py-8">
+            <div class="mx-auto max-w-[1440px] px-4 sm:px-6">
+                <div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
+                    <div>
+                        <span class="text-[#04535C] text-[70px] font-extrabold opacity-15 md:text-[100px] xl:text-[127px] leading-none select-none">
+                            -50%
+                        </span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-left">
+                        <span class="text-[#04535C] text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+                            WINTER SALE
+                        </span>
+                        <p class="mt-2 flex items-center gap-2 text-base font-medium text-gray-800">
+                            Sale Code: <span id="footer-sale-code" class="font-bold text-[#04535C]">WINSALE2026</span>
+                            <button type="button" onclick="copyCouponCode()" aria-label="Copy sale code" class="inline-flex items-center text-gray-500 hover:text-[#04535C] transition-colors">
+                                <svg fill="none" height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.75 11.25C6.75 9.12868 6.75 8.06802 7.40901 7.40901C8.06802 6.75 9.12868 6.75 11.25 6.75L12 6.75C14.1213 6.75 15.182 6.75 15.841 7.40901C16.5 8.06802 16.5 9.12868 16.5 11.25V12C16.5 14.1213 16.5 15.182 15.841 15.841C15.182 16.5 14.1213 16.5 12 16.5H11.25C9.12868 16.5 8.06802 16.5 7.40901 15.841C6.75 15.182 6.75 14.1213 6.75 12L6.75 11.25Z" stroke="#495057" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M12.7499 6.75C12.7482 4.53218 12.7146 3.38341 12.069 2.59682C11.9444 2.44492 11.8051 2.30563 11.6532 2.18097C10.8234 1.5 9.59061 1.5 7.125 1.5C4.65939 1.5 3.42658 1.5 2.59682 2.18097C2.44492 2.30563 2.30563 2.44492 2.18097 2.59682C1.5 3.42658 1.5 4.65939 1.5 7.125C1.5 9.59061 1.5 10.8234 2.18097 11.6532C2.30563 11.8051 2.44492 11.9444 2.59682 12.069C3.38341 12.7146 4.53218 12.7482 6.75 12.7499" stroke="#495057" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </button>
+                        </p>
+                        <p class="text-sm text-gray-500 lg:text-left">
+                            Join our mailing list for exclusive deals and updates
+                        </p>
+                    </div>
+                    <div>
+                        <a class="inline-flex items-center justify-center gap-2 rounded-lg bg-[#04535C] px-6 py-3 text-base font-semibold text-[#AAF27F] transition-all hover:bg-[#03434A]" href="index.html">
+                            Shop Now
+                            <svg fill="none" height="22" viewBox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.5833 6.41406L5.5 16.4974" stroke="#AAF27F" stroke-linecap="round" stroke-width="1.5"></path>
+                                <path d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167" stroke="#AAF27F" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Center End -->
+
+        <!-- 3. Footer Bottom -->
+        <div class="border-t border-gray-200 py-6">
+            <div class="mx-auto max-w-[1440px] px-4 sm:px-6 flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+                <div>
+                    <p class="text-sm text-gray-500">
+                        &copy; 2026 Storely. All rights reserved. By <a class="text-[#04535C] font-semibold hover:underline" href="#">Createuiux</a>
+                    </p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img alt="Payment 1" class="h-6 w-auto" src="./assets/images/payment-logo/payment-1.svg" />
+                    <img alt="Payment 2" class="h-6 w-auto" src="./assets/images/payment-logo/payment-2.svg" />
+                    <img alt="Payment 3" class="h-6 w-auto" src="./assets/images/payment-logo/payment-3.svg" />
+                    <img alt="Payment 4" class="h-6 w-auto" src="./assets/images/payment-logo/payment-4.svg" />
+                    <img alt="Payment 5" class="h-6 w-auto" src="./assets/images/payment-logo/payment-5.svg" />
+                    <img alt="Payment 6" class="h-6 w-auto" src="./assets/images/payment-logo/payment-6.svg" />
+                </div>
+                <div class="hidden lg:block">
+                    <nav class="flex items-center gap-5 text-sm text-gray-500">
+                        <a href="privacy-policy.html" class="hover:text-[#04535C]">Privacy Policy</a>
+                        <a href="term-and-conditions.html" class="hover:text-[#04535C]">Terms &amp; Conditions</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom End -->
+
+    </footer>
+
+    <!-- ================= DARK TEAL TRUST STRIP (BELOW FOOTER) ================= -->
+    <div class="bg-[#04535C] py-8">
+        <div class="mx-auto max-w-[1440px] px-4 sm:px-6">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4 2xl:gap-11">
+                <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s">
+                    <div class="bg-[#AAF27F] text-[#04535C] inline-flex size-12 items-center justify-center rounded-full shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="17" cy="18" r="2" stroke="#04535C" stroke-width="1.5" />
+                            <circle cx="7" cy="18" r="2" stroke="#04535C" stroke-width="1.5" />
+                            <path d="M11 17H15M13.5 7H14.4429C15.7533 7 16.4086 7 16.9641 7.31452C17.5196 7.62904 17.89 8.20972 18.6308 9.37107C19.1502 10.1854 19.6955 10.7765 20.4622 11.3024C21.2341 11.8318 21.6012 12.0906 21.8049 12.506C22 12.9038 22 13.375 22 14.3173C22 15.5596 22 16.1808 21.651 16.5755C21.636 16.5925 21.6207 16.609 21.6049 16.625C21.2375 17 20.6594 17 19.503 17H19" stroke="#04535C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M13 7L13.9942 9.48556C14.4813 10.7034 14.7249 11.3123 15.2328 11.6561C15.7407 12 16.3965 12 17.7081 12L21 12" stroke="#04535C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4.86957 17C3.51684 17 2.84048 17 2.42024 16.5607C2 16.1213 2 15.4142 2 14L2 7C2 5.58579 2 4.87868 2.42024 4.43934C2.84048 4 3.51684 4 4.86957 4L10.1304 4C11.4832 4 12.1595 4 12.5798 4.43934C13 4.87868 13 5.58579 13 7L13 17L8.69565 17" stroke="#04535C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-base leading-6 font-normal text-white">Shipping to</p>
+                        <p class="font-medium text-white">Over 200+ Countries</p>
+                    </div>
+                </div>
+
+                <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s" data-wow-delay="0.1s">
+                    <div class="bg-[#AAF27F] text-[#04535C] inline-flex size-12 items-center justify-center rounded-full shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M11.9982 2C8.99043 2 7.04018 4.01899 4.73371 4.7549C3.79589 5.05413 3.32697 5.20374 3.1372 5.41465C2.94743 5.62556 2.89186 5.93375 2.78072 6.55013C1.59143 13.146 4.1909 19.244 10.3903 21.6175C11.0564 21.8725 11.3894 22 12.0015 22C12.6135 22 12.9466 21.8725 13.6126 21.6175C19.8116 19.2439 22.4086 13.146 21.219 6.55013C21.1078 5.93364 21.0522 5.6254 20.8624 5.41449C20.6726 5.20358 20.2037 5.05405 19.2659 4.75499C16.9585 4.01915 15.0061 2 11.9982 2Z" stroke="#04535C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 13C9 13 10 13 11 15C11 15 14.1765 10 17 9" stroke="#04535C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-base leading-6 font-normal text-white">100% Secure</p>
+                        <p class="font-medium text-white">Checkout</p>
+                    </div>
+                </div>
+
+                <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s" data-wow-delay="0.2s">
+                    <div class="bg-[#AAF27F] text-[#04535C] inline-flex size-12 items-center justify-center rounded-full shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M17 10.8045C17 10.4588 17 10.286 17.052 10.132C17.2032 9.68444 17.6018 9.51076 18.0011 9.32888C18.45 9.12442 18.6744 9.02219 18.8968 9.0042C19.1493 8.98378 19.4022 9.03818 19.618 9.15929C19.9041 9.31984 20.1036 9.62493 20.3079 9.87302C21.2513 11.0188 21.7229 11.5918 21.8955 12.2236C22.0348 12.7334 22.0348 13.2666 21.8955 13.7764C21.6438 14.6979 20.8485 15.4704 20.2598 16.1854C19.9587 16.5511 19.8081 16.734 19.618 16.8407C19.4022 16.9618 19.1493 17.0162 18.8968 16.9958C18.6744 16.9778 18.45 16.8756 18.0011 16.6711C17.6018 16.4892 17.2032 16.3156 17.052 15.868C17 15.714 17 15.5412 17 15.1955V10.8045Z" stroke="#04535C" stroke-width="1.5" />
+                            <path d="M7 10.8046C7 10.3694 6.98778 9.97821 6.63591 9.6722C6.50793 9.5609 6.33825 9.48361 5.99891 9.32905C5.55001 9.12458 5.32556 9.02235 5.10316 9.00436C4.43591 8.9504 4.07692 9.40581 3.69213 9.87318C2.74875 11.019 2.27706 11.5919 2.10446 12.2237C1.96518 12.7336 1.96518 13.2668 2.10446 13.7766C2.3562 14.6981 3.15152 15.4705 3.74021 16.1856C4.11129 16.6363 4.46577 17.0475 5.10316 16.996C5.32556 16.978 5.55001 16.8757 5.99891 16.6713C6.33825 16.5167 6.50793 16.4394 6.63591 16.3281C6.98778 16.0221 7 15.631 7 15.1957V10.8046Z" stroke="#04535C" stroke-width="1.5" />
+                            <path d="M5 9C5 5.68629 8.13401 3 12 3C15.866 3 19 5.68629 19 9" stroke="#04535C" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round" />
+                            <path d="M19 17V17.8C19 19.5673 17.2091 21 15 21H13" stroke="#04535C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-base leading-6 font-normal text-white">Outstanding</p>
+                        <p class="font-medium text-white">Support</p>
+                    </div>
+                </div>
+
+                <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s" data-wow-delay="0.3s">
+                    <div class="bg-[#AAF27F] text-[#04535C] inline-flex size-12 items-center justify-center rounded-full shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path d="M12.4791 2.19418L14.2389 5.74288C14.4789 6.23687 15.1188 6.7107 15.6587 6.80143L18.8484 7.33575C20.8882 7.67853 21.3681 9.17059 19.8983 10.6425L17.4186 13.1427C16.9986 13.5661 16.7686 14.3827 16.8986 14.9675L17.6085 18.0625C18.1685 20.5123 16.8786 21.46 14.7289 20.1796L11.7392 18.3952C11.1992 18.0726 10.3093 18.0726 9.7594 18.3952L6.76973 20.1796C4.62997 21.46 3.33011 20.5022 3.89005 18.0625L4.59997 14.9675C4.72996 14.3827 4.49998 13.5661 4.08003 13.1427L1.6003 10.6425C0.140465 9.17059 0.610413 7.67853 2.65019 7.33575L5.83984 6.80143C6.36978 6.7107 7.00971 6.23687 7.24968 5.74288L9.00949 2.19418C9.96938 0.268607 11.5292 0.268607 12.4791 2.19418Z" stroke="#04535C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-base leading-6 font-normal text-white">Over 9K+ 5-Star</p>
+                        <p class="font-medium text-white">Genuine Reviews</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= MOBILE / RESPONSIVE SIDEBAR DRAWER ================= -->
+    <div id="sidebar-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0" aria-hidden="true">
+        <div id="sidebar-overlay" class="absolute inset-0 bg-gray-900/50 backdrop-blur-sm cursor-pointer"></div>
+        <div id="sidebar-panel" class="relative flex h-full w-full max-w-[320px] sm:max-w-[350px] flex-col bg-white shadow-2xl transition-transform duration-300 ease-out -translate-x-full">
+
+            <div class="flex items-center justify-between border-b border-gray-200 px-5 py-4">
+                <a href="index.html" aria-label="Storly Home" class="shrink-0">
+                    <img src="./assets/icons/logo.svg" alt="Storly Logo" class="block w-[110px] h-auto object-contain">
+                </a>
+                <button type="button" id="sidebar-close-btn" aria-label="Close navigation menu"
+                    class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flex-1 space-y-6 overflow-y-auto overscroll-contain px-5 py-4 [scrollbar-width:thin]">
+                <nav class="space-y-1">
+
+                    <!-- Menu 1: Home -->
+                    <div class="sidebar-accordion">
+                        <button type="button"
+                            class="sidebar-accordion-btn group flex w-full items-center justify-between border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]">
+                            <span>Home</span>
+                            <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="sidebar-accordion-content hidden grid grid-cols-2 gap-x-4 gap-y-2 border-b border-gray-200 py-2 pl-4">
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V1</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V2</a>
+                            <a class="block py-1 text-sm font-semibold text-[#04535C]" href="index.html">Grocery V3</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V4</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V5</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V6</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Chocolate</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Bakery V1</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Bakery V2</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V7</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Coffee &amp; Tea</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Ice Cream</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Frozen Food</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Juice</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Sweets</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Energy Drink</a>
+                        </div>
+                    </div>
+
+                    <!-- Menu 2: About Us -->
+                    <a class="block w-full border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]" href="about.html">
+                        About Us
+                    </a>
+
+                    <!-- Menu 3: Shop -->
+                    <div class="sidebar-accordion">
+                        <button type="button"
+                            class="sidebar-accordion-btn group flex w-full items-center justify-between border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]">
+                            <span>Shop</span>
+                            <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="sidebar-accordion-content hidden space-y-2 border-b border-gray-200 py-2 pl-4">
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="product-details.html">Product Details</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="cart.html">Shop - Cart</a>
+                            <a class="block py-1 text-sm font-semibold text-[#04535C] transition" href="check-out.html">Shop - Checkout</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="order-success.html">Shop - Order Success</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="wishlist.html">Shop - Wishlist</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="vendor-grid.html">Shop - Vendor</a>
+                        </div>
+                    </div>
+
+                    <!-- Menu 4: Sellers -->
+                    <div class="sidebar-accordion">
+                        <button type="button"
+                            class="sidebar-accordion-btn group flex w-full items-center justify-between border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]">
+                            <span>Sellers</span>
+                            <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="sidebar-accordion-content hidden space-y-2 border-b border-gray-200 py-2 pl-4">
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="seller-grid.html">Seller Grid</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="seller-list.html">Seller List</a>
+                        </div>
+                    </div>
+
+                    <!-- Menu 5: Mega Menu -->
+                    <div class="sidebar-accordion">
+                        <button type="button"
+                            class="sidebar-accordion-btn group flex w-full items-center justify-between border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]">
+                            <span>Mega Menu</span>
+                            <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="sidebar-accordion-content hidden space-y-2 border-b border-gray-200 py-2 pl-4">
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="banner-with-left-sidebar-3-column.html">Grid - 1 Column</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="banner-with-left-sidebar-3-column.html">Grid - 2 Columns</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="banner-with-left-sidebar-3-column.html">Grid - 3 Columns</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="banner-with-left-sidebar-3-column.html">Grid - 4 Columns</a>
+                        </div>
+                    </div>
+
+                    <!-- Menu 6: Blog -->
+                    <a class="block w-full border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]" href="blog.html">
+                        Blog
+                    </a>
+
+                    <!-- Menu 7: Contact -->
+                    <a class="block w-full border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]" href="contact.html">
+                        Contact
+                    </a>
+
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" aria-label="Scroll to top"
+        class="fixed bottom-6 right-6 z-40 hidden size-12 cursor-pointer items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F] shadow-lg transition-transform hover:scale-110 focus:outline-none">
+        <svg class="size-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Drawer Logic ---
+            const menuOpenBtn = document.getElementById('menu-open-btn');
+            const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+            const sidebarDrawer = document.getElementById('sidebar-drawer');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const sidebarPanel = document.getElementById('sidebar-panel');
+
+            function openSidebar() {
+                sidebarDrawer.classList.remove('pointer-events-none', 'opacity-0');
+                sidebarDrawer.classList.add('opacity-100');
+                sidebarPanel.classList.remove('-translate-x-full');
+                sidebarPanel.classList.add('translate-x-0');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeSidebar() {
+                sidebarDrawer.classList.remove('opacity-100');
+                sidebarDrawer.classList.add('opacity-0', 'pointer-events-none');
+                sidebarPanel.classList.remove('translate-x-0');
+                sidebarPanel.classList.add('-translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            if (menuOpenBtn) menuOpenBtn.addEventListener('click', openSidebar);
+            if (sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
+            if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+
+            // --- Accordions in Sidebar ---
+            const accordionBtns = document.querySelectorAll('.sidebar-accordion-btn');
+            accordionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('svg');
+                    const isOpen = !content.classList.contains('hidden');
+
+                    if (isOpen) {
+                        content.classList.add('hidden');
+                        if (icon) icon.classList.remove('rotate-180');
+                    } else {
+                        content.classList.remove('hidden');
+                        if (icon) icon.classList.add('rotate-180');
+                    }
+                });
+            });
+
+            // --- Scroll to Top Button ---
+            const scrollToTopBtn = document.getElementById('scroll-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollToTopBtn?.classList.remove('hidden');
+                    scrollToTopBtn?.classList.add('flex');
+                } else {
+                    scrollToTopBtn?.classList.add('hidden');
+                    scrollToTopBtn?.classList.remove('flex');
+                }
+            });
+            scrollToTopBtn?.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // --- Payment Methods Switcher ---
+            const paymentItems = document.querySelectorAll('.payment-method-item');
+            const paymentRadios = document.querySelectorAll('.payment-radio');
+
+            function updatePaymentAccordion() {
+                paymentItems.forEach(item => {
+                    const radio = item.querySelector('.payment-radio');
+                    const body = item.querySelector('.payment-body');
+                    if (radio && radio.checked) {
+                        item.classList.add('border-[#04535C]');
+                        body?.classList.remove('hidden');
+                    } else {
+                        item.classList.remove('border-[#04535C]');
+                        body?.classList.add('hidden');
+                    }
+                });
+            }
+
+            paymentRadios.forEach(r => {
+                r.addEventListener('change', updatePaymentAccordion);
+            });
+
+            // --- Shipment Fee & Total Calculation ---
+            const shipmentRadios = document.querySelectorAll('.shipment-radio');
+            const shipmentCostElem = document.getElementById('checkout-shipment-cost');
+            const finalTotalElem = document.getElementById('checkout-final-total');
+            const baseSubtotal = 20.00; // Subtotal (20) + Vat (4) - Discount (4) = 20.00
+
+            shipmentRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    const isFast = radio.value === 'fast';
+                    const shippingFee = isFast ? 10.00 : 0.00;
+                    if (shipmentCostElem) shipmentCostElem.textContent = `$${shippingFee.toFixed(2)}`;
+                    const total = baseSubtotal + shippingFee;
+                    if (finalTotalElem) finalTotalElem.textContent = `$${total.toFixed(2)}`;
+                });
+            });
+
+            // --- Save Address Feedback ---
+            const saveAddressBtn = document.getElementById('save-address-btn');
+            saveAddressBtn?.addEventListener('click', () => {
+                const orig = saveAddressBtn.innerHTML;
+                saveAddressBtn.innerHTML = `
+                    <svg class="inline-block size-4 mr-1.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                    </svg> Address Saved!
+                `;
+                setTimeout(() => {
+                    saveAddressBtn.innerHTML = orig;
+                }, 1500);
+            });
+
+            // --- Place Order & Proceed to Checkout ---
+            const placeOrderBtn = document.getElementById('place-order-btn');
+            placeOrderBtn?.addEventListener('click', () => {
+                const fname = document.getElementById('billing-first-name')?.value.trim();
+                const lname = document.getElementById('billing-last-name')?.value.trim();
+                const phone = document.getElementById('billing-phone')?.value.trim();
+
+                // Basic validation check
+                if (!fname || !lname || !phone) {
+                    alert('Please complete the required billing and address fields (First Name, Last Name, Phone Number).');
+                    document.getElementById('billing-first-name')?.focus();
+                    return;
+                }
+
+                // Smooth navigation to Order Success
+                placeOrderBtn.innerHTML = `
+                    <svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                    </svg> Processing Order...
+                `;
+                setTimeout(() => {
+                    window.location.href = 'order-success.html';
+                }, 600);
+            });
+
+        });
+    </script>
+</body>
+
+</html>

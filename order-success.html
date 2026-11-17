@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storly - Order Success</title>
+    <link href="./assets/css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/logo.svg">
+    <style>
+        .fade-up-init {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .fade-up-init.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-white font-sans text-[#212529] antialiased">
+
+    <!-- Top Announcement Bar -->
+    <div class="flex h-[42px] w-full items-center justify-center bg-[#AAF27F] px-4">
+        <p class="text-center text-sm font-medium text-[#04535C]">
+            Free shipping on orders over 129 $
+        </p>
+    </div>
+
+    <!-- ================= MAIN HEADER ================= -->
+    <header class="sticky top-0 z-50 bg-white px-4 py-3 sm:px-6 sm:py-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)]">
+        <div class="mx-auto flex max-w-[1440px] items-center justify-between">
+
+            <!-- Hamburger Menu -->
+            <button type="button" id="menu-open-btn" aria-label="Open navigation menu"
+                class="group flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-white transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    class="text-[#04535C] transition-colors duration-300 group-hover:text-[#6CB33F]">
+                    <path d="M4 6h16" />
+                    <path d="M4 12h16" />
+                    <path d="M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Storly Logo -->
+            <a href="index.html" aria-label="Storly Home" class="shrink-0">
+                <img src="./assets/icons/logo.svg" alt="Storly Logo"
+                    class="block w-[135px] sm:w-[150px] h-auto object-contain">
+            </a>
+
+            <!-- Shopping Cart -->
+            <a href="cart.html" aria-label="Shopping Cart"
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#04535C] transition-colors duration-300 hover:bg-[#03434A]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="#AAF27F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="mx-auto max-w-[1440px]">
+            <form role="search" class="relative mt-4 w-full">
+                <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" viewBox="0 0 24 24" fill="none"
+                        stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                </span>
+                <input type="search" name="search" placeholder="Search for the items" aria-label="Search for items"
+                    class="h-12 w-full rounded-full border border-gray-200 bg-white py-3 pl-12 pr-4 text-sm text-[#04535C] outline-none placeholder:text-gray-400 focus:border-[#04535C]">
+            </form>
+        </div>
+    </header>
+
+    <!-- ================= BREADCRUMB ================= -->
+    <nav aria-label="Breadcrumb" class="py-5 bg-white">
+        <div class="mx-auto max-w-[1440px] px-4 sm:px-6">
+            <ul class="flex items-center gap-2 text-sm">
+                <li>
+                    <a href="index.html" class="flex items-center gap-1.5 text-[#212529] hover:text-[#04535C] font-medium transition-colors">
+                        <svg class="h-4 w-4" fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" fill="currentColor"/>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li class="flex items-center justify-center text-[#919EAB]">
+                    <span class="inline-block size-1 rounded-full bg-[#919EAB]"></span>
+                </li>
+                <li class="text-[#919EAB] font-normal">Order Success</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="mx-auto w-full max-w-[1440px] px-4 pb-16 sm:px-6">
+
+        <!-- SECTION 1: ORDER SUCCESS HERO BANNER -->
+        <section class="pb-8 sm:pb-12">
+            <div class="fade-up-init rounded-2xl border border-gray-200 bg-white p-6 sm:p-10 text-center shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+                <div class="mx-auto max-w-[440px]">
+                    <img src="./assets/images/order-success/oders-success.webp" alt="Order Success Illustration" class="mx-auto mb-5 block h-auto max-w-[140px] sm:max-w-[170px]" />
+                    <h1 class="mb-3 text-2xl font-bold leading-tight text-[#212529] sm:text-3xl">
+                        Thank you for your order!
+                    </h1>
+                    <p class="mb-6 text-sm sm:text-base leading-relaxed text-[#637381]">
+                        We're excited to let you know that we've received your order and it's now being processed.
+                    </p>
+                    <a href="index.html" class="inline-flex items-center justify-center rounded-lg bg-[#04535C] px-8 py-3 text-sm sm:text-base font-semibold text-[#AAF27F] transition-all duration-300 hover:bg-[#02414F] hover:text-white">
+                        Back To Home
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ORDER DETAILS & ORDER SUMMARY GRID -->
+        <section class="pb-16">
+            <div class="grid grid-cols-1 gap-8 xl:grid-cols-12">
+
+                <!-- LEFT COLUMN (8 cols): Order Details, Delivery Address, Feedback Form -->
+                <div class="space-y-6 xl:col-span-8">
+
+                    <!-- CARD 1: ORDER DETAILS -->
+                    <div class="fade-up-init rounded-2xl border border-gray-200 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+                        <div class="flex items-center justify-between border-b border-gray-200 px-6 py-4">
+                            <h3 class="flex items-center gap-2.5 text-base sm:text-lg font-bold text-[#212529]">
+                                <svg class="h-6 w-6 text-[#212529]" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 18.6458L4 8.05426C4 5.20025 4 3.77325 4.87868 2.88663C5.75736 2 7.17157 2 10 2L14 2C16.8284 2 18.2426 2 19.1213 2.88663C20 3.77325 20 5.20025 20 8.05426L20 18.6458C20 20.1575 20 20.9133 19.538 21.2108C18.7831 21.6971 17.6161 20.6774 17.0291 20.3073C16.5441 20.0014 16.3017 19.8485 16.0325 19.8397C15.7417 19.8301 15.4949 19.9768 14.9709 20.3073L13.06 21.5124C12.5445 21.8374 12.2868 22 12 22C11.7132 22 11.4555 21.8374 10.94 21.5124L9.02913 20.3073C8.54415 20.0014 8.30166 19.8485 8.03253 19.8397C7.74172 19.8301 7.49493 19.9768 6.97087 20.3073C6.38395 20.6774 5.21687 21.6971 4.46195 21.2108C4 20.9133 4 20.1575 4 18.6458Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M11 11L8 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M14 7L8 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                                Order Details
+                            </h3>
+                            <button type="button" class="text-sm sm:text-base font-medium text-[#04535C] hover:underline">
+                                Add New Address
+                            </button>
+                        </div>
+                        <div class="p-6">
+                            <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                                <div>
+                                    <p class="mb-1 text-xs sm:text-sm text-[#637381]">Order ID</p>
+                                    <p class="text-sm sm:text-base font-semibold text-[#212529]">#SC-9823410</p>
+                                </div>
+                                <div>
+                                    <p class="mb-1 text-xs sm:text-sm text-[#637381]">Status</p>
+                                    <span class="inline-block rounded-md bg-[#FFAA00]/20 px-2 py-0.5 text-xs font-semibold text-[#B76E00]">
+                                        Processing
+                                    </span>
+                                </div>
+                                <div>
+                                    <p class="mb-1 text-xs sm:text-sm text-[#637381]">Amount</p>
+                                    <p class="text-sm sm:text-base font-semibold text-[#212529]">$1,429.00</p>
+                                </div>
+                                <div>
+                                    <p class="mb-1 text-xs sm:text-sm text-[#637381]">Date</p>
+                                    <p class="text-sm sm:text-base font-semibold text-[#212529]">
+                                        11:12 AM, 24 April, 2027
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: DELIVERY ADDRESS -->
+                    <div class="fade-up-init rounded-2xl border border-gray-200 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+                        <div class="flex items-center justify-between border-b border-gray-200 px-6 py-4">
+                            <h3 class="flex items-center gap-2.5 text-base sm:text-lg font-bold text-[#212529]">
+                                <svg class="h-6 w-6 text-[#212529]" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="17" cy="18" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+                                    <circle cx="7" cy="18" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+                                    <path d="M11 17H15M13.5 7H14.4429C15.7533 7 16.4086 7 16.9641 7.31452C17.5196 7.62904 17.89 8.20972 18.6308 9.37107C19.1502 10.1854 19.6955 10.7765 20.4622 11.3024C21.2341 11.8318 21.6012 12.0906 21.8049 12.506C22 12.9038 22 13.375 22 14.3173C22 15.5596 22 16.1808 21.651 16.5755C21.636 16.5925 21.6207 16.609 21.6049 16.625C21.2375 17 20.6594 17 19.503 17H19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M13 7L13.9942 9.48556C14.4813 10.7034 14.7249 11.3123 15.2328 11.6561C15.7407 12 16.3965 12 17.7081 12H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M4.86957 17C3.51684 17 2.84048 17 2.42024 16.5607C2 16.1213 2 15.4142 2 14V7C2 5.58579 2 4.87868 2.42024 4.43934C2.84048 4 3.51684 4 4.86957 4H10.1304C11.4832 4 12.1595 4 12.5798 4.43934C13 4.87868 13 5.58579 13 7V17H8.69565" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                                Address
+                            </h3>
+                            <button type="button" class="text-sm sm:text-base font-medium text-[#04535C] hover:underline">
+                                Change
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2">
+                            <div>
+                                <h4 class="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#04535C]">
+                                    RECIPIENT
+                                </h4>
+                                <div class="space-y-1.5 text-sm sm:text-base text-[#637381]">
+                                    <p class="font-medium text-[#212529]">Leslie Alexander</p>
+                                    <p>1234 Elm Street</p>
+                                    <p>Anytown, USA 12345</p>
+                                </div>
+                            </div>
+                            <div class="border-t border-dashed border-gray-200 pt-6 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-6">
+                                <h4 class="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#04535C]">
+                                    Delivery Location
+                                </h4>
+                                <div class="space-y-1.5 text-sm sm:text-base text-[#637381]">
+                                    <p>4522 Oakwood Avenue, Suite 200</p>
+                                    <p>Beverly Hills, CA 90210</p>
+                                    <p>United States</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: FEEDBACK SECTION -->
+                    <div class="fade-up-init rounded-2xl border border-gray-200 bg-white p-6 shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+                        <h3 class="mb-6 text-base sm:text-lg font-bold text-[#212529]">
+                            How was your shopping experience?
+                        </h3>
+                        <form id="order-feedback-form" action="#" class="space-y-6">
+                            <!-- Rating Buttons -->
+                            <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                <!-- Poor Button -->
+                                <button type="button" data-rating="poor" class="feedback-rate-btn flex w-full items-center justify-center gap-2 rounded-lg bg-gray-100 p-4 text-sm font-medium uppercase text-[#495057] transition-all hover:bg-[#AAF27F] hover:text-[#04535C]">
+                                    <svg class="h-6 w-6" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></circle>
+                                        <path d="M9 16H15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <path d="M10 11L8.5 9.5M8.5 9.5L7 8M8.5 9.5L7 11M8.5 9.5L10 8M17 11L15.5 9.5M15.5 9.5L14 8M15.5 9.5L14 11M15.5 9.5L17 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    </svg>
+                                    POOR
+                                </button>
+                                <!-- Average Button (Default Active) -->
+                                <button type="button" data-rating="average" class="feedback-rate-btn active-rating flex w-full items-center justify-center gap-2 rounded-lg bg-[#AAF27F] p-4 text-sm font-medium uppercase text-[#04535C] transition-all hover:bg-[#AAF27F] hover:text-[#04535C]">
+                                    <svg class="h-6 w-6" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></circle>
+                                        <path d="M8 15C8.91212 16.2144 10.3643 17 12 17C13.6357 17 15.0879 16.2144 16 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <path d="M8.00897 9L8 9M16 9L15.991 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                    </svg>
+                                    Average
+                                </button>
+                                <!-- Great Button -->
+                                <button type="button" data-rating="great" class="feedback-rate-btn flex w-full items-center justify-center gap-2 rounded-lg bg-gray-100 p-4 text-sm font-medium uppercase text-[#495057] transition-all hover:bg-[#AAF27F] hover:text-[#04535C]">
+                                    <svg class="h-6 w-6" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12M8.5 2.62961C9.58934 2.22255 10.7687 2 12 2C13.2313 2 14.4107 2.22255 15.5 2.62961" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <path d="M7.51829 5.43325L8.04623 6.49786C8.11822 6.64606 8.3102 6.78821 8.47219 6.81543L9.42908 6.97573C10.041 7.07856 10.185 7.52618 9.74405 7.96775L9.00013 8.71781C8.87414 8.84484 8.80515 9.08982 8.84414 9.26524L9.05712 10.1937C9.2251 10.9287 8.83815 11.213 8.19322 10.8289L7.29632 10.2936C7.13433 10.1968 6.86736 10.1968 6.70238 10.2936L5.80548 10.8289C5.16355 11.213 4.77359 10.9257 4.94158 10.1937L5.15455 9.26524C5.19355 9.08982 5.12456 8.84484 4.99857 8.71781L4.25465 7.96775C3.8167 7.52618 3.95768 7.07856 4.56962 6.97573L5.52651 6.81543C5.68549 6.78821 5.87747 6.64606 5.94946 6.49786L6.47741 5.43325C6.76537 4.85558 7.23332 4.85558 7.51829 5.43325Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <path d="M17.5183 5.43325L18.0462 6.49786C18.1182 6.64606 18.3102 6.78821 18.4722 6.81543L19.4291 6.97573C20.041 7.07856 20.185 7.52618 19.744 7.96775L19.0001 8.71781C18.8741 8.84484 18.8051 9.08982 18.8441 9.26524L19.0571 10.1937C19.2251 10.9287 18.8381 11.213 18.1932 10.8289L17.2963 10.2936C17.1343 10.1968 16.8674 10.1968 16.7024 10.2936L15.8055 10.8289C15.1636 11.213 14.7736 10.9257 14.9416 10.1937L15.1546 9.26524C15.1935 9.08982 15.1246 8.84484 14.9986 8.71781L14.2547 7.96775C13.8167 7.52618 13.9577 7.07856 14.5696 6.97573L15.5265 6.81543C15.6855 6.78821 15.8775 6.64606 15.9495 6.49786L16.4774 5.43325C16.7654 4.85558 17.2333 4.85558 17.5183 5.43325Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <path d="M8 15C8.91212 16.2144 10.3643 17 12 17C13.6357 17 15.0879 16.2144 16 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    </svg>
+                                    Great
+                                </button>
+                            </div>
+
+                            <!-- Textarea -->
+                            <div class="relative w-full">
+                                <textarea id="feedback-message" rows="4" placeholder=" " required
+                                    class="peer block w-full rounded-lg border border-gray-300 px-4 py-3.5 text-base text-[#212529] outline-none transition focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]"></textarea>
+                                <label for="feedback-message"
+                                    class="absolute left-3.5 top-0 -translate-y-1/2 bg-white px-1 text-sm text-[#637381] transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-sm peer-focus:text-[#04535C]">
+                                    Share your experience*
+                                </label>
+                            </div>
+
+                            <!-- Name Field -->
+                            <div class="relative w-full">
+                                <input type="text" id="feedback-name" placeholder=" "
+                                    class="peer block w-full rounded-lg border border-gray-300 px-4 py-3.5 text-base text-[#212529] outline-none transition focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                <label for="feedback-name"
+                                    class="absolute left-3.5 top-0 -translate-y-1/2 bg-white px-1 text-sm text-[#637381] transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-sm peer-focus:text-[#04535C]">
+                                    Name
+                                </label>
+                            </div>
+
+                            <!-- Email Field -->
+                            <div class="relative w-full">
+                                <input type="email" id="feedback-email" placeholder=" "
+                                    class="peer block w-full rounded-lg border border-gray-300 px-4 py-3.5 text-base text-[#212529] outline-none transition focus:border-[#04535C] focus:ring-1 focus:ring-[#04535C]">
+                                <label for="feedback-email"
+                                    class="absolute left-3.5 top-0 -translate-y-1/2 bg-white px-1 text-sm text-[#637381] transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-sm peer-focus:text-[#04535C]">
+                                    Email
+                                </label>
+                            </div>
+
+                            <!-- Submit Feedback -->
+                            <div class="flex items-center justify-between">
+                                <span id="feedback-toast" class="hidden text-sm font-medium text-[#04535C]">
+                                    ✓ Thank you! Your feedback has been noted.
+                                </span>
+                                <button type="submit"
+                                    class="ml-auto inline-flex items-center justify-center rounded-lg bg-[#04535C] px-8 py-3 text-sm sm:text-base font-semibold text-[#AAF27F] transition-all hover:bg-[#02414F] hover:text-white">
+                                    Send Your Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN (4 cols): Order Summary & Payment Breakdown -->
+                <div class="xl:col-span-4">
+                    <div class="fade-up-init space-y-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+
+                        <!-- Item List Header -->
+                        <div>
+                            <h2 class="mb-5 text-lg sm:text-xl font-bold text-[#212529]">
+                                Order Summary
+                            </h2>
+                            <ul class="space-y-4">
+                                <!-- Product 1 -->
+                                <li class="flex items-center gap-3 rounded-xl border border-gray-200 p-3">
+                                    <div class="shrink-0 size-15 overflow-hidden rounded-lg bg-gray-50">
+                                        <img src="./assets/images/order-success/product-1.webp" alt="Nebulizer Ultrapar" class="h-full w-full object-cover">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="mb-1 truncate text-sm sm:text-base font-medium text-[#212529]">
+                                            Nebulizer Ultrapar
+                                        </h3>
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-xs sm:text-sm text-[#637381]">1 x 120 mg Pack</p>
+                                            <div class="flex items-center gap-1.5 text-xs sm:text-sm">
+                                                <span class="text-[#919EAB] line-through">$29.99</span>
+                                                <span class="font-semibold text-[#04535C]">$27.49</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Product 2 -->
+                                <li class="flex items-center gap-3 rounded-xl border border-gray-200 p-3">
+                                    <div class="shrink-0 size-15 overflow-hidden rounded-lg bg-gray-50">
+                                        <img src="./assets/images/order-success/product-2.webp" alt="Nebulizer Ultrapar" class="h-full w-full object-cover">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="mb-1 truncate text-sm sm:text-base font-medium text-[#212529]">
+                                            Nebulizer Ultrapar
+                                        </h3>
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-xs sm:text-sm text-[#637381]">1 x 120 mg Pack</p>
+                                            <div class="flex items-center gap-1.5 text-xs sm:text-sm">
+                                                <span class="text-[#919EAB] line-through">$29.99</span>
+                                                <span class="font-semibold text-[#04535C]">$27.49</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Product 3 -->
+                                <li class="flex items-center gap-3 rounded-xl border border-gray-200 p-3">
+                                    <div class="shrink-0 size-15 overflow-hidden rounded-lg bg-gray-50">
+                                        <img src="./assets/images/order-success/product-3.webp" alt="Nebulizer Ultrapar" class="h-full w-full object-cover">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="mb-1 truncate text-sm sm:text-base font-medium text-[#212529]">
+                                            Nebulizer Ultrapar
+                                        </h3>
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-xs sm:text-sm text-[#637381]">1 x 120 mg Pack</p>
+                                            <div class="flex items-center gap-1.5 text-xs sm:text-sm">
+                                                <span class="text-[#919EAB] line-through">$29.99</span>
+                                                <span class="font-semibold text-[#04535C]">$27.49</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Product 4 -->
+                                <li class="flex items-center gap-3 rounded-xl border border-gray-200 p-3">
+                                    <div class="shrink-0 size-15 overflow-hidden rounded-lg bg-gray-50">
+                                        <img src="./assets/images/order-success/product-4.webp" alt="Nebulizer Ultrapar" class="h-full w-full object-cover">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="mb-1 truncate text-sm sm:text-base font-medium text-[#212529]">
+                                            Nebulizer Ultrapar
+                                        </h3>
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-xs sm:text-sm text-[#637381]">1 x 120 mg Pack</p>
+                                            <div class="flex items-center gap-1.5 text-xs sm:text-sm">
+                                                <span class="text-[#919EAB] line-through">$29.99</span>
+                                                <span class="font-semibold text-[#04535C]">$27.49</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Payment Breakdown Card -->
+                        <div class="rounded-2xl bg-[#AAF27F]/30 p-6 border border-[#AAF27F]/40">
+                            <h3 class="mb-5 text-lg font-bold text-[#04535C]">
+                                Payment Summary
+                            </h3>
+                            <ul class="space-y-3.5 pb-4 text-sm sm:text-base text-[#04535C]">
+                                <li class="flex items-center justify-between">
+                                    <span>Sub-Total</span>
+                                    <span class="font-semibold">$20.00</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <span>Vat (40%)</span>
+                                    <span class="font-semibold">$4.00</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <span>Discount</span>
+                                    <span class="font-semibold text-[#04535C]">-$4.00</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <span>Shipment</span>
+                                    <span class="font-semibold">$0.00</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <span>Tax</span>
+                                    <span class="font-semibold">$0.00</span>
+                                </li>
+                            </ul>
+                            <div class="flex items-center justify-between border-t border-[#04535C]/20 pt-4 text-base sm:text-lg font-bold text-[#04535C]">
+                                <span>Total</span>
+                                <span>$20.00</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: 4-COLUMN BENEFIT CARDS -->
+        <section class="py-12 border-t border-gray-200">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+                <!-- Item 1: Free Shipping -->
+                <div class="fade-up-init rounded-2xl border border-gray-200 bg-white p-6 text-center transition-all hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
+                    <div class="mx-auto mb-4 flex size-14 items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F]">
+                        <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="22.6667" cy="23.9987" r="2.66667" stroke="currentColor" stroke-width="1.5" />
+                            <circle cx="9.33366" cy="23.9987" r="2.66667" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M14.667 22.6654H20.0003M18.0003 9.33203H19.2575C21.0048 9.33203 21.8784 9.33203 22.6191 9.75139C23.3598 10.1707 23.8536 10.945 24.8414 12.4935C25.534 13.5793 26.2609 14.3674 27.2832 15.0685C28.3125 15.7745 28.8019 16.1195 29.0735 16.6734C29.3337 17.2038 29.3337 17.832 29.3337 19.0885C29.3337 20.7449 29.3337 21.5731 28.8683 22.0994C28.8484 22.122 28.8279 22.144 28.8069 22.1654C28.317 22.6654 27.5461 22.6654 26.0044 22.6654H25.3337" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M17.333 9.33203L18.6586 12.6461C19.3081 14.2699 19.6329 15.0817 20.3101 15.5402C20.9873 15.9987 21.8617 15.9987 23.6105 15.9987H27.9997" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M6.49308 22.6654C4.68944 22.6654 3.78763 22.6654 3.22731 22.0796C2.66699 21.4938 2.66699 20.551 2.66699 18.6654V9.33203C2.66699 7.44641 2.66699 6.5036 3.22731 5.91782C3.78763 5.33203 4.68944 5.33203 6.49308 5.33203H13.5076C15.3112 5.33203 16.213 5.33203 16.7733 5.91782C17.3337 6.5036 17.3337 7.44641 17.3337 9.33203V22.6654H11.5945" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h4 class="mb-2 text-base sm:text-lg font-bold text-[#212529]">Free Shipping</h4>
+                    <p class="text-sm leading-relaxed text-[#637381]">
+                        Enjoy the Convenience of Free Shipping on Every Order
+                    </p>
+                </div>
+
+                <!-- Item 2: 24x7 Support -->
+                <div class="fade-up-init rounded-2xl border border-gray-200 bg-white p-6 text-center transition-all hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
+                    <div class="mx-auto mb-4 flex size-14 items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F]">
+                        <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.666 14.4059C22.666 13.9451 22.666 13.7147 22.7354 13.5093C22.937 12.9126 23.4684 12.681 24.0008 12.4385C24.5993 12.1659 24.8986 12.0296 25.1951 12.0056C25.5317 11.9784 25.869 12.0509 26.1567 12.2124C26.5381 12.4265 26.8042 12.8332 27.0765 13.164C28.3343 14.6918 28.9633 15.4557 29.1934 16.2981C29.3791 16.9779 29.3791 17.6888 29.1934 18.3686C28.8577 19.5972 27.7973 20.6271 27.0124 21.5805C26.6109 22.0682 26.4101 22.312 26.1567 22.4543C25.869 22.6158 25.5317 22.6883 25.1951 22.6611C24.8986 22.6371 24.5993 22.5008 24.0008 22.2282C23.4684 21.9857 22.937 21.7541 22.7354 21.1574C22.666 20.952 22.666 20.7216 22.666 20.2607V14.4059Z" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M9.33301 14.4062C9.33301 13.8258 9.31671 13.3043 8.84756 12.8963C8.67691 12.7479 8.45068 12.6448 7.99822 12.4387C7.39968 12.1661 7.10042 12.0298 6.80389 12.0058C5.91423 11.9339 5.43557 12.5411 4.92251 13.1642C3.66467 14.692 3.03576 15.4559 2.80563 16.2983C2.61991 16.9781 2.61991 17.689 2.80563 18.3688C3.14128 19.5975 4.2017 20.6274 4.98662 21.5807C5.48139 22.1817 5.95403 22.73 6.80389 22.6613C7.10042 22.6373 7.39968 22.501 7.99822 22.2284C8.45068 22.0223 8.67691 21.9192 8.84756 21.7708C9.31671 21.3628 9.33301 20.8413 9.33301 20.261V14.4062Z" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M6.66602 12C6.66602 7.58172 10.8447 4 15.9993 4C21.154 4 25.3327 7.58172 25.3327 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round" />
+                            <path d="M25.333 22.668V23.7346C25.333 26.0911 22.9452 28.0013 19.9997 28.0013H17.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h4 class="mb-2 text-base sm:text-lg font-bold text-[#212529]">24x7 Support</h4>
+                    <p class="text-sm leading-relaxed text-[#637381]">
+                        Round-the-Clock Assistance, Anytime You Need It
+                    </p>
+                </div>
+
+                <!-- Item 3: 30 Days Return -->
+                <div class="fade-up-init rounded-2xl border border-gray-200 bg-white p-6 text-center transition-all hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
+                    <div class="mx-auto mb-4 flex size-14 items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F]">
+                        <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.931 4H5.06966C4.06895 4 3.56859 4 3.22215 4.23634C3.05056 4.3534 2.90877 4.50812 2.80788 4.68836C2.6042 5.05227 2.65398 5.5439 2.75356 6.52716C2.91976 8.16832 3.00286 8.9889 3.43796 9.57558C3.65478 9.86793 3.92967 10.1136 4.24585 10.2975C4.88031 10.6667 5.71546 10.6667 7.38576 10.6667H24.6149C26.2852 10.6667 27.1203 10.6667 27.7548 10.2975C28.071 10.1136 28.3459 9.86793 28.5627 9.57558C28.9978 8.9889 29.0809 8.16832 29.2471 6.52716C29.3467 5.5439 29.3965 5.05227 29.1928 4.68836C29.0919 4.50812 28.9501 4.3534 28.7785 4.23634C28.4321 4 27.9317 4 26.931 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4 10.668V17.3891C4 22.0013 7.5 28.0013 14.6667 28.0013H24.0006C26.2557 28.0013 28 26.257 28 24.0013V10.668" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M13.333 14.668H18.6663" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h4 class="mb-2 text-base sm:text-lg font-bold text-[#212529]">30 Days Return</h4>
+                    <p class="text-sm leading-relaxed text-[#637381]">
+                        Your Satisfaction is Our Priority: Return Any Product Within 30 Days
+                    </p>
+                </div>
+
+                <!-- Item 4: Secure Payment -->
+                <div class="fade-up-init rounded-2xl border border-gray-200 bg-white p-6 text-center transition-all hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
+                    <div class="mx-auto mb-4 flex size-14 items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F]">
+                        <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.667 24.6654C18.667 24.6654 20.0003 24.6654 21.3337 27.332C21.3337 27.332 25.569 20.6654 29.3337 19.332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7.33301 15.332H7.32103" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14.667 26.0013H14.0003C8.98889 26.0013 6.48317 26.0013 4.81027 24.6801C4.5427 24.4688 4.29524 24.2359 4.07073 23.9841C2.66699 22.4096 2.66699 20.0513 2.66699 15.3346C2.66699 10.618 2.66699 8.25967 4.07073 6.68517C4.29524 6.43334 4.5427 6.20044 4.81027 5.98913C6.48317 4.66797 8.98889 4.66797 14.0003 4.66797H18.0003C23.0118 4.66797 25.5175 4.66797 27.1904 5.98913C27.458 6.20044 27.7054 6.43334 27.9299 6.68517C29.1947 8.10375 29.3199 10.1586 29.3323 14.0013V14.668" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M19.3337 15.3333C19.3337 17.1743 17.8413 18.6667 16.0003 18.6667C14.1594 18.6667 12.667 17.1743 12.667 15.3333C12.667 13.4924 14.1594 12 16.0003 12C17.8413 12 19.3337 13.4924 19.3337 15.3333Z" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <h4 class="mb-2 text-base sm:text-lg font-bold text-[#212529]">Secure Payment</h4>
+                    <p class="text-sm leading-relaxed text-[#637381]">
+                        Seamless Shopping Backed by Safe and Secure Payment Options
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SECTION 4: TRUST / BENEFITS STRIP -->
+    <div class="border-y border-gray-200 bg-white py-8">
+        <div class="mx-auto max-w-[1440px] px-4 sm:px-6">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 min-[1293px]:grid-cols-4 2xl:gap-11">
+                <!-- 1. Over 200+ Countries -->
+                <div class="flex items-center gap-4">
+                    <div class="inline-flex size-12 items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="17" cy="18" r="2" stroke="currentColor" stroke-width="1.5" />
+                            <circle cx="7" cy="18" r="2" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M11 17H15M13.5 7H14.4429C15.7533 7 16.4086 7 16.9641 7.31452C17.5196 7.62904 17.89 8.20972 18.6308 9.37107C19.1502 10.1854 19.6955 10.7765 20.4622 11.3024C21.2341 11.8318 21.6012 12.0906 21.8049 12.506C22 12.9038 22 13.375 22 14.3173C22 15.5596 22 16.1808 21.651 16.5755C21.636 16.5925 21.6207 16.609 21.6049 16.625C21.2375 17 20.6594 17 19.503 17H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M13 7L13.9942 9.48556C14.4813 10.7034 14.7249 11.3123 15.2328 11.6561C15.7407 12 16.3965 12 17.7081 12L21 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4.86957 17C3.51684 17 2.84048 17 2.42024 16.5607C2 16.1213 2 15.4142 2 14L2 7C2 5.58579 2 4.87868 2.42024 4.43934C2.84048 4 3.51684 4 4.86957 4L10.1304 4C11.4832 4 12.1595 4 12.5798 4.43934C13 4.87868 13 5.58579 13 7L13 17L8.69565 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-base font-normal leading-6 text-gray-500">Shipping to</p>
+                        <p class="font-medium text-gray-900">Over 200+ Countries</p>
+                    </div>
+                </div>
+
+                <!-- 2. 100% Secure Checkout -->
+                <div class="flex items-center gap-4">
+                    <div class="inline-flex size-12 items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M11.9982 2C8.99043 2 7.04018 4.01899 4.73371 4.7549C3.79589 5.05413 3.32697 5.20374 3.1372 5.41465C2.94743 5.62556 2.89186 5.93375 2.78072 6.55013C1.59143 13.146 4.1909 19.244 10.3903 21.6175C11.0564 21.8725 11.3894 22 12.0015 22C12.6135 22 12.9466 21.8725 13.6126 21.6175C19.8116 19.2439 22.4086 13.146 21.219 6.55013C21.1078 5.93364 21.0522 5.6254 20.8624 5.41449C20.6726 5.20358 20.2037 5.05405 19.2659 4.75499C16.9585 4.01915 15.0061 2 11.9982 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 13C9 13 10 13 11 15C11 15 14.1765 10 17 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-base font-normal leading-6 text-gray-900">100% Secure</p>
+                        <p class="font-medium text-gray-500">Checkout</p>
+                    </div>
+                </div>
+
+                <!-- 3. Outstanding Support -->
+                <div class="flex items-center gap-4">
+                    <div class="inline-flex size-12 items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M17 10.8045C17 10.4588 17 10.286 17.052 10.132C17.2032 9.68444 17.6018 9.51076 18.0011 9.32888C18.45 9.12442 18.6744 9.02219 18.8968 9.0042C19.1493 8.98378 19.4022 9.03818 19.618 9.15929C19.9041 9.31984 20.1036 9.62493 20.3079 9.87302C21.2513 11.0188 21.7229 11.5918 21.8955 12.2236C22.0348 12.7334 22.0348 13.2666 21.8955 13.7764C21.6438 14.6979 20.8485 15.4704 20.2598 16.1854C19.9587 16.5511 19.8081 16.734 19.618 16.8407C19.4022 16.9618 19.1493 17.0162 18.8968 16.9958C18.6744 16.9778 18.45 16.8756 18.0011 16.6711C17.6018 16.4892 17.2032 16.3156 17.052 15.868C17 15.714 17 15.5412 17 15.1955V10.8045Z" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M7 10.8046C7 10.3694 6.98778 9.97821 6.63591 9.6722C6.50793 9.5609 6.33825 9.48361 5.99891 9.32905C5.55001 9.12458 5.32556 9.02235 5.10316 9.00436C4.43591 8.9504 4.07692 9.40581 3.69213 9.87318C2.74875 11.019 2.27706 11.5919 2.10446 12.2237C1.96518 12.7336 1.96518 13.2668 2.10446 13.7766C2.3562 14.6981 3.15152 15.4705 3.74021 16.1856C4.11129 16.6363 4.46577 17.0475 5.10316 16.996C5.32556 16.978 5.55001 16.8757 5.99891 16.6713C6.33825 16.5167 6.50793 16.4394 6.63591 16.3281C6.98778 16.0221 7 15.631 7 15.1957V10.8046Z" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M5 9C5 5.68629 8.13401 3 12 3C15.866 3 19 5.68629 19 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round" />
+                            <path d="M19 17V17.8C19 19.5673 17.2091 21 15 21H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-base font-normal leading-6 text-gray-900">Outstanding</p>
+                        <p class="font-medium text-gray-500">Support</p>
+                    </div>
+                </div>
+
+                <!-- 4. Over 9K+ 5-Star Reviews -->
+                <div class="flex items-center gap-4">
+                    <div class="inline-flex size-12 items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path d="M12.4791 2.19418L14.2389 5.74288C14.4789 6.23687 15.1188 6.7107 15.6587 6.80143L18.8484 7.33575C20.8882 7.67853 21.3681 9.17059 19.8983 10.6425L17.4186 13.1427C16.9986 13.5661 16.7686 14.3827 16.8986 14.9675L17.6085 18.0625C18.1685 20.5123 16.8786 21.46 14.7289 20.1796L11.7392 18.3952C11.1992 18.0726 10.3093 18.0726 9.7594 18.3952L6.76973 20.1796C4.62997 21.46 3.33011 20.5022 3.89005 18.0625L4.59997 14.9675C4.72996 14.3827 4.49998 13.5661 4.08003 13.1427L1.6003 10.6425C0.140465 9.17059 0.610413 7.67853 2.65019 7.33575L5.83984 6.80143C6.36978 6.7107 7.00971 6.23687 7.24968 5.74288L9.00949 2.19418C9.96938 0.268607 11.5292 0.268607 12.4791 2.19418Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-base font-normal leading-6 text-gray-900">Over 9K+ 5-Star</p>
+                        <p class="font-medium text-gray-500">Genuine Reviews</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <!-- Footer Nav -->
+        <div class="pt-12 pb-8">
+            <div class="mx-auto max-w-[1440px] px-4 sm:px-6">
+                <div class="flex flex-col justify-between gap-6 min-[1293px]:flex-row">
+                    <div class="min-[1293px]:w-4/12 2xl:w-3/12">
+                        <a class="mb-5 block" href="index.html">
+                            <img alt="Storly Logo" src="./assets/icons/logo.svg" />
+                        </a>
+                        <p class="mb-5 md:pr-10 text-sm leading-relaxed text-[#637381]">
+                            From Our Trusted Store to Your Doorstep, Delivering Quality with Convenience
+                        </p>
+                        <div class="mb-5 flex items-center gap-4">
+                            <a href="#" aria-label="Facebook" class="text-[#212529] hover:text-[#04535C] transition-colors">
+                                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M17 8.75C17.4142 8.75 17.75 8.41421 17.75 8C17.75 7.58579 17.4142 7.25 17 7.25V8V8.75ZM16 8V8.75V8ZM11.25 21.5C11.25 21.9142 11.5858 22.25 12 22.25C12.4142 22.25 12.75 21.9142 12.75 21.5H12H11.25ZM10 13.25C9.58579 13.25 9.25 13.5858 9.25 14C9.25 14.4142 9.58579 14.75 10 14.75V14V13.25ZM15 14.75C15.4142 14.75 15.75 14.4142 15.75 14C15.75 13.5858 15.4142 13.25 15 13.25V14V14.75ZM17 8V7.25H16V8V8.75H17V8ZM12 12H11.25V21.5H12H12.75V12H12ZM16 8V7.25C15.0784 7.25 14.3117 7.24841 13.7055 7.32991C13.0777 7.41432 12.5109 7.59999 12.0555 8.05546L12.5858 8.58579L13.1161 9.11612C13.2464 8.9858 13.4439 8.87858 13.9054 8.81654C14.3884 8.75159 15.036 8.75 16 8.75V8ZM12 12H12.75C12.75 11.036 12.7516 10.3884 12.8165 9.90539C12.8786 9.44393 12.9858 9.24643 13.1161 9.11612L12.5858 8.58579L12.0555 8.05546C11.6 8.51093 11.4143 9.07773 11.3299 9.70552C11.2484 10.3117 11.25 11.0784 11.25 12H12ZM10 14V14.75H15V14V13.25H10V14Z" fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="X / Twitter" class="text-[#212529] hover:text-[#04535C] transition-colors">
+                                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 21L10.5484 13.4516M10.5484 13.4516L3 3H8L13.4516 10.5484M10.5484 13.4516L16 21H21L13.4516 10.5484M21 3L13.4516 10.5484" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Instagram" class="text-[#212529] hover:text-[#04535C] transition-colors">
+                                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.51472 16.5 7.5 14.4853 7.5 12C7.5 9.51472 9.51472 7.5 12 7.5C14.4853 7.5 16.5 9.51472 16.5 12Z" stroke="currentColor" stroke-width="1.5"></path>
+                                    <path d="M17.5078 6.5L17.4988 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" class="text-[#212529] hover:text-[#04535C] transition-colors">
+                                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 10V17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M11 13V17M11 13C11 11.3431 12.3431 10 14 10C15.6569 10 17 11.3431 17 13V17M11 13V10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path d="M7.00801 7L6.99902 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                    <path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 md:grid-cols-12 min-[1293px]:w-8/12 2xl:w-8/12">
+                        <div class="md:col-span-3">
+                            <h4 class="mb-5 text-base sm:text-lg font-medium text-[#212529]">Menu</h4>
+                            <nav>
+                                <ul class="space-y-4 text-sm sm:text-base text-gray-500">
+                                    <li><a class="hover:text-[#04535C] transition-all hover:underline" href="about.html">About</a></li>
+                                    <li><a class="hover:text-[#04535C] transition-all hover:underline" href="index.html">Delivery</a></li>
+                                    <li><a class="hover:text-[#04535C] transition-all hover:underline" href="contact.html">FAQ</a></li>
+                                    <li><a class="hover:text-[#04535C] transition-all hover:underline" href="blog.html?view=list">Blog</a></li>
+                                    <li><a class="hover:text-[#04535C] transition-all hover:underline" href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h4 class="mb-5 text-base sm:text-lg font-medium text-[#212529]">Category</h4>
+                            <nav>
+                                <ul class="space-y-4 text-sm sm:text-base text-gray-500">
+                                    <li><a class="hover:text-[#04535C] transition-all hover:underline" href="index.html">Grocery</a></li>
+                                    <li><a class="hover:text-[#04535C] transition-all hover:underline" href="index.html">Bakery</a></li>
+                                    <li><a class="hover:text-[#04535C] transition-all hover:underline" href="index.html">Ice-cream</a></li>
+                                    <li><a class="hover:text-[#04535C] transition-all hover:underline" href="index.html">Energy Drinks</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-span-full md:col-span-6">
+                            <h4 class="mb-5 text-base sm:text-lg font-medium text-[#212529]">Customer Services</h4>
+                            <ul class="space-y-4 text-sm sm:text-base text-gray-500">
+                                <li class="flex items-center gap-2">
+                                    <svg class="shrink-0" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.77762 11.9424C2.8296 10.2893 2.37185 8.93948 2.09584 7.57121C1.68762 5.54758 2.62181 3.57081 4.16938 2.30947C4.82345 1.77638 5.57323 1.95852 5.96 2.6524L6.83318 4.21891C7.52529 5.46057 7.87134 6.08139 7.8027 6.73959C7.73407 7.39779 7.26737 7.93386 6.33397 9.00601L3.77762 11.9424ZM3.77762 11.9424C5.69651 15.2883 8.70784 18.3013 12.0576 20.2224M12.0576 20.2224C13.7107 21.1704 15.0605 21.6282 16.4288 21.9042C18.4524 22.3124 20.4292 21.3782 21.6905 19.8306C22.2236 19.1766 22.0415 18.4268 21.3476 18.04L19.7811 17.1668C18.5394 16.4747 17.9186 16.1287 17.2604 16.1973C16.6022 16.2659 16.0661 16.7326 14.994 17.666L12.0576 20.2224Z" stroke="#495057" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    </svg>
+                                    +1 (555) 666-77-88
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="shrink-0" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.6177 21.367C13.1841 21.773 12.6044 22 12.0011 22C11.3978 22 10.8182 21.773 10.3845 21.367C6.41302 17.626 1.09076 13.4469 3.68627 7.37966C5.08963 4.09916 8.45834 2 12.0011 2C15.5439 2 18.9126 4.09916 20.316 7.37966C22.9082 13.4393 17.599 17.6389 13.6177 21.367Z" stroke="#495057" stroke-width="1.5"></path>
+                                        <path d="M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z" stroke="#495057" stroke-width="1.5"></path>
+                                    </svg>
+                                    help@company.com
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="shrink-0" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 8.5L9.94202 10.2394C11.6572 11.2535 12.3428 11.2535 14.058 10.2394L17 8.5" stroke="#495057" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <path d="M2.01577 13.4756C2.08114 16.5412 2.11383 18.0739 3.24496 19.2094C4.37608 20.3448 5.95033 20.3843 9.09883 20.4634C11.0393 20.5122 12.9607 20.5122 14.9012 20.4634C18.0497 20.3843 19.6239 20.3448 20.7551 19.2094C21.8862 18.0739 21.9189 16.5412 21.9842 13.4756C22.0053 12.4899 22.0053 11.5101 21.9842 10.5244C21.9189 7.45886 21.8862 5.92609 20.7551 4.79066C19.6239 3.65523 18.0497 3.61568 14.9012 3.53657C12.9607 3.48781 11.0393 3.48781 9.09882 3.53656C5.95033 3.61566 4.37608 3.65521 3.24495 4.79065C2.11382 5.92608 2.08114 7.45885 2.01576 10.5244C1.99474 11.5101 1.99475 12.4899 2.01577 13.4756Z" stroke="#495057" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    </svg>
+                                    2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-200 pt-8 pb-10">
+            <div class="mx-auto max-w-[1440px] px-4 sm:px-6 flex flex-col items-center justify-between gap-8 text-center md:flex-row md:text-left">
+                <div>
+                    <p class="text-sm text-gray-600">
+                        © 2026 Storely. All rights reserved. By
+                        <a class="text-[#04535C] hover:underline" href="#">Createuiux</a>
+                    </p>
+                </div>
+                <div class="flex gap-2">
+                    <img alt="Visa" src="./assets/images/payment-logo/payment-1.svg" />
+                    <img alt="Mastercard" src="./assets/images/payment-logo/payment-2.svg" />
+                    <img alt="Amex" src="./assets/images/payment-logo/payment-3.svg" />
+                    <img alt="Paypal" src="./assets/images/payment-logo/payment-4.svg" />
+                    <img alt="Discover" src="./assets/images/payment-logo/payment-5.svg" />
+                    <img alt="Maestro" src="./assets/images/payment-logo/payment-6.svg" />
+                </div>
+                <div class="hidden lg:block">
+                    <nav class="flex gap-5 text-sm text-gray-600">
+                        <a href="privacy-policy.html" class="hover:text-[#04535C]"> Privacy Policy </a>
+                        <a href="term-and-conditions.html" class="hover:text-[#04535C]"> Terms &amp; Conditions </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MOBILE / RESPONSIVE SIDEBAR DRAWER ================= -->
+    <div id="sidebar-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0"
+        aria-hidden="true">
+
+        <!-- Backdrop Overlay -->
+        <div id="sidebar-overlay" class="absolute inset-0 bg-gray-900/50 backdrop-blur-sm cursor-pointer"></div>
+
+        <!-- Drawer Panel -->
+        <div id="sidebar-panel"
+            class="relative flex h-full w-full max-w-[320px] sm:max-w-[350px] flex-col bg-white shadow-2xl transition-transform duration-300 ease-out -translate-x-full">
+
+            <!-- Drawer Header -->
+            <div class="flex items-center justify-between border-b border-gray-200 px-5 py-4">
+                <a href="index.html" aria-label="Storly Home" class="shrink-0">
+                    <img src="./assets/icons/logo.svg" alt="Storly Logo" class="block w-[110px] h-auto object-contain">
+                </a>
+                <button type="button" id="sidebar-close-btn" aria-label="Close navigation menu"
+                    class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Scrollable Navigation Content -->
+            <div class="flex-1 space-y-6 overflow-y-auto overscroll-contain px-5 py-4 [scrollbar-width:thin]">
+
+                <!-- Nav Menu List -->
+                <nav class="space-y-1">
+
+                    <!-- Menu 1: Home -->
+                    <div class="sidebar-accordion">
+                        <button type="button"
+                            class="sidebar-accordion-btn group flex w-full items-center justify-between border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]">
+                            <span>Home</span>
+                            <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="sidebar-accordion-content hidden grid grid-cols-2 gap-x-4 gap-y-2 border-b border-gray-200 py-2 pl-4">
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V1</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V2</a>
+                            <a class="block py-1 text-sm font-semibold text-[#04535C]" href="index.html">Grocery V3</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V4</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V5</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V6</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Chocolate</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Bakery V1</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Bakery V2</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Grocery V7</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Coffee &amp; Tea</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Ice Cream</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Frozen Food</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Juice</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Sweets</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]" href="index.html">Energy Drink</a>
+                        </div>
+                    </div>
+
+                    <!-- Menu 2: About Us -->
+                    <a class="block w-full border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]"
+                        href="about.html">
+                        About Us
+                    </a>
+
+                    <!-- Menu 3: Shop (Dropdown Accordion with Shop - Order Success) -->
+                    <div class="sidebar-accordion">
+                        <button type="button"
+                            class="sidebar-accordion-btn group flex w-full items-center justify-between border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]">
+                            <span>Shop</span>
+                            <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="sidebar-accordion-content hidden space-y-2 border-b border-gray-200 py-2 pl-4">
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="product-details.html">Product Details</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="cart.html">Shop - Cart</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="check-out.html">Shop - Checkout</a>
+                            <a class="block py-1 text-sm font-semibold text-[#04535C] transition"
+                                href="order-success.html">Shop - Order Success</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="wishlist.html">Shop - Wishlist</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="vendor-grid.html">Shop - Vendor</a>
+                        </div>
+                    </div>
+
+                    <!-- Menu 4: Sellers -->
+                    <div class="sidebar-accordion">
+                        <button type="button"
+                            class="sidebar-accordion-btn group flex w-full items-center justify-between border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]">
+                            <span>Sellers</span>
+                            <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="sidebar-accordion-content hidden space-y-2 border-b border-gray-200 py-2 pl-4">
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="seller-grid.html">Seller Grid</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="seller-list.html">Seller List</a>
+                        </div>
+                    </div>
+
+                    <!-- Menu 5: Mega Menu -->
+                    <div class="sidebar-accordion">
+                        <button type="button"
+                            class="sidebar-accordion-btn group flex w-full items-center justify-between border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]">
+                            <span>Mega Menu</span>
+                            <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="sidebar-accordion-content hidden space-y-2 border-b border-gray-200 py-2 pl-4">
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="banner-with-left-sidebar-3-column.html">Grid - 1 Column</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="banner-with-left-sidebar-3-column.html">Grid - 2 Columns</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="banner-with-left-sidebar-3-column.html">Grid - 3 Columns</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="banner-with-left-sidebar-3-column.html">Grid - 4 Columns</a>
+                        </div>
+                    </div>
+
+                    <!-- Menu 6: Pages -->
+                    <div class="sidebar-accordion">
+                        <button type="button"
+                            class="sidebar-accordion-btn group flex w-full items-center justify-between border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]">
+                            <span>Pages</span>
+                            <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="sidebar-accordion-content hidden space-y-2 border-b border-gray-200 py-2 pl-4">
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="about.html">About Us</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="contact.html">Contact Us</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="faq.html">FAQ</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="privacy-policy.html">Privacy Policy</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="term-and-conditions.html">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+
+                    <!-- Menu 7: Blog -->
+                    <div class="sidebar-accordion">
+                        <button type="button"
+                            class="sidebar-accordion-btn group flex w-full items-center justify-between border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]">
+                            <span>Blog</span>
+                            <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="sidebar-accordion-content hidden space-y-2 border-b border-gray-200 py-2 pl-4">
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="blog.html?view=list">Blog List</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="blog.html?view=grid">Blog Grid</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="blog-details.html">Blog Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Menu 8: Contact -->
+                    <a class="block w-full border-b border-gray-200 py-3 text-base font-medium text-[#212529] transition-colors hover:text-[#04535C]"
+                        href="contact.html">
+                        Contact
+                    </a>
+
+                </nav>
+
+                <!-- Log In / Contact Details Card -->
+                <div class="space-y-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
+                    <a href="signup.html" class="group flex w-full cursor-pointer items-center gap-4 text-left">
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F]">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                        <span class="text-base font-medium text-gray-700 transition group-hover:text-[#04535C]">
+                            Log in / Sign Up
+                        </span>
+                    </a>
+                    <div class="flex items-center gap-4">
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#04535C] text-[#AAF27F]">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                        <span class="text-base font-medium text-gray-700">888-777-999</span>
+                    </div>
+                </div>
+
+                <!-- Follow Us Section -->
+                <div class="space-y-3 pb-6">
+                    <h4 class="text-base font-bold text-[#212529]">Follow us</h4>
+                    <div class="flex items-center gap-4 text-[#212529]">
+                        <a href="#" aria-label="Facebook" class="transition-colors hover:text-[#04535C]">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="X (Twitter)" class="transition-colors hover:text-[#04535C]">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M3 21L10.5484 13.4516M10.5484 13.4516L3 3H8L13.4516 10.5484M10.5484 13.4516L16 21H21L13.4516 10.5484M21 3L13.4516 10.5484" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="transition-colors hover:text-[#04535C]">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="transition-colors hover:text-[#04535C]">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Circular Scroll Progress Indicator -->
+    <button id="scroll-progress-btn" type="button" aria-label="Scroll to top"
+        class="fixed right-6 bottom-6 z-50 flex size-14 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] transition-all duration-300 hover:scale-110 active:scale-95 opacity-0 pointer-events-none group">
+        <svg class="size-14 -rotate-90 pointer-events-none" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="25" fill="none" stroke="#E5E7EB" stroke-width="2.5" />
+            <circle id="scroll-progress-circle" cx="30" cy="30" r="25" fill="none" stroke="#04535C" stroke-width="2.5"
+                stroke-linecap="round" stroke-dasharray="157.08" stroke-dashoffset="157.08"
+                class="transition-[stroke-dashoffset] duration-150 ease-out" />
+        </svg>
+        <span id="scroll-progress-text"
+            class="absolute text-xs font-semibold text-[#04535C] select-none tracking-tight">0%</span>
+    </button>
+
+    <!-- Page Scripts -->
+    <script>
+        // 1. Sidebar Drawer Toggle
+        (function () {
+            const openBtn = document.getElementById('menu-open-btn');
+            const closeBtn = document.getElementById('sidebar-close-btn');
+            const drawer = document.getElementById('sidebar-drawer');
+            const overlay = document.getElementById('sidebar-overlay');
+            const panel = document.getElementById('sidebar-panel');
+
+            function openSidebar() {
+                if (!drawer || !panel) return;
+                drawer.classList.remove('pointer-events-none', 'opacity-0');
+                drawer.classList.add('pointer-events-auto', 'opacity-100');
+                panel.classList.remove('-translate-x-full');
+                panel.classList.add('translate-x-0');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeSidebar() {
+                if (!drawer || !panel) return;
+                drawer.classList.remove('pointer-events-auto', 'opacity-100');
+                drawer.classList.add('pointer-events-none', 'opacity-0');
+                panel.classList.remove('translate-x-0');
+                panel.classList.add('-translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openSidebar);
+            if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+            if (overlay) overlay.addEventListener('click', closeSidebar);
+
+            // Accordion Toggles
+            const accordionBtns = document.querySelectorAll('.sidebar-accordion-btn');
+            accordionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('svg');
+                    const isOpen = !content.classList.contains('hidden');
+
+                    if (isOpen) {
+                        content.classList.add('hidden');
+                        if (icon) icon.classList.remove('rotate-180');
+                        btn.classList.remove('text-[#04535C]');
+                    } else {
+                        content.classList.remove('hidden');
+                        if (icon) icon.classList.add('rotate-180');
+                        btn.classList.add('text-[#04535C]');
+                    }
+                });
+            });
+
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeSidebar();
+            });
+        })();
+
+        // 2. Scroll Progress & Scroll-to-Top
+        (function () {
+            const progressBtn = document.getElementById('scroll-progress-btn');
+            const progressCircle = document.getElementById('scroll-progress-circle');
+            const progressText = document.getElementById('scroll-progress-text');
+
+            if (!progressBtn || !progressCircle || !progressText) return;
+
+            const circumference = 2 * Math.PI * 25; // ~157.08
+
+            function onScroll() {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const progress = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+
+                const offset = circumference - (progress * circumference);
+                progressCircle.style.strokeDashoffset = offset;
+
+                const percent = Math.min(100, Math.max(0, Math.round(progress * 100)));
+                progressText.textContent = `${percent}%`;
+
+                if (scrollTop > 200) {
+                    progressBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    progressBtn.classList.add('opacity-100', 'pointer-events-auto');
+                } else {
+                    progressBtn.classList.remove('opacity-100', 'pointer-events-auto');
+                    progressBtn.classList.add('opacity-0', 'pointer-events-none');
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            progressBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+
+        // 3. Feedback Rating Selection & Interactive Form
+        (function () {
+            const rateBtns = document.querySelectorAll('.feedback-rate-btn');
+            rateBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    rateBtns.forEach(b => {
+                        b.classList.remove('bg-[#AAF27F]', 'text-[#04535C]', 'active-rating');
+                        b.classList.add('bg-gray-100', 'text-[#495057]');
+                    });
+                    btn.classList.remove('bg-gray-100', 'text-[#495057]');
+                    btn.classList.add('bg-[#AAF27F]', 'text-[#04535C]', 'active-rating');
+                });
+            });
+
+            const form = document.getElementById('order-feedback-form');
+            const toast = document.getElementById('feedback-toast');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (toast) {
+                        toast.classList.remove('hidden');
+                        setTimeout(() => {
+                            toast.classList.add('hidden');
+                        }, 4000);
+                    }
+                    form.reset();
+                });
+            }
+        })();
+
+        // 4. Viewport Fade-up Animations
+        (function () {
+            const items = document.querySelectorAll('.fade-up-init');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            items.forEach(item => observer.observe(item));
+        })();
+    </script>
+</body>
+
+</html>

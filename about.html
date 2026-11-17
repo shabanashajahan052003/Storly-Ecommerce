@@ -73,10 +73,72 @@
                 transition: none !important;
             }
         }
+    
+        /* ================= ANIMATION & SMOOTH TRANSITIONS ================= */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 30px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .animate__fadeInUp {
+            animation-name: fadeInUp;
+            animation-duration: 1.2s;
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .wow {
+            opacity: 0;
+            will-change: opacity, transform;
+        }
+
+        .wow.animated {
+            opacity: 1;
+        }
+
+        .about-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .about-fade-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto !important;
+            }
+            .wow, .about-fade-up, .animate__fadeInUp {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+                transition: none !important;
+            }
+            #site-preloader {
+                display: none !important;
+            }
+        }
+
     </style>
 </head>
 
 <body class="bg-white text-gray-800 antialiased font-sans">
+    <!-- Preloader -->
+    <div id="site-preloader"
+        class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-300 ease-in">
+        <div class="inline-block size-12 animate-spin rounded-full border-4 border-gray-200 border-t-[#04535C]"></div>
+    </div>
+
 
     <!-- ================= TOP SUPPORT / ANNOUNCEMENT BAR ================= -->
     <div class="relative z-50 w-full bg-[#04535C] py-3 text-white">
@@ -135,19 +197,19 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <button type="button" data-val="Español"
+                                    <button type="button" data-val="Espa�ol"
                                         class="lang-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                                        Español
+                                        Espa�ol
                                     </button>
                                 </li>
                                 <li>
-                                    <button type="button" data-val="Français"
+                                    <button type="button" data-val="Fran�ais"
                                         class="lang-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                                        Français
+                                        Fran�ais
                                     </button>
                                 </li>
                                 <li>
-                                    <button type="button" data-val="Français"
+                                    <button type="button" data-val="Fran�ais"
                                         class="lang-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                                         Deutsch
                                     </button>
@@ -196,19 +258,19 @@
                                 <li>
                                     <button type="button" data-val="EUR"
                                         class="curr-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                                        EUR (€)
+                                        EUR (�)
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" data-val="GBP"
                                         class="curr-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                                        GBP (£)
+                                        GBP (�)
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" data-val="JPY"
                                         class="curr-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                                        JPY (¥)
+                                        JPY (�)
                                     </button>
                                 </li>
                             </ul>
@@ -221,7 +283,7 @@
                     <a href="about.html" class="text-white transition-colors hover:text-[#AAF27F]">About Us</a>
                     <a href="user-dashboard.html" class="text-white transition-colors hover:text-[#AAF27F]">My
                         Account</a>
-                    <a href="empty-wishlist-screen.html" class="text-white transition-colors hover:text-[#AAF27F]">My
+                    <a href="wishlist.html" class="text-white transition-colors hover:text-[#AAF27F]">My
                         Wishlist</a>
                 </div>
             </div>
@@ -252,7 +314,7 @@
                 </a>
 
                 <!-- Shopping Cart Icon Button -->
-                <a href="cart-single-vendor.html" aria-label="Shopping Cart"
+                <a href="cart.html" aria-label="Shopping Cart"
                     class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#04535C] transition-colors duration-300 hover:bg-[#03434A]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="#AAF27F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -300,7 +362,7 @@
                         <span>Home</span>
                     </a>
                 </li>
-                <li class="select-none text-gray-300">•</li>
+                <li class="select-none text-gray-300">�</li>
                 <li class="font-medium text-gray-400" aria-current="page">About</li>
             </ol>
         </nav>
@@ -326,7 +388,7 @@
                                         To make quality healthcare products accessible, affordable,
                                         and reliable for every household. We are committed to helping
                                         individuals and families take control of their health with
-                                        ease, confidence, and care—right from the comfort of home.
+                                        ease, confidence, and care�right from the comfort of home.
                                     </p>
                                 </div>
 
@@ -336,7 +398,7 @@
                                     </h2>
                                     <p class="text-base leading-6 text-[#495057]">
                                         To become a trusted name in home healthcare by simplifying the
-                                        way people care for themselves and their loved ones—empowering
+                                        way people care for themselves and their loved ones�empowering
                                         healthier lives through innovation, compassion, and
                                         convenience.
                                     </p>
@@ -427,7 +489,7 @@
                         Faster Free Delivery
                     </h2>
                     <p class="mb-4 text-base leading-6 text-[#495057]">
-                        Experience the ultimate convenience with our Faster Free Delivery service—designed to bring your
+                        Experience the ultimate convenience with our Faster Free Delivery service�designed to bring your
                         orders to your doorstep quickly and without any extra cost. Whether you're ordering essentials
                         or gifts, we make sure you get them faster than ever.
                     </p>
@@ -448,7 +510,7 @@
                                 </div>
                                 <p class="text-base leading-6 text-[#495057]">
                                     <span class="font-normal text-[#495057]">Absolutely Free:</span> No delivery
-                                    fees, no hidden charges—just fast, reliable service.
+                                    fees, no hidden charges�just fast, reliable service.
                                 </p>
                             </li>
                             <!-- Feature 2: Real-Time Tracking -->
@@ -500,7 +562,7 @@
                     </div>
                     <p class="text-base leading-relaxed text-[#495057]">
                         Say goodbye to long waits and shipping fees. With Faster Free Delivery, we're raising the
-                        standard—fast, seamless, and 100% free.
+                        standard�fast, seamless, and 100% free.
                     </p>
                 </div>
 
@@ -605,7 +667,7 @@
                         Focus on Customer Satisfaction
                     </h2>
                     <p class="mb-4 text-base leading-6 text-[#495057]">
-                        Experience the ultimate convenience with our Faster Free Delivery service—designed to bring your
+                        Experience the ultimate convenience with our Faster Free Delivery service�designed to bring your
                         orders to your doorstep quickly and without any extra cost. Whether you're ordering essentials
                         or gifts, we make sure you get them faster than ever.<br class="hidden sm:inline" />
                         Why You'll Love It:
@@ -627,7 +689,7 @@
                                 </div>
                                 <p class="text-base leading-6 text-[#495057]">
                                     <span class="font-normal text-[#495057]">Absolutely Free:</span> No delivery
-                                    fees, no hidden charges—just fast, reliable service.
+                                    fees, no hidden charges�just fast, reliable service.
                                 </p>
                             </li>
                             <!-- Feature 2: Real-Time Tracking -->
@@ -679,7 +741,7 @@
                     </div>
                     <p class="text-base leading-relaxed text-[#495057]">
                         Say goodbye to long waits and shipping fees. With Faster Free Delivery, we're raising the
-                        standard—fast, seamless, and 100% free.
+                        standard�fast, seamless, and 100% free.
                     </p>
                 </div>
             </div>
@@ -725,8 +787,8 @@
                             </div>
                             <!-- Testimonial Content -->
                             <p class="border-y border-[#919eab]/24 py-4 text-base leading-6 text-[#495057]">
-                                "Keeps me perfectly warm without overheating. True to size and excellent quality—I’m
-                                thrilled with this purchase! 🤩"
+                                "Keeps me perfectly warm without overheating. True to size and excellent quality�I�m
+                                thrilled with this purchase! ??"
                             </p>
                             <!-- Product Tag -->
                             <div class="flex items-center gap-4 pt-4">
@@ -767,8 +829,8 @@
                             </div>
                             <!-- Testimonial Content -->
                             <p class="border-y border-[#919eab]/24 py-4 text-base leading-6 text-[#495057]">
-                                "Keeps me perfectly warm without overheating. True to size and excellent quality—I’m
-                                thrilled with this purchase! 🤩"
+                                "Keeps me perfectly warm without overheating. True to size and excellent quality�I�m
+                                thrilled with this purchase! ??"
                             </p>
                             <!-- Product Tag -->
                             <div class="flex items-center gap-4 pt-4">
@@ -807,8 +869,8 @@
                             </div>
                             <!-- Testimonial Content -->
                             <p class="border-y border-[#919eab]/24 py-4 text-base leading-6 text-[#495057]">
-                                "Keeps me perfectly warm without overheating. True to size and excellent quality—I’m
-                                thrilled with this purchase! 🤩"
+                                "Keeps me perfectly warm without overheating. True to size and excellent quality�I�m
+                                thrilled with this purchase! ??"
                             </p>
                             <!-- Product Tag -->
                             <div class="flex items-center gap-4 pt-4">
@@ -1353,7 +1415,7 @@
                 <!-- Copyright Notice -->
                 <div>
                     <p class="text-sm text-gray-500">
-                        © 2026 Storely. All rights reserved. By
+                        � 2026 Storely. All rights reserved. By
                         <a class="font-medium text-[#04535C] hover:underline" href="#">Createuiux</a>
                     </p>
                 </div>
@@ -1474,13 +1536,15 @@
                         </button>
                         <div class="sidebar-accordion-content hidden space-y-2 border-b border-gray-200 py-2 pl-4">
                             <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
-                                href="product-details-6.html">Product Details</a>
+                                href="product-details.html">Product Details</a>
                             <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
-                                href="cart-single-vendor.html">Shop - Cart</a>
+                                href="cart.html">Shop - Cart</a>
                             <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
-                                href="checkout-1.html">Shop - Checkout</a>
+                                href="check-out.html">Shop - Checkout</a>
                             <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
-                                href="empty-wishlist-screen.html">Shop - Wishlist</a>
+                                href="order-success.html">Shop - Order Success</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="wishlist.html">Shop - Wishlist</a>
                             <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
                                 href="vendor-grid.html">Shop - Vendor</a>
                         </div>
@@ -1999,6 +2063,70 @@
             });
         })();
     </script>
+
+    <!-- Global Preloader & Scroll Animation Script -->
+    <script>
+        (function () {
+            // 1. Preloader dismissal
+            function hidePreloader() {
+                const preloader = document.getElementById('site-preloader');
+                if (preloader) {
+                    preloader.style.opacity = '0';
+                    preloader.style.pointerEvents = 'none';
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 350);
+                }
+            }
+
+            if (document.readyState === 'complete') {
+                setTimeout(hidePreloader, 150);
+            } else {
+                window.addEventListener('load', () => {
+                    setTimeout(hidePreloader, 200);
+                });
+                setTimeout(hidePreloader, 1500);
+            }
+
+            // 2. IntersectionObserver for wow and about-fade-up scroll entrance animations
+            if ('IntersectionObserver' in window) {
+                const scrollAnimObserver = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            
+                            // Handle wow elements
+                            if (el.classList.contains('wow')) {
+                                const delay = el.getAttribute('data-wow-delay') || '0s';
+                                const duration = el.getAttribute('data-wow-duration') || '1.2s';
+                                el.style.animationDelay = delay;
+                                el.style.animationDuration = duration;
+                                el.classList.add('animated');
+                            }
+
+                            // Handle about-fade-up elements
+                            if (el.classList.contains('about-fade-up')) {
+                                el.classList.add('is-visible');
+                            }
+
+                            obs.unobserve(el);
+                        }
+                    });
+                }, {
+                    rootMargin: '0px 0px -50px 0px',
+                    threshold: 0.1
+                });
+
+                document.querySelectorAll('.wow, .about-fade-up').forEach(el => {
+                    scrollAnimObserver.observe(el);
+                });
+            } else {
+                document.querySelectorAll('.wow').forEach(el => el.classList.add('animated'));
+                document.querySelectorAll('.about-fade-up').forEach(el => el.classList.add('is-visible'));
+            }
+        })();
+    </script>
+
 </body>
 
 </html>

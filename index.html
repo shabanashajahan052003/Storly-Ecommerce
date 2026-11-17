@@ -418,10 +418,72 @@
             stroke: #ED3838 !important;
             fill: #ED3838 !important;
         }
+    
+        /* ================= ANIMATION & SMOOTH TRANSITIONS ================= */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 30px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .animate__fadeInUp {
+            animation-name: fadeInUp;
+            animation-duration: 1.2s;
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .wow {
+            opacity: 0;
+            will-change: opacity, transform;
+        }
+
+        .wow.animated {
+            opacity: 1;
+        }
+
+        .about-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .about-fade-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto !important;
+            }
+            .wow, .about-fade-up, .animate__fadeInUp {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+                transition: none !important;
+            }
+            #site-preloader {
+                display: none !important;
+            }
+        }
+
     </style>
 </head>
 
 <body class="bg-white">
+    <!-- Preloader -->
+    <div id="site-preloader"
+        class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-300 ease-in">
+        <div class="inline-block size-12 animate-spin rounded-full border-4 border-gray-200 border-t-[#04535C]"></div>
+    </div>
+
 
 
     <!-- ================= ANNOUNCEMENT BAR ================= -->
@@ -471,7 +533,7 @@
 
             <!-- Shopping Cart -->
 
-            <a href="cart-single-vendor.html" aria-label="Shopping Cart"
+            <a href="cart.html" aria-label="Shopping Cart"
                 class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#04535C] transition-colors duration-300 hover:bg-[#03434A]">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -623,7 +685,7 @@
                             <!-- Description -->
                             <p class="hero-fade-item mb-4 max-w-sm text-xs leading-relaxed text-white line-clamp-2 sm:mb-6 sm:text-sm sm:line-clamp-none md:text-base"
                                 style="animation-delay: 0.7s;">
-                                our weekly shop just got easier—and 25% cheaper
+                                our weekly shop just got easier�and 25% cheaper
                             </p>
 
                             <!-- CTA Button -->
@@ -748,7 +810,7 @@
 
         <!-- ================= PROMO BANNERS ================= -->
 
-        <section id="promo-banners-section" class="w-full px-4 pb-8 sm:px-6 sm:pb-12">
+        <section id="promo-banners-section" class="w-full px-4 pb-8 sm:px-6 sm:pb-12 wow animate__fadeInUp">
 
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
 
@@ -831,7 +893,7 @@
 
         <!-- ================= SHOP BY CATEGORY SECTION ================= -->
 
-        <section id="shop-by-category-section" class="w-full px-4 pb-12 sm:px-6 sm:pb-16">
+        <section id="shop-by-category-section" class="w-full px-4 pb-12 sm:px-6 sm:pb-16 wow animate__fadeInUp">
 
             <!-- Section Header -->
             <div class="mb-8 flex items-end justify-between">
@@ -844,7 +906,7 @@
                     <p class="mt-2 text-sm text-gray-500 md:text-base">
                         <span class="cat-envelope-slot">
                             <span class="cat-envelope-text cat-subtitle-text">Secure a rare 50% valuation on our
-                                most-celebrated goods 🔥</span>
+                                most-celebrated goods ??</span>
                         </span>
                     </p>
                 </div>
@@ -882,7 +944,7 @@
                     <!-- Category 1: Frozen Foods -->
                     <div
                         class="category-item cat-card-slot w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
-                        <a href="product-details-6.html"
+                        <a href="product-details.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
                                 class="size-36 sm:size-40 shrink-0 overflow-hidden rounded-full bg-[#f4f7f6] p-3 transition-all duration-300 group-hover/slide:scale-105 shadow-sm">
@@ -900,7 +962,7 @@
                     <!-- Category 2: Snacks & Beverages -->
                     <div
                         class="category-item cat-card-slot w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
-                        <a href="product-details-6.html"
+                        <a href="product-details.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
                                 class="size-36 sm:size-40 shrink-0 overflow-hidden rounded-full bg-[#f4f7f6] p-3 transition-all duration-300 group-hover/slide:scale-105 shadow-sm">
@@ -918,7 +980,7 @@
                     <!-- Category 3: Fresh Produce -->
                     <div
                         class="category-item cat-card-slot w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
-                        <a href="product-details-6.html"
+                        <a href="product-details.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
                                 class="size-36 sm:size-40 shrink-0 overflow-hidden rounded-full bg-[#f4f7f6] p-3 transition-all duration-300 group-hover/slide:scale-105 shadow-sm">
@@ -936,7 +998,7 @@
                     <!-- Category 4: Dairy & Eggs -->
                     <div
                         class="category-item cat-card-slot w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
-                        <a href="product-details-6.html"
+                        <a href="product-details.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
                                 class="size-36 sm:size-40 shrink-0 overflow-hidden rounded-full bg-[#f4f7f6] p-3 transition-all duration-300 group-hover/slide:scale-105 shadow-sm">
@@ -954,7 +1016,7 @@
                     <!-- Category 5: Meat & Fish -->
                     <div
                         class="category-item cat-card-slot w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
-                        <a href="product-details-6.html"
+                        <a href="product-details.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
                                 class="size-36 sm:size-40 shrink-0 overflow-hidden rounded-full bg-[#f4f7f6] p-3 transition-all duration-300 group-hover/slide:scale-105 shadow-sm">
@@ -972,7 +1034,7 @@
                     <!-- Category 6: Bakery & Breakfast -->
                     <div
                         class="category-item w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
-                        <a href="product-details-6.html"
+                        <a href="product-details.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
                                 class="size-36 sm:size-40 shrink-0 overflow-hidden rounded-full bg-[#f4f7f6] p-3 transition-all duration-300 group-hover/slide:scale-105 shadow-sm">
@@ -990,7 +1052,7 @@
                     <!-- Category 7: Rice, Atta & Grains -->
                     <div
                         class="category-item w-[calc(50%-8px)] sm:w-[calc(33.333%-14px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-19.2px)] shrink-0 snap-start">
-                        <a href="product-details-6.html"
+                        <a href="product-details.html"
                             class="group/slide flex flex-col items-center justify-center gap-4 text-center">
                             <div
                                 class="size-36 sm:size-40 shrink-0 overflow-hidden rounded-full bg-[#f4f7f6] p-3 transition-all duration-300 group-hover/slide:scale-105 shadow-sm">
@@ -1016,7 +1078,7 @@
 
         <!-- ================= WINTER SALE BANNER SECTION ================= -->
 
-        <section id="winter-sale-section" class="w-full px-4 pb-12 sm:px-6 sm:pb-16">
+        <section id="winter-sale-section" class="w-full px-4 pb-12 sm:px-6 sm:pb-16 wow animate__fadeInUp">
 
             <div
                 class="winter-envelope-card rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 md:p-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
@@ -1085,7 +1147,7 @@
 
 
         <!-- ================= BEST SELLING PRODUCTS SECTION ================= -->
-        <section id="best-selling-products-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14">
+        <section id="best-selling-products-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14 wow animate__fadeInUp">
             <div class="mx-auto max-w-[1440px]">
 
                 <!-- Section Header with Arrows -->
@@ -1135,7 +1197,7 @@
                         class="best-selling-card best-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
                         <div
                             class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
-                            <a href="product-details-6.html"
+                            <a href="product-details.html"
                                 class="relative block overflow-hidden rounded-lg bg-gray-50">
                                 <img src="./assets/images/best-selling/product-1.webp" alt="Premium Basmati Rice"
                                     class="h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
@@ -1145,7 +1207,7 @@
                                 Store Name/Category
                             </a>
                             <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
-                                <a href="product-details-6.html">Premium Basmati Rice</a>
+                                <a href="product-details.html">Premium Basmati Rice</a>
                             </h3>
                             <div class="flex items-center gap-3">
                                 <span class="text-base font-semibold text-gray-900">$21.99</span>
@@ -1229,7 +1291,7 @@
                         class="best-selling-card best-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
                         <div
                             class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
-                            <a href="product-details-6.html"
+                            <a href="product-details.html"
                                 class="relative block overflow-hidden rounded-lg bg-gray-50">
                                 <img src="./assets/images/best-selling/product-2.webp" alt="Fresh Organic Vegetables"
                                     class="h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
@@ -1239,7 +1301,7 @@
                                 Fresh Produce
                             </a>
                             <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
-                                <a href="product-details-6.html">Fresh Organic Vegetables Pack</a>
+                                <a href="product-details.html">Fresh Organic Vegetables Pack</a>
                             </h3>
                             <div class="flex items-center gap-3">
                                 <span class="text-base font-semibold text-gray-900">$18.50</span>
@@ -1323,7 +1385,7 @@
                         class="best-selling-card best-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
                         <div
                             class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
-                            <a href="product-details-6.html"
+                            <a href="product-details.html"
                                 class="relative block overflow-hidden rounded-lg bg-gray-50">
                                 <img src="./assets/images/best-selling/product-3.webp" alt="Organic Whole Wheat Bread"
                                     class="h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
@@ -1333,7 +1395,7 @@
                                 Bakery & Breakfast
                             </a>
                             <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
-                                <a href="product-details-6.html">Organic Whole Wheat Bread</a>
+                                <a href="product-details.html">Organic Whole Wheat Bread</a>
                             </h3>
                             <div class="flex items-center gap-3">
                                 <span class="text-base font-semibold text-gray-900">$4.99</span>
@@ -1417,7 +1479,7 @@
                         class="best-selling-card best-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
                         <div
                             class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
-                            <a href="product-details-6.html"
+                            <a href="product-details.html"
                                 class="relative block overflow-hidden rounded-lg bg-gray-50">
                                 <img src="./assets/images/best-selling/product-4.webp" alt="Fresh Farm Whole Milk"
                                     class="h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
@@ -1427,7 +1489,7 @@
                                 Dairy & Eggs
                             </a>
                             <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
-                                <a href="product-details-6.html">Fresh Farm Whole Milk</a>
+                                <a href="product-details.html">Fresh Farm Whole Milk</a>
                             </h3>
                             <div class="flex items-center gap-3">
                                 <span class="text-base font-semibold text-gray-900">$3.49</span>
@@ -1511,7 +1573,7 @@
                         class="best-selling-card best-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
                         <div
                             class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
-                            <a href="product-details-6.html"
+                            <a href="product-details.html"
                                 class="relative block overflow-hidden rounded-lg bg-gray-50">
                                 <img src="./assets/images/best-selling/product-5.webp"
                                     alt="Cold Pressed Pure Sunflower Oil"
@@ -1522,7 +1584,7 @@
                                 Rice, Atta & Grains
                             </a>
                             <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
-                                <a href="product-details-6.html">Cold Pressed Pure Sunflower Oil</a>
+                                <a href="product-details.html">Cold Pressed Pure Sunflower Oil</a>
                             </h3>
                             <div class="flex items-center gap-3">
                                 <span class="text-base font-semibold text-gray-900">$14.99</span>
@@ -1609,7 +1671,7 @@
 
 
         <!-- ================= PROMOTIONAL FEATURE BANNERS SECTION ================= -->
-        <section id="promo-feature-banners-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14">
+        <section id="promo-feature-banners-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14 wow animate__fadeInUp">
             <div class="mx-auto max-w-[1400px]">
                 <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
 
@@ -1733,7 +1795,7 @@
         <!-- ================= END PROMOTIONAL FEATURE BANNERS SECTION ================= -->
 
         <!-- ================= NEW ARRIVALS SECTION ================= -->
-        <section id="new-arrivals-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14">
+        <section id="new-arrivals-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14 wow animate__fadeInUp">
             <div class="mx-auto max-w-[1440px]">
 
                 <!-- Section Header (Title, Subtitle & Arrows) -->
@@ -1784,7 +1846,7 @@
                         class="new-arrivals-card arrivals-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
                         <div
                             class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
-                            <a href="product-details-6.html"
+                            <a href="product-details.html"
                                 class="product-img-wrap relative block overflow-hidden rounded-lg bg-gray-50">
                                 <img src="./assets/images/best-selling/product-1.webp" alt="Premium Basmati Rice"
                                     class="product-img-click-zoom h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
@@ -1794,7 +1856,7 @@
                                 Store Name/Category
                             </a>
                             <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
-                                <a href="product-details-6.html">Premium Basmati Rice</a>
+                                <a href="product-details.html">Premium Basmati Rice</a>
                             </h3>
                             <div class="flex items-center gap-3">
                                 <span class="text-base font-semibold text-gray-900">$21.99</span>
@@ -1878,7 +1940,7 @@
                         class="new-arrivals-card arrivals-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
                         <div
                             class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
-                            <a href="product-details-6.html"
+                            <a href="product-details.html"
                                 class="product-img-wrap relative block overflow-hidden rounded-lg bg-gray-50">
                                 <img src="./assets/images/best-selling/product-2.webp"
                                     alt="Fresh Organic Vegetables Pack"
@@ -1889,7 +1951,7 @@
                                 Fresh Produce
                             </a>
                             <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
-                                <a href="product-details-6.html">Fresh Organic Vegetables Pack</a>
+                                <a href="product-details.html">Fresh Organic Vegetables Pack</a>
                             </h3>
                             <div class="flex items-center gap-3">
                                 <span class="text-base font-semibold text-gray-900">$18.50</span>
@@ -1973,7 +2035,7 @@
                         class="new-arrivals-card arrivals-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
                         <div
                             class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
-                            <a href="product-details-6.html"
+                            <a href="product-details.html"
                                 class="product-img-wrap relative block overflow-hidden rounded-lg bg-gray-50">
                                 <img src="./assets/images/best-selling/product-3.webp" alt="Organic Whole Wheat Bread"
                                     class="product-img-click-zoom h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
@@ -1983,7 +2045,7 @@
                                 Bakery & Breakfast
                             </a>
                             <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
-                                <a href="product-details-6.html">Organic Whole Wheat Bread</a>
+                                <a href="product-details.html">Organic Whole Wheat Bread</a>
                             </h3>
                             <div class="flex items-center gap-3">
                                 <span class="text-base font-semibold text-gray-900">$4.99</span>
@@ -2067,7 +2129,7 @@
                         class="new-arrivals-card arrivals-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
                         <div
                             class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
-                            <a href="product-details-6.html"
+                            <a href="product-details.html"
                                 class="product-img-wrap relative block overflow-hidden rounded-lg bg-gray-50">
                                 <img src="./assets/images/best-selling/product-4.webp" alt="Fresh Farm Whole Milk"
                                     class="product-img-click-zoom h-[245px] sm:h-[260px] w-full object-contain transition-transform duration-300 hover:scale-105" />
@@ -2077,7 +2139,7 @@
                                 Dairy & Eggs
                             </a>
                             <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
-                                <a href="product-details-6.html">Fresh Farm Whole Milk</a>
+                                <a href="product-details.html">Fresh Farm Whole Milk</a>
                             </h3>
                             <div class="flex items-center gap-3">
                                 <span class="text-base font-semibold text-gray-900">$3.49</span>
@@ -2161,7 +2223,7 @@
                         class="new-arrivals-card arrivals-card-slot flex-none w-[285px] sm:w-[310px] md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]">
                         <div
                             class="flex flex-col gap-3.5 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 transition-shadow duration-300 hover:shadow-lg">
-                            <a href="product-details-6.html"
+                            <a href="product-details.html"
                                 class="product-img-wrap relative block overflow-hidden rounded-lg bg-gray-50">
                                 <img src="./assets/images/best-selling/product-5.webp"
                                     alt="Cold Pressed Pure Sunflower Oil"
@@ -2172,7 +2234,7 @@
                                 Cooking & Oils
                             </a>
                             <h3 class="line-clamp-1 text-base font-medium text-gray-900 hover:text-[#04535C]">
-                                <a href="product-details-6.html">Cold Pressed Pure Sunflower Oil</a>
+                                <a href="product-details.html">Cold Pressed Pure Sunflower Oil</a>
                             </h3>
                             <div class="flex items-center gap-3">
                                 <span class="text-base font-semibold text-gray-900">$12.99</span>
@@ -2257,7 +2319,7 @@
         <!-- ================= END NEW ARRIVALS SECTION ================= -->
 
         <!-- ================= SECONDARY PROMOTIONAL BANNERS SECTION ================= -->
-        <section id="promo-banners-2-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14">
+        <section id="promo-banners-2-section" class="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-14 wow animate__fadeInUp">
             <div class="mx-auto max-w-[1440px]">
                 <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
 
@@ -2366,7 +2428,7 @@
         <!-- ================= END SECONDARY PROMOTIONAL BANNERS SECTION ================= -->
 
         <!-- ================= EVERYDAY ESSENTIALS SECTION ================= -->
-        <section id="everyday-essentials-section" class="py-12 px-4 sm:px-6">
+        <section id="everyday-essentials-section" class="py-12 px-4 sm:px-6 wow animate__fadeInUp">
             <div class="mx-auto max-w-[1440px]">
 
                 <!-- Section Header (Centered Title & Subtitle with Envelope Reveal) -->
@@ -2427,8 +2489,8 @@
                         <article class="flex flex-col rounded-xl border border-gray-300 bg-white p-4 sm:p-6 transition-shadow duration-300 hover:shadow-lg">
                             
                             <!-- Mango Product Image & 15% OFF Badge Ribbon -->
-                            <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg bg-gray-50/50">
-                                <img src="./assets/images/essential/product-1.webp" alt="Creamy Sugar Apples – Soft, Sweet & Tropical Delight"
+                            <a href="product-details.html" class="relative block overflow-hidden rounded-lg bg-gray-50/50">
+                                <img src="./assets/images/essential/product-1.webp" alt="Creamy Sugar Apples � Soft, Sweet & Tropical Delight"
                                     class="w-full object-contain rounded-lg transition-transform duration-300 hover:scale-105" />
                                 <div class="absolute top-2 left-0 inline-block z-10">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="67" height="22" viewBox="0 0 67 22" fill="none">
@@ -2456,8 +2518,8 @@
 
                                 <!-- Product Title matching reference exactly -->
                                 <h3 class="line-clamp-2 text-lg leading-6 font-medium text-gray-900 transition-colors hover:text-[#04535C]">
-                                    <a href="product-details-6.html">
-                                        Creamy Sugar Apples – Soft, Sweet & Tropical Delight
+                                    <a href="product-details.html">
+                                        Creamy Sugar Apples � Soft, Sweet & Tropical Delight
                                     </a>
                                 </h3>
 
@@ -2522,7 +2584,7 @@
                             <article data-category="beverages"
                                 class="essentials-product-card essentials-card-slot essentials-grid-slot flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 transition-shadow duration-300 hover:shadow-lg">
                                 <div class="relative">
-                                    <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg">
+                                    <a href="product-details.html" class="relative block overflow-hidden rounded-lg">
                                         <img src="./assets/images/essential/product-2.webp" alt="Farm Fresh Milk"
                                             class="w-full rounded-lg object-contain transition-transform duration-300 hover:scale-110" />
                                     </a>
@@ -2544,8 +2606,8 @@
                                     </button>
                                 </div>
                                 <h3 class="line-clamp-2 text-base leading-6 font-medium text-gray-900 transition-colors hover:text-[#04535C]">
-                                    <a href="product-details-6.html">
-                                        Farm Fresh Milk – Pure Pasteurized Daily Nutrition
+                                    <a href="product-details.html">
+                                        Farm Fresh Milk � Pure Pasteurized Daily Nutrition
                                     </a>
                                 </h3>
                                 <div class="flex items-center gap-1">
@@ -2580,7 +2642,7 @@
                             <article data-category="beverages"
                                 class="essentials-product-card essentials-card-slot essentials-grid-slot flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 transition-shadow duration-300 hover:shadow-lg">
                                 <div class="relative">
-                                    <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg">
+                                    <a href="product-details.html" class="relative block overflow-hidden rounded-lg">
                                         <img src="./assets/images/essential/product-3.webp" alt="Organic Almond Milk"
                                             class="w-full rounded-lg object-contain transition-transform duration-300 hover:scale-110" />
                                     </a>
@@ -2602,8 +2664,8 @@
                                     </button>
                                 </div>
                                 <h3 class="line-clamp-2 text-base leading-6 font-medium text-gray-900 transition-colors hover:text-[#04535C]">
-                                    <a href="product-details-6.html">
-                                        Farm Fresh Milk – Pure Pasteurized Daily Nutrition
+                                    <a href="product-details.html">
+                                        Farm Fresh Milk � Pure Pasteurized Daily Nutrition
                                     </a>
                                 </h3>
                                 <div class="flex items-center gap-1">
@@ -2638,7 +2700,7 @@
                             <article data-category="frozen"
                                 class="essentials-product-card essentials-card-slot essentials-grid-slot flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 transition-shadow duration-300 hover:shadow-lg">
                                 <div class="relative">
-                                    <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg">
+                                    <a href="product-details.html" class="relative block overflow-hidden rounded-lg">
                                         <img src="./assets/images/essential/product-4.webp" alt="Frozen Wild Blueberries"
                                             class="w-full rounded-lg object-contain transition-transform duration-300 hover:scale-110" />
                                     </a>
@@ -2660,8 +2722,8 @@
                                     </button>
                                 </div>
                                 <h3 class="line-clamp-2 text-base leading-6 font-medium text-gray-900 transition-colors hover:text-[#04535C]">
-                                    <a href="product-details-6.html">
-                                        Farm Fresh Milk – Pure Pasteurized Daily Nutrition
+                                    <a href="product-details.html">
+                                        Farm Fresh Milk � Pure Pasteurized Daily Nutrition
                                     </a>
                                 </h3>
                                 <div class="flex items-center gap-1">
@@ -2696,7 +2758,7 @@
                             <article data-category="vegetables"
                                 class="essentials-product-card essentials-card-slot essentials-grid-slot flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 transition-shadow duration-300 hover:shadow-lg">
                                 <div class="relative">
-                                    <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg">
+                                    <a href="product-details.html" class="relative block overflow-hidden rounded-lg">
                                         <img src="./assets/images/essential/product-5.webp" alt="Fresh Organic Broccoli"
                                             class="w-full rounded-lg object-contain transition-transform duration-300 hover:scale-110" />
                                     </a>
@@ -2718,8 +2780,8 @@
                                     </button>
                                 </div>
                                 <h3 class="line-clamp-2 text-base leading-6 font-medium text-gray-900 transition-colors hover:text-[#04535C]">
-                                    <a href="product-details-6.html">
-                                        Farm Fresh Milk – Pure Pasteurized Daily Nutrition
+                                    <a href="product-details.html">
+                                        Farm Fresh Milk � Pure Pasteurized Daily Nutrition
                                     </a>
                                 </h3>
                                 <div class="flex items-center gap-1">
@@ -2754,7 +2816,7 @@
                             <article data-category="vegetables"
                                 class="essentials-product-card essentials-card-slot essentials-grid-slot flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 transition-shadow duration-300 hover:shadow-lg">
                                 <div class="relative">
-                                    <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg">
+                                    <a href="product-details.html" class="relative block overflow-hidden rounded-lg">
                                         <img src="./assets/images/essential/product-6.webp" alt="Fresh Mixed Bell Peppers"
                                             class="w-full rounded-lg object-contain transition-transform duration-300 hover:scale-110" />
                                     </a>
@@ -2776,8 +2838,8 @@
                                     </button>
                                 </div>
                                 <h3 class="line-clamp-2 text-base leading-6 font-medium text-gray-900 transition-colors hover:text-[#04535C]">
-                                    <a href="product-details-6.html">
-                                        Farm Fresh Milk – Pure Pasteurized Daily Nutrition
+                                    <a href="product-details.html">
+                                        Farm Fresh Milk � Pure Pasteurized Daily Nutrition
                                     </a>
                                 </h3>
                                 <div class="flex items-center gap-1">
@@ -2812,7 +2874,7 @@
                             <article data-category="meat"
                                 class="essentials-product-card essentials-card-slot essentials-grid-slot flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 transition-shadow duration-300 hover:shadow-lg">
                                 <div class="relative">
-                                    <a href="product-details-6.html" class="relative block overflow-hidden rounded-lg">
+                                    <a href="product-details.html" class="relative block overflow-hidden rounded-lg">
                                         <img src="./assets/images/essential/product-7.webp" alt="Fresh Atlantic Salmon Fillet"
                                             class="w-full rounded-lg object-contain transition-transform duration-300 hover:scale-110" />
                                     </a>
@@ -2834,8 +2896,8 @@
                                     </button>
                                 </div>
                                 <h3 class="line-clamp-2 text-base leading-6 font-medium text-gray-900 transition-colors hover:text-[#04535C]">
-                                    <a href="product-details-6.html">
-                                        Farm Fresh Milk – Pure Pasteurized Daily Nutrition
+                                    <a href="product-details.html">
+                                        Farm Fresh Milk � Pure Pasteurized Daily Nutrition
                                     </a>
                                 </h3>
                                 <div class="flex items-center gap-1">
@@ -2942,7 +3004,7 @@
             <h3>
               <a
                 class="hover:text-[#AAF27F] mb-1 flex items-center gap-1.5 text-base leading-tight font-medium text-white transition-colors"
-                href="product-details-6.html"
+                href="product-details.html"
               >
                 Fresh Avocado
                 <svg
@@ -3005,7 +3067,7 @@
             <h3>
               <a
                 class="hover:text-[#AAF27F] mb-1 flex items-center gap-1.5 text-base leading-tight font-medium text-white transition-colors"
-                href="product-details-6.html"
+                href="product-details.html"
               >
                 Tomatoes
                 <svg
@@ -3068,7 +3130,7 @@
             <h3>
               <a
                 class="hover:text-[#AAF27F] mb-1 flex items-center gap-1.5 text-base leading-tight font-medium text-white transition-colors"
-                href="product-details-6.html"
+                href="product-details.html"
               >
                 Fresh Carrots
                 <svg
@@ -3131,7 +3193,7 @@
             <h3>
               <a
                 class="hover:text-[#AAF27F] mb-1 flex items-center gap-1.5 text-base leading-tight font-medium text-white transition-colors"
-                href="product-details-6.html"
+                href="product-details.html"
               >
                 Fresh Broccoli
                 <svg
@@ -3186,7 +3248,7 @@
             Deals Available Now !
           </h2>
           <p class="text-base leading-6">
-            Don’t Miss Up to 50% Off Your Favorite Styles
+            Don�t Miss Up to 50% Off Your Favorite Styles
           </p>
           <!-- Countdown: set data-countdown-target to any ISO date string -->
           <div
@@ -3986,7 +4048,7 @@
         <div>
           <h4 class="text-[#04535C] mb-1.5 text-2xl font-bold tracking-tight">Newsletter</h4>
           <p class="text-[#04535C] text-sm sm:text-base font-normal">
-            Don’t miss out on exclusive deals and updates
+            Don�t miss out on exclusive deals and updates
           </p>
         </div>
       </div>
@@ -4503,7 +4565,7 @@
     >
       <div>
         <p>
-          © 2026 Storely. All rights reserved. By
+          � 2026 Storely. All rights reserved. By
           <a class="text-[#04535C]" href="#">Createuiux</a>
         </p>
       </div>
@@ -5084,13 +5146,15 @@
                         </button>
                         <div class="sidebar-accordion-content hidden space-y-2 border-b border-gray-200 py-2 pl-4">
                             <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
-                                href="product-details-6.html">Product Details</a>
+                                href="product-details.html">Product Details</a>
                             <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
-                                href="cart-single-vendor.html">Shop - Cart</a>
+                                href="cart.html">Shop - Cart</a>
                             <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
-                                href="checkout-1.html">Shop - Checkout</a>
+                                href="check-out.html">Shop - Checkout</a>
                             <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
-                                href="empty-wishlist-screen.html">Shop - Wishlist</a>
+                                href="order-success.html">Shop - Order Success</a>
+                            <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
+                                href="wishlist.html">Shop - Wishlist</a>
                             <a class="block py-1 text-sm text-gray-600 transition hover:text-[#04535C]"
                                 href="vendor-grid.html">Shop - Vendor</a>
                         </div>
@@ -5413,6 +5477,70 @@
             });
         })();
     </script>
+
+    <!-- Global Preloader & Scroll Animation Script -->
+    <script>
+        (function () {
+            // 1. Preloader dismissal
+            function hidePreloader() {
+                const preloader = document.getElementById('site-preloader');
+                if (preloader) {
+                    preloader.style.opacity = '0';
+                    preloader.style.pointerEvents = 'none';
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 350);
+                }
+            }
+
+            if (document.readyState === 'complete') {
+                setTimeout(hidePreloader, 150);
+            } else {
+                window.addEventListener('load', () => {
+                    setTimeout(hidePreloader, 200);
+                });
+                setTimeout(hidePreloader, 1500);
+            }
+
+            // 2. IntersectionObserver for wow and about-fade-up scroll entrance animations
+            if ('IntersectionObserver' in window) {
+                const scrollAnimObserver = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            
+                            // Handle wow elements
+                            if (el.classList.contains('wow')) {
+                                const delay = el.getAttribute('data-wow-delay') || '0s';
+                                const duration = el.getAttribute('data-wow-duration') || '1.2s';
+                                el.style.animationDelay = delay;
+                                el.style.animationDuration = duration;
+                                el.classList.add('animated');
+                            }
+
+                            // Handle about-fade-up elements
+                            if (el.classList.contains('about-fade-up')) {
+                                el.classList.add('is-visible');
+                            }
+
+                            obs.unobserve(el);
+                        }
+                    });
+                }, {
+                    rootMargin: '0px 0px -50px 0px',
+                    threshold: 0.1
+                });
+
+                document.querySelectorAll('.wow, .about-fade-up').forEach(el => {
+                    scrollAnimObserver.observe(el);
+                });
+            } else {
+                document.querySelectorAll('.wow').forEach(el => el.classList.add('animated'));
+                document.querySelectorAll('.about-fade-up').forEach(el => el.classList.add('is-visible'));
+            }
+        })();
+    </script>
+
 </body>
 
 </html>
