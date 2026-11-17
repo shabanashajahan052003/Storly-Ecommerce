@@ -24,11 +24,114 @@
 
 <body class="bg-white font-sans text-[#212529] antialiased">
 
-    <!-- Top Announcement Bar -->
-    <div class="flex h-[42px] w-full items-center justify-center bg-[#AAF27F] px-4">
-        <p class="text-center text-sm font-medium text-[#04535C]">
-            Free shipping on orders over 129 $
-        </p>
+    <!-- ================= TOP SUPPORT / LANGUAGE BAR ================= -->
+    <div class="relative z-50 w-full bg-[#04535C] py-3 text-white">
+        <div class="mx-auto max-w-[1440px] px-4 sm:px-6">
+            <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                <!-- Left: Support Phone + Language & Currency -->
+                <div class="flex flex-wrap items-center justify-center gap-4 sm:justify-start sm:gap-6">
+                    <div class="flex items-center gap-2">
+                        <p class="flex items-center gap-2 text-sm font-normal text-white">
+                            <svg class="size-5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M14.1665 9.00371C14.1665 8.7157 14.1665 8.57169 14.2099 8.44331C14.3359 8.07037 14.668 7.92563 15.0007 7.77407C15.3748 7.60368 15.5619 7.51849 15.7472 7.5035C15.9576 7.48649 16.1684 7.53181 16.3482 7.63274C16.5866 7.76654 16.7529 8.02078 16.9231 8.22751C17.7092 9.18237 18.1023 9.6598 18.2461 10.1863C18.3622 10.6112 18.3622 11.0555 18.2461 11.4804C18.0363 12.2483 17.3736 12.892 16.883 13.4878C16.6321 13.7926 16.5066 13.945 16.3482 14.0339C16.1684 14.1349 15.9576 14.1802 15.7472 14.1632C15.5619 14.1482 15.3748 14.063 15.0007 13.8926C14.668 13.741 14.3359 13.5963 14.2099 13.2234C14.1665 13.095 14.1665 12.951 14.1665 12.663V9.00371Z" stroke="white" stroke-width="1.5" />
+                                <path d="M5.83301 9.00366C5.83301 8.64096 5.82282 8.31499 5.5296 8.05998C5.42295 7.96723 5.28155 7.90283 4.99876 7.77402C4.62468 7.60364 4.43764 7.51844 4.25231 7.50345C3.69627 7.45848 3.39711 7.83799 3.07645 8.22747C2.2903 9.18233 1.89723 9.65976 1.75339 10.1863C1.63732 10.6111 1.63732 11.0554 1.75339 11.4803C1.96318 12.2482 2.62594 12.8919 3.11652 13.4878C3.42575 13.8634 3.72115 14.2061 4.25231 14.1631C4.43764 14.1481 4.62468 14.0629 4.99876 13.8926C5.28155 13.7637 5.42295 13.6993 5.5296 13.6066C5.82282 13.3516 5.83301 13.0256 5.83301 12.6629V9.00366Z" stroke="white" stroke-width="1.5" />
+                                <path d="M4.1665 7.5C4.1665 4.73858 6.77818 2.5 9.99984 2.5C13.2215 2.5 15.8332 4.73858 15.8332 7.5" stroke="white" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round" />
+                                <path d="M15.833 14.1667V14.8334C15.833 16.3061 14.3406 17.5 12.4997 17.5H10.833" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Need Support ? Call Us</span>
+                        </p>
+                        <a href="tel:+4805550103" class="inline-flex h-5 items-center justify-center rounded-full bg-[#AAF27F] px-2.5 py-0.5 text-xs font-semibold text-gray-900 transition-opacity hover:opacity-90">
+                            (480) 555-0103
+                        </a>
+                    </div>
+
+                    <div class="hidden items-center divide-x divide-white/20 sm:flex">
+                        <!-- Language Dropdown -->
+                        <div class="relative pr-5">
+                            <button type="button" id="lang-btn" aria-expanded="false" class="flex items-center gap-1.5 text-sm text-white transition-opacity hover:opacity-80 focus:outline-none">
+                                <img src="./assets/icons/eng.svg" alt="English" class="size-4.5 shrink-0 object-contain" />
+                                <span id="current-lang">English</span>
+                                <svg class="size-5 shrink-0 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+                                    <path d="M5 7.5L9.29289 11.7929C9.62623 12.1262 9.79289 12.2929 10 12.2929C10.2071 12.2929 10.3738 12.1262 10.7071 11.7929L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <ul id="lang-menu" class="absolute left-0 z-50 mt-2 hidden w-36 origin-top-left rounded-lg border border-gray-100 bg-white py-1 shadow-xl ring-1 ring-black/5">
+                                <li>
+                                    <button type="button" data-val="English" class="lang-opt flex w-full items-center px-4 py-2 text-left text-sm text-[#04535C] bg-gray-50 font-medium hover:bg-gray-100 hover:text-gray-900">
+                                        English
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-val="Español" class="lang-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                        Español
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-val="Français" class="lang-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                        Français
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-val="Deutsch" class="lang-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                        Deutsch
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Currency Dropdown -->
+                        <div class="relative pl-5">
+                            <button type="button" id="curr-btn" aria-expanded="false" class="flex items-center gap-1.5 text-sm text-white transition-opacity hover:opacity-80 focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" class="size-4.5 shrink-0 text-white">
+                                    <g clip-path="url(#clip0_38244_93989)">
+                                        <path d="M16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5C13.1421 1.5 16.5 4.85786 16.5 9Z" stroke="currentColor" stroke-width="1.5" />
+                                        <path d="M10.3125 7.59584C10.3125 8.01006 10.6483 8.34584 11.0625 8.34584C11.4767 8.34584 11.8125 8.01006 11.8125 7.59584H11.0625H10.3125ZM7.5 10.4045C7.5 9.99027 7.16421 9.65448 6.75 9.65448C6.33579 9.65448 6 9.99027 6 10.4045H6.75H7.5ZM9.75 5.25C9.75 4.83579 9.41421 4.5 9 4.5C8.58579 4.5 8.25 4.83579 8.25 5.25L9 5.25L9.75 5.25ZM8.25 12.75C8.25 13.1642 8.58579 13.5 9 13.5C9.41421 13.5 9.75 13.1642 9.75 12.75H9H8.25ZM9 8.89214V8.14214C8.29782 8.14214 7.96493 8.02867 7.82348 7.93398C7.74626 7.88228 7.6875 7.81974 7.6875 7.59584H6.9375H6.1875C6.1875 8.20719 6.40999 8.7928 6.98902 9.18044C7.50382 9.52508 8.20218 9.64214 9 9.64214V8.89214ZM6.9375 7.59584H7.6875C7.6875 7.47458 7.75296 7.30148 7.98509 7.13128C8.21676 6.9614 8.57314 6.8335 9 6.8335V6.0835V5.3335C8.28777 5.3335 7.6129 5.54414 7.0981 5.92163C6.58374 6.29878 6.1875 6.88186 6.1875 7.59584H6.9375ZM9 6.0835V6.8335C9.42686 6.8335 9.78324 6.9614 10.0149 7.13128C10.247 7.30148 10.3125 7.47458 10.3125 7.59584H11.0625H11.8125C11.8125 6.88186 11.4163 6.29878 10.9019 5.92163C10.3871 5.54414 9.71223 5.3335 9 5.3335V6.0835ZM11.25 10.4045H10.5C10.5 10.6602 10.4051 10.8033 10.2066 10.9218C9.96255 11.0674 9.55372 11.1668 9 11.1668V11.9168V12.6668C9.68892 12.6668 10.4051 12.5502 10.9754 12.2097C11.5913 11.8421 12 11.229 12 10.4045H11.25ZM9 11.9168V11.1668C8.50734 11.1668 8.09498 11.0313 7.8274 10.8514C7.55512 10.6684 7.5 10.4962 7.5 10.4045H6.75H6C6 11.148 6.44856 11.732 6.99062 12.0963C7.53738 12.4638 8.25002 12.6668 9 12.6668V11.9168ZM9 8.89214V9.64214C9.70817 9.64214 10.0904 9.75 10.2796 9.87258C10.4005 9.95097 10.5 10.0659 10.5 10.4045H11.25H12C12 9.66285 11.7245 9.02158 11.0954 8.61385C10.5346 8.25033 9.79182 8.14214 9 8.14214V8.89214ZM9 6.0835L9.75 6.0835L9.75 5.25L9 5.25L8.25 5.25L8.25 6.0835L9 6.0835ZM9 11.9168H8.25V12.75H9H9.75V11.9168H9Z" fill="currentColor" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_38244_93989">
+                                            <rect width="18" height="18" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <span id="current-curr">USD</span>
+                                <svg class="size-5 shrink-0 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+                                    <path d="M5 7.5L9.29289 11.7929C9.62623 12.1262 9.79289 12.2929 10 12.2929C10.2071 12.2929 10.3738 12.1262 10.7071 11.7929L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <ul id="curr-menu" class="absolute left-0 z-[60] mt-2 hidden w-28 origin-top-left rounded-lg border border-gray-100 bg-white py-1 shadow-2xl ring-1 ring-black/5">
+                                <li>
+                                    <button type="button" data-val="USD" class="curr-opt flex w-full items-center px-4 py-2 text-left text-sm text-[#04535C] bg-gray-50 font-medium hover:bg-gray-100 hover:text-gray-900">
+                                        USD ($)
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-val="EUR" class="curr-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                        EUR (€)
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-val="GBP" class="curr-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                        GBP (£)
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-val="JPY" class="curr-opt flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                        JPY (¥)
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Quick Links -->
+                <div class="flex items-center gap-5 text-sm font-normal">
+                    <a href="about.html" class="text-white transition-colors hover:text-[#AAF27F]">About Us</a>
+                    <a href="signup.html" class="text-white transition-colors hover:text-[#AAF27F]">My Account</a>
+                    <a href="wishlist.html" class="text-white transition-colors hover:text-[#AAF27F]">My Wishlist</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- ================= MAIN HEADER ================= -->
@@ -1203,6 +1306,93 @@
 
     <!-- ================= JAVASCRIPT ================= -->
     <script>
+        // Language & Currency Dropdowns
+        (function () {
+            const langBtn = document.getElementById('lang-btn');
+            const langMenu = document.getElementById('lang-menu');
+            const currBtn = document.getElementById('curr-btn');
+            const currMenu = document.getElementById('curr-menu');
+
+            function closeDropdowns() {
+                if (langMenu) langMenu.classList.add('hidden');
+                if (currMenu) currMenu.classList.add('hidden');
+                if (langBtn) {
+                    langBtn.setAttribute('aria-expanded', 'false');
+                    const arrow = langBtn.querySelector('svg:last-child');
+                    if (arrow) arrow.classList.remove('rotate-180');
+                }
+                if (currBtn) {
+                    currBtn.setAttribute('aria-expanded', 'false');
+                    const arrow = currBtn.querySelector('svg:last-child');
+                    if (arrow) arrow.classList.remove('rotate-180');
+                }
+            }
+
+            if (langBtn && langMenu) {
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isHidden = langMenu.classList.contains('hidden');
+                    closeDropdowns();
+                    if (isHidden) {
+                        langMenu.classList.remove('hidden');
+                        langBtn.setAttribute('aria-expanded', 'true');
+                        const arrow = langBtn.querySelector('svg:last-child');
+                        if (arrow) arrow.classList.add('rotate-180');
+                    }
+                });
+
+                langMenu.querySelectorAll('.lang-opt').forEach(opt => {
+                    opt.addEventListener('click', () => {
+                        const target = document.getElementById('current-lang');
+                        const val = opt.getAttribute('data-val') || opt.textContent.trim();
+                        if (target) target.textContent = val;
+
+                        langMenu.querySelectorAll('.lang-opt').forEach(item => {
+                            item.classList.remove('text-[#04535C]', 'bg-gray-50', 'font-medium');
+                            item.classList.add('text-gray-700');
+                        });
+                        opt.classList.remove('text-gray-700');
+                        opt.classList.add('text-[#04535C]', 'bg-gray-50', 'font-medium');
+
+                        closeDropdowns();
+                    });
+                });
+            }
+
+            if (currBtn && currMenu) {
+                currBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isHidden = currMenu.classList.contains('hidden');
+                    closeDropdowns();
+                    if (isHidden) {
+                        currMenu.classList.remove('hidden');
+                        currBtn.setAttribute('aria-expanded', 'true');
+                        const arrow = currBtn.querySelector('svg:last-child');
+                        if (arrow) arrow.classList.add('rotate-180');
+                    }
+                });
+
+                currMenu.querySelectorAll('.curr-opt').forEach(opt => {
+                    opt.addEventListener('click', () => {
+                        const target = document.getElementById('current-curr');
+                        const val = opt.getAttribute('data-val') || opt.textContent.trim().split(' ')[0];
+                        if (target) target.textContent = val;
+
+                        currMenu.querySelectorAll('.curr-opt').forEach(item => {
+                            item.classList.remove('text-[#04535C]', 'bg-gray-50', 'font-medium');
+                            item.classList.add('text-gray-700');
+                        });
+                        opt.classList.remove('text-gray-700');
+                        opt.classList.add('text-[#04535C]', 'bg-gray-50', 'font-medium');
+
+                        closeDropdowns();
+                    });
+                });
+            }
+
+            window.addEventListener('click', closeDropdowns);
+        })();
+
         document.addEventListener('DOMContentLoaded', () => {
 
             // --- Drawer Logic ---
