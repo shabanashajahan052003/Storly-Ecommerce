@@ -855,14 +855,8 @@
   .max-w-\[760px\] {
     max-width: 760px;
   }
-  .max-w-\[1400px\] {
-    max-width: 1400px;
-  }
-  .max-w-\[1420px\] {
-    max-width: 1420px;
-  }
-  .max-w-\[1440px\] {
-    max-width: 1440px;
+  .max-w-\[1600px\] {
+    max-width: 1600px;
   }
   .max-w-lg {
     max-width: var(--container-lg);
@@ -2966,9 +2960,6 @@
     }
     .sm\:px-4 {
       padding-inline: calc(var(--spacing) * 4);
-    }
-    .sm\:px-5 {
-      padding-inline: calc(var(--spacing) * 5);
     }
     .sm\:px-6 {
       padding-inline: calc(var(--spacing) * 6);
